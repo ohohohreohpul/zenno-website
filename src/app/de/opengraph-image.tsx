@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og'
+import { OgLogoMark } from '@/components/marketing/OgLogoMark'
 
 export const dynamic = 'force-static'
 export const size = { width: 1200, height: 630 }
@@ -24,27 +25,16 @@ export default function OpengraphImageDe() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
           <div
             style={{
-              width: 44,
-              height: 44,
+              width: 52,
+              height: 52,
               borderRadius: 14,
               background: '#FDFCFA',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              position: 'relative',
             }}
           >
-            <div
-              style={{
-                position: 'absolute',
-                top: 10,
-                right: 10,
-                width: 12,
-                height: 12,
-                borderRadius: 999,
-                background: '#059669',
-              }}
-            />
+            <OgLogoMark size={26} />
           </div>
           <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: -1 }}>zenno</div>
         </div>

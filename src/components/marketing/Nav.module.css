@@ -26,38 +26,15 @@
   box-shadow: var(--sh);
 }
 
-/* default state sits over the hero photo — light text; scrolled state sits over
-   the cream page — ink text. Both transition together with the pill background. */
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  font-weight: 640;
-  font-size: 1.15rem;
-  letter-spacing: -0.03em;
-  color: #fff;
   text-decoration: none;
-  transition: color 0.4s var(--ease-out-expo);
 }
-.scrolled .logo {
-  color: var(--t1);
-}
-.mark {
-  width: 20px;
-  height: 20px;
-  border-radius: 7px;
-  background: var(--ink);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  position: relative;
-}
-.mark::after {
-  content: '';
-  position: absolute;
-  inset: 6px 6px auto auto;
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: var(--green);
+.wordmark {
+  display: block;
+  height: 26px;
+  width: auto;
 }
 
 .links {
@@ -133,11 +110,50 @@
   background: var(--subtle);
 }
 
+/* the nav CTA reuses the global .btn pill; .actions .cta wins over .btn on
+   specificity so the narrow-viewport overrides below always apply regardless
+   of stylesheet order. */
+.actions .cta {
+  white-space: nowrap;
+}
+.ctaShort {
+  display: none;
+}
+
 @media (max-width: 860px) {
   .links {
     display: none;
   }
   .signin {
     display: none;
+  }
+}
+
+/* "Get started free" wraps to 3 lines and balloons into a circle once the
+   logo + language switch + full CTA no longer fit one row — swap to a
+   shorter label instead of shrinking text until it's unreadable. */
+@media (max-width: 640px) {
+  .ctaFull {
+    display: none;
+  }
+  .ctaShort {
+    display: inline;
+  }
+}
+
+@media (max-width: 400px) {
+  .inner {
+    padding: 8px 8px 8px 14px;
+  }
+  .langSwitch {
+    padding: 6px 8px;
+    font-size: 0.68rem;
+  }
+  .actions {
+    gap: 4px;
+  }
+  .actions .cta {
+    padding: 0.7em 1.05em;
+    font-size: 0.84rem;
   }
 }

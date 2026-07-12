@@ -9,7 +9,7 @@ export function organizationSchema() {
     '@type': 'Organization',
     name: 'Zenno',
     url: SITE_URL,
-    logo: `${SITE_URL}/opengraph-image`,
+    logo: `${SITE_URL}/logo/wordmark-black.png`,
     description:
       "An AI receptionist that answers customer chats and books appointments 24/7 on a business's own WhatsApp, Telegram, LINE, Messenger, or website.",
   }

@@ -102,8 +102,7 @@ export function Footer({ lang = 'en' }: FooterProps) {
       <div className={`wrap ${styles.inner}`}>
         <div className={styles.brand}>
           <a href={`${home}#top`} className={styles.logo}>
-            <span className={styles.mark} aria-hidden />
-            zenno
+            <img src="/logo/wordmark-black.svg" alt="Zenno" width={104} height={29} className={styles.wordmark} />
           </a>
           <p className={styles.tagline}>{t.tagline}</p>
           <div className={styles.channels}>

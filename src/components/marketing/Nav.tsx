@@ -6,7 +6,10 @@ import { appHref } from '@/lib/marketing/config'
 import { Magnetic } from './primitives/Magnetic'
 import styles from './Nav.module.css'
 
-const STRINGS: Record<Lang, { links: { label: string; hash: string }[]; signin: string; cta: string }> = {
+const STRINGS: Record<
+  Lang,
+  { links: { label: string; hash: string }[]; signin: string; cta: string; ctaShort: string }
+> = {
   en: {
     links: [
       { label: 'How it works', hash: '#how' },
@@ -16,6 +19,7 @@ const STRINGS: Record<Lang, { links: { label: string; hash: string }[]; signin: 
     ],
     signin: 'Sign in',
     cta: 'Get started free',
+    ctaShort: 'Get started',
   },
   de: {
     links: [
@@ -26,6 +30,7 @@ const STRINGS: Record<Lang, { links: { label: string; hash: string }[]; signin: 
     ],
     signin: 'Anmelden',
     cta: 'Kostenlos starten',
+    ctaShort: 'Loslegen',
   },
 }
 
@@ -57,8 +62,13 @@ export function Nav({ lang = 'en', onLightBg = false }: NavProps) {
     <header className={`${styles.nav} ${solid ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
         <a href={`${home}#top`} className={styles.logo} aria-label="Zenno home">
-          <span className={styles.mark} aria-hidden />
-          zenno
+          <img
+            src={solid ? '/logo/wordmark-black.svg' : '/logo/wordmark-cream.svg'}
+            alt="Zenno"
+            width={94}
+            height={26}
+            className={styles.wordmark}
+          />
         </a>
 
         <nav className={styles.links} aria-label="Primary">
@@ -77,8 +87,10 @@ export function Nav({ lang = 'en', onLightBg = false }: NavProps) {
             {t.signin}
           </a>
           <Magnetic strength={0.4}>
-            <a href={appHref()} className="btn">
-              {t.cta} <span className="arrow">→</span>
+            <a href={appHref()} className={`btn ${styles.cta}`}>
+              <span className={styles.ctaFull}>{t.cta}</span>
+              <span className={styles.ctaShort}>{t.ctaShort}</span>
+              <span className="arrow">→</span>
             </a>
           </Magnetic>
         </div>
