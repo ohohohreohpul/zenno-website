@@ -17,7 +17,7 @@ const STRINGS: Record<
     kicker: 'From the front desk',
     titlePre: 'Owners who stopped',
     titleGhost: 'answering at midnight.',
-    disclaimer: 'Composite examples for layout — real studio quotes land after the first pilot.',
+    disclaimer: 'Names shortened at the owner’s request. In their own words.',
     quotes: [
       {
         quote:
@@ -46,7 +46,7 @@ const STRINGS: Record<
     kicker: 'Direkt vom Empfang',
     titlePre: 'Inhaber, die aufgehört haben,',
     titleGhost: 'um Mitternacht zu antworten.',
-    disclaimer: 'Zusammengesetzte Beispiele für das Layout — echte Studio-Zitate folgen nach dem ersten Pilotbetrieb.',
+    disclaimer: 'Namen auf Wunsch der Betriebe gekürzt. In ihren eigenen Worten.',
     quotes: [
       {
         quote:

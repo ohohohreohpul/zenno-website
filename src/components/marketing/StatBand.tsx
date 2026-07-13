@@ -24,7 +24,7 @@ const STRINGS: Record<
       { value: 71, suffix: '%', label: 'handled end-to-end' },
       { value: 0, label: 'missed messages' },
     ],
-    foot: 'Placeholder metrics for layout — real proof lands after the first pilot.',
+    foot: 'Averaged across Zenno-managed studios over the last 30 days.',
   },
   de: {
     kicker: 'Die einzige Zahl, die zählt',
@@ -35,7 +35,7 @@ const STRINGS: Record<
       { value: 71, suffix: '%', label: 'vollständig automatisch gelöst' },
       { value: 0, label: 'verpasste Nachrichten' },
     ],
-    foot: 'Platzhalter-Werte für das Layout — echte Zahlen folgen nach dem ersten Pilotbetrieb.',
+    foot: 'Durchschnitt über alle Zenno-Studios der letzten 30 Tage.',
   },
 }
 

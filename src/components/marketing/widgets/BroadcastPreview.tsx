@@ -29,7 +29,7 @@ interface BroadcastPreviewProps {
   lang?: Lang
 }
 
-/** Static mini mockup: a personalized broadcast queue with a preview-before-send state. */
+/** A personalized broadcast queue showing the preview-before-send state. */
 export function BroadcastPreview({ lang = 'en' }: BroadcastPreviewProps) {
   const t = STRINGS[lang]
 

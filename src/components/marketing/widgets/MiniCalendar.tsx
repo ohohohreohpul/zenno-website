@@ -16,7 +16,7 @@ interface MiniCalendarProps {
   lang?: Lang
 }
 
-/** Tiny calendar-fill mockup: a grid of slots, one fills green as the agent books it. */
+/** A calendar-fill view: a grid of slots, one fills green as the agent books it. */
 export function MiniCalendar({ lang = 'en' }: MiniCalendarProps) {
   const cells = useMemo(() => Array.from({ length: 14 }, (_, i) => i), [])
   const t = STRINGS[lang]
