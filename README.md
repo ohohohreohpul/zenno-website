@@ -27,7 +27,7 @@ buttons point, since the app dashboard is a different deployment:
 NEXT_PUBLIC_APP_URL=https://your-app-domain.com
 ```
 
-Defaults to `https://zen-agent.vercel.app` if unset. Set this as a build-time
+Defaults to `https://app.zennohq.studio` if unset. Set this as a build-time
 environment variable on whichever host you use (see below).
 
 The site's own canonical domain is hardcoded as `SITE_URL` in three files

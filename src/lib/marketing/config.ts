@@ -4,9 +4,9 @@
  * must point at the app's own domain instead of a relative path.
  * Set NEXT_PUBLIC_APP_URL at build time to override the default.
  */
-export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://zen-agent.vercel.app'
+export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.zennohq.studio'
 
-export function appHref(path: string = '/dashboard'): string {
+export function appHref(path: string = '/'): string {
   return `${APP_URL}${path}`
 }
 
