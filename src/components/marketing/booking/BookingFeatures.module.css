@@ -1,0 +1,127 @@
+.section {
+  background: var(--bg-warm);
+}
+.bento {
+  margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    "page page page pay pay pay"
+    "page page page remind remind remind"
+    "loyalty loyalty portal portal dash dash";
+  gap: 14px;
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: clamp(20px, 1rem + 1vw, 30px);
+  border-radius: var(--r-xl);
+  transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-out-expo);
+}
+.tile:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sh);
+}
+.title {
+  margin: 0;
+  font-size: var(--step-1);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+.body {
+  margin: 0;
+  font-size: 0.93rem;
+  color: var(--t2);
+  max-width: 40ch;
+}
+
+/* booking-page flow */
+.flow {
+  margin-top: auto;
+  padding-top: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.step {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: var(--r);
+  border: 1px solid var(--line);
+  background: var(--bg);
+  font-size: 0.9rem;
+  font-weight: 560;
+}
+.step em {
+  font-style: normal;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--t3);
+  font-weight: 500;
+}
+.stepOn {
+  border-color: var(--bk);
+  background: var(--bk-soft);
+  color: var(--bk);
+}
+
+/* gift card + loyalty punch */
+.gift {
+  margin-top: auto;
+  padding: 16px;
+  border-radius: var(--r);
+  background: var(--ink);
+  color: var(--inv);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 4px 10px;
+}
+.giftAmount {
+  font-size: 1.6rem;
+  font-weight: 640;
+  letter-spacing: -0.04em;
+}
+.giftLabel {
+  font-size: 0.78rem;
+  color: var(--inv-2);
+}
+.giftDots {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 5px;
+  margin-top: 8px;
+}
+.giftDots i {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.giftDots .dotOn {
+  background: var(--bk-soft);
+  border-color: var(--bk-soft);
+}
+
+@media (max-width: 900px) {
+  .bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "page page"
+      "pay remind"
+      "loyalty portal"
+      "dash dash";
+  }
+}
+@media (max-width: 560px) {
+  .bento {
+    grid-template-columns: 1fr;
+    grid-template-areas: "page" "pay" "remind" "loyalty" "portal" "dash";
+  }
+}

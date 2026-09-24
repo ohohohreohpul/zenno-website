@@ -1,6 +1,7 @@
 import type { Lang } from './lang'
 import type { FaqItem } from './content/faq'
 import { PRICING_TIERS } from './content/pricing'
+import { BOOKING_TIERS, bookingPath } from './content/booking'
 import { SITE_URL } from './config'
 
 export function organizationSchema() {
@@ -62,6 +63,30 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
       position: i + 1,
       name: item.name,
       item: `${SITE_URL}${item.path}`,
+    })),
+  }
+}
+
+export function bookingApplicationSchema(lang: Lang) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Zenno Booking',
+    alternateName: 'onbuuk',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    url: `${SITE_URL}${bookingPath(lang)}`,
+    description:
+      lang === 'de'
+        ? 'Online-Buchung, Kalender, Zahlungen, Erinnerungen, Gutscheine und Treueprogramm für Salons, Spas und Wellnessstudios. Vormals onbuuk.com.'
+        : 'Online booking, calendar, payments, reminders, gift cards and loyalty for salons, spas and wellness studios. Previously onbuuk.com.',
+    publisher: { '@type': 'Organization', name: 'Zenno', url: SITE_URL },
+    offers: BOOKING_TIERS[lang].map((tier) => ({
+      '@type': 'Offer',
+      name: tier.name,
+      price: tier.price.replace(/[^0-9.]/g, ''),
+      priceCurrency: 'EUR',
+      description: tier.line,
     })),
   }
 }

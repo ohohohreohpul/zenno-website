@@ -1,0 +1,241 @@
+.stage {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+}
+
+/* ---- the two doors ---- */
+.doors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.door {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh);
+  min-height: 150px;
+}
+.doorLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--t3);
+}
+.waDot,
+.bkDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+}
+.waDot {
+  background: var(--wa);
+}
+.bkDot {
+  background: var(--bk);
+}
+
+.bubble {
+  margin: 0;
+  max-width: 94%;
+  padding: 7px 10px;
+  border-radius: 12px;
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+.me {
+  align-self: flex-end;
+  background: var(--ink);
+  color: var(--inv);
+  border-bottom-right-radius: 4px;
+}
+.bot {
+  align-self: flex-start;
+  background: var(--bg-warm);
+  border: 1px solid var(--line);
+  border-bottom-left-radius: 4px;
+}
+
+.service {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--t1);
+}
+.times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+.time {
+  position: relative;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  color: var(--t2);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.picked {
+  background: var(--bk);
+  border-color: var(--bk);
+  color: #fff;
+}
+.tap {
+  position: absolute;
+  inset: -6px;
+  border-radius: 999px;
+  border: 2px solid var(--bk);
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* ---- connector: both doors pour into one calendar ---- */
+.join {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 26px;
+}
+.join span {
+  position: relative;
+}
+.join span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  border-left: 1px dashed var(--line-strong);
+}
+
+/* ---- the shared calendar ---- */
+.calendar {
+  padding: 16px;
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-lg);
+}
+.calHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.calHead strong {
+  font-size: 0.92rem;
+  letter-spacing: -0.01em;
+}
+.calHead span {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--t3);
+}
+.slots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.slot {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  min-height: 40px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px dashed var(--line-strong);
+  font-size: 0.8rem;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.slotTime {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  color: var(--t3);
+}
+.slotEmpty,
+.slotBody {
+  grid-column: 2;
+  grid-row: 1;
+  transition: opacity 0.3s ease;
+}
+.slotEmpty {
+  color: var(--t3);
+}
+.slotBody {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 4px;
+  color: var(--t2);
+}
+.slotBody b {
+  color: var(--t1);
+  font-weight: 600;
+}
+.source {
+  flex-basis: 100%;
+  font-style: normal;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.taken {
+  border-style: solid;
+  border-color: var(--line);
+  background: var(--subtle);
+}
+
+/* demo slots start "Open", then fill */
+.slot[data-fill] .slotBody {
+  opacity: 0;
+}
+.slot[data-fill].filled .slotBody {
+  opacity: 1;
+}
+.slot[data-fill].filled .slotEmpty {
+  opacity: 0;
+}
+.slot[data-source="chat"].filled {
+  border-style: solid;
+  border-color: color-mix(in srgb, var(--green) 40%, transparent);
+  background: var(--green-soft);
+}
+.slot[data-source="chat"] .source {
+  color: var(--green);
+}
+.slot[data-source="click"].filled {
+  border-style: solid;
+  border-color: color-mix(in srgb, var(--bk) 40%, transparent);
+  background: var(--bk-soft);
+}
+.slot[data-source="click"] .source {
+  color: var(--bk);
+}
+
+@media (max-width: 420px) {
+  .doors {
+    gap: 8px;
+  }
+  .door {
+    padding: 11px;
+  }
+  .bubble {
+    font-size: 0.72rem;
+  }
+}

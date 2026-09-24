@@ -3,20 +3,29 @@
 import { useEffect, useState } from 'react'
 import type { Lang } from '@/lib/marketing/lang'
 import { appHref } from '@/lib/marketing/config'
+import { bookingPath } from '@/lib/marketing/content/booking'
 import { Magnetic } from './primitives/Magnetic'
 import styles from './Nav.module.css'
 
-const STRINGS: Record<
-  Lang,
-  { links: { label: string; hash: string }[]; signin: string; cta: string; ctaShort: string }
-> = {
+interface NavLink {
+  label: string
+  /** In-page anchor on the homepage (resolved per locale), or… */
+  hash?: string
+  /** …an absolute site path for standalone pages. */
+  path?: string
+  isNew?: boolean
+}
+
+const STRINGS: Record<Lang, { links: NavLink[]; newBadge: string; signin: string; cta: string; ctaShort: string }> = {
   en: {
     links: [
       { label: 'How it works', hash: '#how' },
       { label: 'Features', hash: '#features' },
       { label: 'Channels', hash: '#channels' },
       { label: 'Pricing', hash: '#pricing' },
+      { label: 'Booking', path: bookingPath('en'), isNew: true },
     ],
+    newBadge: 'New',
     signin: 'Sign in',
     cta: 'Get started free',
     ctaShort: 'Get started',
@@ -27,7 +36,9 @@ const STRINGS: Record<
       { label: 'Funktionen', hash: '#features' },
       { label: 'Kanäle', hash: '#channels' },
       { label: 'Preise', hash: '#pricing' },
+      { label: 'Buchung', path: bookingPath('de'), isNew: true },
     ],
+    newBadge: 'Neu',
     signin: 'Anmelden',
     cta: 'Kostenlos starten',
     ctaShort: 'Loslegen',
@@ -42,13 +53,16 @@ interface NavProps {
    * of the white-on-photo scheme, which is otherwise invisible until scrolled.
    */
   onLightBg?: boolean
+  /** Same page in the other language; defaults to the other homepage. */
+  alternatePath?: string
 }
 
-export function Nav({ lang = 'en', onLightBg = false }: NavProps) {
+export function Nav({ lang = 'en', onLightBg = false, alternatePath }: NavProps) {
   const [scrolled, setScrolled] = useState(false)
   const t = STRINGS[lang]
   const home = lang === 'de' ? '/de' : '/'
-  const switchTo = lang === 'de' ? { href: '/', label: 'EN' } : { href: '/de', label: 'DE' }
+  const switchTo =
+    lang === 'de' ? { href: alternatePath ?? '/', label: 'EN' } : { href: alternatePath ?? '/de', label: 'DE' }
   const solid = scrolled || onLightBg
 
   useEffect(() => {
@@ -73,8 +87,9 @@ export function Nav({ lang = 'en', onLightBg = false }: NavProps) {
 
         <nav className={styles.links} aria-label="Primary">
           {t.links.map((l) => (
-            <a key={l.hash} href={`${home}${l.hash}`} className={styles.link}>
+            <a key={l.label} href={l.path ?? `${home}${l.hash ?? ''}`} className={styles.link}>
               {l.label}
+              {l.isNew && <span className={styles.newBadge}>{t.newBadge}</span>}
             </a>
           ))}
         </nav>

@@ -1,0 +1,52 @@
+.badge {
+  background: var(--bk);
+}
+.tick {
+  color: var(--bk);
+}
+.tickOnDark {
+  color: var(--bk-soft);
+}
+
+.addon {
+  margin: clamp(2.5rem, 1.5rem + 2vw, 3.5rem) auto 0;
+  max-width: 860px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 28px;
+  border-radius: var(--r-xl);
+  border-style: dashed;
+  border-color: var(--line-strong);
+  background: var(--bg-warm);
+}
+.addonKicker {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--t3);
+}
+.addonTitle {
+  margin: 0.4rem 0 0.2rem;
+  font-size: var(--step-1);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.addonBody {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--t2);
+  max-width: 52ch;
+}
+.addon :global(.btn) {
+  flex: none;
+}
+
+@media (max-width: 700px) {
+  .addon {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

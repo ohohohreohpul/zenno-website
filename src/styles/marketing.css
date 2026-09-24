@@ -24,6 +24,11 @@
   --green: #059669;
   --green-soft: #d9f0e6;
 
+  /* Zenno Booking (previously onbuuk) — its one inherited accent, a deep teal
+     that passes AA as text on --bg. Used for the "click to book" path only. */
+  --bk: #0f766e;
+  --bk-soft: #d7efec;
+
   /* Channels */
   --wa: #25d366;
   --tg: #26a5e4;

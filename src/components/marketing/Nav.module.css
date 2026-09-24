@@ -48,11 +48,25 @@
   color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
   font-weight: 500;
+  white-space: nowrap;
   transition: color 0.2s ease, background 0.2s ease;
 }
 .link:hover {
   color: #fff;
   background: rgba(255, 255, 255, 0.12);
+}
+.newBadge {
+  margin-left: 6px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--bk-soft);
+  color: var(--bk);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: 1px;
 }
 .scrolled .link {
   color: var(--t2);
@@ -92,6 +106,7 @@
   background: var(--subtle);
 }
 .signin {
+  white-space: nowrap;
   padding: 8px 14px;
   font-size: 0.9rem;
   font-weight: 500;
@@ -120,10 +135,14 @@
   display: none;
 }
 
-@media (max-width: 860px) {
+/* five links + actions stop fitting on one row below ~1000px */
+@media (max-width: 1000px) {
   .links {
     display: none;
   }
+}
+
+@media (max-width: 860px) {
   .signin {
     display: none;
   }

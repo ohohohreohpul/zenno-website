@@ -16,6 +16,7 @@ import { Comparison } from './Comparison'
 import { Faq } from './Faq'
 import { ClosingCta } from './ClosingCta'
 import { Footer } from './Footer'
+import { BookingBand } from './booking/BookingBand'
 
 interface HomePageProps {
   lang: Lang
@@ -34,6 +35,7 @@ export function HomePage({ lang }: HomePageProps) {
         <FeatureBento lang={lang} />
         <Channels lang={lang} />
         <UspSplits lang={lang} />
+        <BookingBand lang={lang} />
         <ProductPreview lang={lang} />
         <BeforeAfter lang={lang} />
         <Testimonials lang={lang} />
