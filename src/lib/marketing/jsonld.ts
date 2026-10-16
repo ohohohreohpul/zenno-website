@@ -1,41 +1,40 @@
 import type { Lang } from './lang'
 import type { FaqItem } from './content/faq'
-import { PRICING_TIERS } from './content/pricing'
-import { BOOKING_TIERS, bookingPath } from './content/booking'
+import { BOOKING_TIERS } from './content/booking'
 import { SITE_URL } from './config'
+import { absoluteUrl } from './seo'
 
 export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
     name: 'Zenno',
     url: SITE_URL,
     logo: `${SITE_URL}/logo/wordmark-black.png`,
     description:
-      "An AI receptionist that answers customer chats and books appointments 24/7 on a business's own WhatsApp, Telegram, LINE, Messenger, or website.",
+      'Booking software for studios that AI assistants can book directly, with no-show protection, VAT and DATEV export, and an AI receptionist.',
+    areaServed: { '@type': 'Country', name: 'Germany' },
+    knowsLanguage: ['de', 'en', 'th'],
   }
 }
 
-export function softwareApplicationSchema(lang: Lang) {
-  const tiers = PRICING_TIERS[lang]
+const WEBSITE_NAME: Record<Lang, string> = {
+  de: 'Zenno – Buchungssoftware für Studios',
+  en: 'Zenno – Booking software for studios',
+  th: 'Zenno – ระบบจองคิวออนไลน์สำหรับสตูดิโอ',
+}
+
+/** One WebSite node per locale, tied to the organization. */
+export function websiteSchema(lang: Lang) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: 'Zenno',
-    applicationCategory: 'BusinessApplication',
-    operatingSystem: 'Web',
-    url: lang === 'de' ? `${SITE_URL}/de` : SITE_URL,
-    description:
-      lang === 'de'
-        ? 'Ein KI-Empfang, der jede Nachricht beantwortet und Termine rund um die Uhr bucht.'
-        : 'An AI receptionist that answers every message and books appointments 24/7.',
-    offers: tiers.map((tier) => ({
-      '@type': 'Offer',
-      name: tier.name,
-      price: tier.price.replace(/[^0-9.]/g, ''),
-      priceCurrency: 'EUR',
-      description: tier.line,
-    })),
+    '@type': 'WebSite',
+    '@id': `${absoluteUrl(lang)}#website`,
+    name: WEBSITE_NAME[lang],
+    url: absoluteUrl(lang),
+    inLanguage: lang,
+    publisher: { '@id': `${SITE_URL}/#organization` },
   }
 }
 
@@ -67,20 +66,25 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
   }
 }
 
-export function bookingApplicationSchema(lang: Lang) {
+export const BOOKING_APP_DESCRIPTION: Record<Lang, string> = {
+  de: 'Buchungssoftware, die für Sie bucht: Kassenkalender, Online-Buchungsseite, Gutscheine, Zahlungen, No-Show-Gebühren, Kassenbuch und DATEV-Export, mit einer KI-Rezeption für WhatsApp, E-Mail und Website. Vormals onbuuk.com.',
+  en: 'Booking software that books itself: a POS calendar, online booking page, vouchers, payments, no-show fees, cash book and DATEV export, with an AI receptionist for WhatsApp, email and your website. Previously onbuuk.com.',
+  th: 'ระบบจองคิว ที่รับจองแทนคุณ ปฏิทินหน้าร้าน หน้าจองออนไลน์ บัตรของขวัญ การชำระเงิน ค่าปรับไม่มาตามนัด สมุดเงินสด และไฟล์ส่งออก DATEV พร้อมพนักงานต้อนรับ AI สำหรับ WhatsApp อีเมล และเว็บไซต์ เดิมคือ onbuuk.com',
+}
+
+/** The product: the homepage, feature pages and /booking describe this one. */
+export function bookingApplicationSchema(lang: Lang, path: string = '/') {
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'Zenno Booking',
+    name: 'Zenno',
     alternateName: 'onbuuk',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
-    url: `${SITE_URL}${bookingPath(lang)}`,
-    description:
-      lang === 'de'
-        ? 'Online-Buchung, Kalender, Zahlungen, Erinnerungen, Gutscheine und Treueprogramm für Salons, Spas und Wellnessstudios. Vormals onbuuk.com.'
-        : 'Online booking, calendar, payments, reminders, gift cards and loyalty for salons, spas and wellness studios. Previously onbuuk.com.',
-    publisher: { '@type': 'Organization', name: 'Zenno', url: SITE_URL },
+    url: absoluteUrl(lang, path),
+    inLanguage: lang,
+    description: BOOKING_APP_DESCRIPTION[lang],
+    publisher: { '@id': `${SITE_URL}/#organization` },
     offers: BOOKING_TIERS[lang].map((tier) => ({
       '@type': 'Offer',
       name: tier.name,

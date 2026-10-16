@@ -11,11 +11,13 @@ interface UseCaseFitProps {
   titlePre: string
   titleGhost: string
   points: FitPoint[]
+  /** Anchor id, e.g. 'how' for a steps block. */
+  id?: string
 }
 
-export function UseCaseFit({ kicker, titlePre, titleGhost, points }: UseCaseFitProps) {
+export function UseCaseFit({ kicker, titlePre, titleGhost, points, id }: UseCaseFitProps) {
   return (
-    <section className="pad-y">
+    <section id={id} className="pad-y">
       <div className="wrap">
         <SectionHeader
           kicker={kicker}

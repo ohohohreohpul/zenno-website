@@ -1,12 +1,19 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, type CSSProperties } from 'react'
 import type { Lang } from '@/lib/marketing/lang'
 import { useGsapContext, gsap, ScrollTrigger } from '@/lib/marketing/gsap'
 import styles from './ChatAutoplay.module.css'
 
 type Turn = { from: 'me' | 'bot'; text: string; booked?: boolean }
-export type ChatScript = { studio: string; channel: string; turns: Turn[]; bookedLabel: string }
+export type ChatScript = {
+  studio: string
+  channel: string
+  turns: Turn[]
+  bookedLabel: string
+  /** Header dot colour; defaults to the WhatsApp green. */
+  accent?: string
+}
 
 const SCRIPTS: Record<Lang, ChatScript> = {
   en: {
@@ -30,6 +37,17 @@ const SCRIPTS: Record<Lang, ChatScript> = {
       { from: 'bot', text: 'Fertig! Bis Samstag!', booked: true },
     ],
     bookedLabel: 'Gebucht · Sa. 10:00',
+  },
+  th: {
+    studio: 'Lotus Yoga',
+    channel: 'WhatsApp · ออนไลน์',
+    turns: [
+      { from: 'me', text: 'เสาร์นี้มีคลาสโยคะว่างไหมคะ' },
+      { from: 'bot', text: 'มีค่ะ เวิร์กช็อปวันหยุด เสาร์ 10:00 กับครูมะลิ เหลือ 8 ที่ จองเลยไหมคะ' },
+      { from: 'me', text: 'จองเลยค่ะ 🙌' },
+      { from: 'bot', text: 'จองให้แล้วค่ะ เจอกันวันเสาร์นะคะ', booked: true },
+    ],
+    bookedLabel: 'จองแล้ว · เสาร์ 10:00',
   },
 }
 
@@ -104,7 +122,10 @@ export function ChatAutoplay({ lang = 'en', script: scriptOverride }: ChatAutopl
     >
       <div className={styles.head}>
         <span className={styles.avatar} aria-hidden>
-          <span className={styles.chDot} />
+          <span
+            className={styles.chDot}
+            style={script.accent ? ({ '--dot': script.accent } as CSSProperties) : undefined}
+          />
         </span>
         <div>
           <strong>{script.studio}</strong>

@@ -1,11 +1,8 @@
 .badge {
-  background: var(--bk);
+  background: var(--green);
 }
 .tick {
-  color: var(--bk);
-}
-.tickOnDark {
-  color: var(--bk-soft);
+  color: var(--green);
 }
 
 .addon {

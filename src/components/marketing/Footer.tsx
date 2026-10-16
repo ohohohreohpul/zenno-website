@@ -1,4 +1,6 @@
-import type { Lang } from '@/lib/marketing/lang'
+import { LANGS, LANG_NAME, homePath, localePath, type Lang } from '@/lib/marketing/lang'
+import { HELP_URL, SUPPORT_EMAIL } from '@/lib/marketing/config'
+import { FEATURE_SLUGS, INDUSTRY_SLUGS, PAGE_LABEL, type PageSlug } from '@/lib/marketing/pages'
 import styles from './Footer.module.css'
 
 interface FooterLink {
@@ -11,84 +13,82 @@ interface FooterCol {
   links: FooterLink[]
 }
 
-const STRINGS: Record<
-  Lang,
-  { tagline: string; cols: FooterCol[]; rights: string; made: string }
-> = {
-  en: {
-    tagline: 'Your chats, answered. Your calendar, filled.',
-    cols: [
-      {
-        title: 'Product',
-        links: [
-          { label: 'How it works', href: '/#how' },
-          { label: 'Features', href: '/#features' },
-          { label: 'Channels', href: '/#channels' },
-          { label: 'Zenno Booking', href: '/booking' },
-          { label: 'Pricing', href: '/pricing' },
-          { label: 'Comparison', href: '/comparison' },
-        ],
-      },
-      {
-        title: 'Use cases',
-        links: [
-          { label: 'Yoga studios', href: '/yoga-studios' },
-          { label: 'Salons & spas', href: '/salons-spas' },
-          { label: 'Clinics', href: '/clinics' },
-          { label: 'Wellness centres', href: '/#' },
-        ],
-      },
-      {
-        title: 'Company',
-        links: [
-          { label: 'About', href: '#' },
-          { label: 'Careers', href: '#' },
-          { label: 'Privacy', href: '#' },
-          { label: 'Terms', href: '#' },
-          { label: 'Contact', href: '#' },
-        ],
-      },
-    ],
-    rights: 'All rights reserved.',
-    made: 'Built for the businesses that were losing the 11pm inquiry.',
-  },
+/** The channels the receptionist answers on today. */
+const CHANNELS: readonly (readonly [string, string])[] = [
+  ['WhatsApp', '#10b981'],
+  ['E-Mail', '#0ea5e9'],
+  ['Website', '#3d3833'],
+]
+
+interface FooterStrings {
+  tagline: string
+  product: { title: string; calendar: string; receptionist: string; vouchers: string; pricing: string }
+  useCases: { title: string }
+  help: { title: string; docs: string; support: string }
+  company: { title: string; links: string[] }
+  languages: string
+  rights: string
+  previously: string
+}
+
+const STRINGS: Record<Lang, FooterStrings> = {
   de: {
-    tagline: 'Ihre Chats, beantwortet. Ihr Kalender, gefüllt.',
-    cols: [
-      {
-        title: 'Produkt',
-        links: [
-          { label: 'So funktioniert’s', href: '/de#how' },
-          { label: 'Funktionen', href: '/de#features' },
-          { label: 'Kanäle', href: '/de#channels' },
-          { label: 'Zenno Booking', href: '/de/booking' },
-          { label: 'Preise', href: '/pricing' },
-          { label: 'Vergleich', href: '/comparison' },
-        ],
-      },
-      {
-        title: 'Anwendungsfälle',
-        links: [
-          { label: 'Yogastudios', href: '/yoga-studios' },
-          { label: 'Salons & Spas', href: '/salons-spas' },
-          { label: 'Kliniken', href: '/clinics' },
-          { label: 'Wellness-Zentren', href: '/#' },
-        ],
-      },
-      {
-        title: 'Unternehmen',
-        links: [
-          { label: 'Über uns', href: '#' },
-          { label: 'Karriere', href: '#' },
-          { label: 'Datenschutz', href: '#' },
-          { label: 'AGB', href: '#' },
-          { label: 'Kontakt', href: '#' },
-        ],
-      },
-    ],
+    tagline: 'Die Buchungssoftware, die für Sie bucht.',
+    product: { title: 'Produkt', calendar: 'Kalender', receptionist: 'KI-Rezeption', vouchers: 'Gutscheine', pricing: 'Preise' },
+    useCases: { title: 'Branchen' },
+    help: { title: 'Hilfe', docs: 'Hilfe-Center', support: 'Support' },
+    company: { title: 'Unternehmen', links: ['Datenschutz', 'AGB', 'Impressum'] },
+    languages: 'Sprache',
     rights: 'Alle Rechte vorbehalten.',
-    made: 'Gebaut für Betriebe, die die 23-Uhr-Anfrage nicht mehr verpassen.',
+    previously: 'Früher onbuuk.com',
   },
+  en: {
+    tagline: 'Booking software that books itself.',
+    product: { title: 'Product', calendar: 'Calendar', receptionist: 'AI receptionist', vouchers: 'Vouchers', pricing: 'Pricing' },
+    useCases: { title: 'Industries' },
+    help: { title: 'Help', docs: 'Help centre', support: 'Support' },
+    company: { title: 'Company', links: ['Privacy', 'Terms', 'Imprint'] },
+    languages: 'Language',
+    rights: 'All rights reserved.',
+    previously: 'Previously onbuuk.com',
+  },
+  th: {
+    tagline: 'ระบบจองคิว ที่รับจองแทนคุณ',
+    product: { title: 'ผลิตภัณฑ์', calendar: 'ปฏิทิน', receptionist: 'พนักงานต้อนรับ AI', vouchers: 'บัตรของขวัญ', pricing: 'ราคา' },
+    useCases: { title: 'ประเภทธุรกิจ' },
+    help: { title: 'ช่วยเหลือ', docs: 'ศูนย์ช่วยเหลือ', support: 'ฝ่ายบริการลูกค้า' },
+    company: { title: 'บริษัท', links: ['ความเป็นส่วนตัว', 'ข้อกำหนด', 'ข้อมูลบริษัท'] },
+    languages: 'ภาษา',
+    rights: 'สงวนลิขสิทธิ์',
+    previously: 'เดิมคือ onbuuk.com',
+  },
+}
+
+function buildCols(lang: Lang): FooterCol[] {
+  const t = STRINGS[lang]
+  const pageLink = (slug: PageSlug): FooterLink => ({ label: PAGE_LABEL[slug][lang], href: localePath(lang, `/${slug}`) })
+  return [
+    {
+      title: t.product.title,
+      links: [
+        { label: t.product.calendar, href: homePath(lang, '#calendar') },
+        { label: t.product.receptionist, href: localePath(lang, '/ai-receptionist') },
+        { label: t.product.vouchers, href: localePath(lang, '/vouchers') },
+        ...FEATURE_SLUGS.map(pageLink),
+        { label: t.product.pricing, href: homePath(lang, '#pricing') },
+      ],
+    },
+    { title: t.useCases.title, links: INDUSTRY_SLUGS.map(pageLink) },
+    {
+      title: t.help.title,
+      links: [
+        { label: t.help.docs, href: HELP_URL },
+        { label: t.help.support, href: `mailto:${SUPPORT_EMAIL}` },
+      ],
+    },
+    // TODO: real Privacy / Terms / Impressum pages before launch.
+    { title: t.company.title, links: t.company.links.map((label) => ({ label, href: '#' })) },
+  ]
 }
 
 interface FooterProps {
@@ -97,24 +97,17 @@ interface FooterProps {
 
 export function Footer({ lang = 'en' }: FooterProps) {
   const t = STRINGS[lang]
-  const home = lang === 'de' ? '/de' : '/'
 
   return (
     <footer className={styles.footer}>
       <div className={`wrap ${styles.inner}`}>
         <div className={styles.brand}>
-          <a href={`${home}#top`} className={styles.logo}>
+          <a href={homePath(lang, '#top')} className={styles.logo}>
             <img src="/logo/wordmark-black.svg" alt="Zenno" width={104} height={29} className={styles.wordmark} />
           </a>
           <p className={styles.tagline}>{t.tagline}</p>
           <div className={styles.channels}>
-            {[
-              ['WhatsApp', 'var(--wa)'],
-              ['Telegram', 'var(--tg)'],
-              ['LINE', 'var(--ln)'],
-              ['Messenger', 'var(--ms)'],
-              ['Web', 'var(--wc)'],
-            ].map(([n, c]) => (
+            {CHANNELS.map(([n, c]) => (
               <span key={n} className={styles.ch}>
                 <i style={{ background: c }} />
                 {n}
@@ -124,7 +117,7 @@ export function Footer({ lang = 'en' }: FooterProps) {
         </div>
 
         <div className={styles.cols}>
-          {t.cols.map((col) => (
+          {buildCols(lang).map((col) => (
             <nav key={col.title} className={styles.col} aria-label={col.title}>
               <span className={styles.colTitle}>{col.title}</span>
               {col.links.map((l) => (
@@ -139,7 +132,23 @@ export function Footer({ lang = 'en' }: FooterProps) {
 
       <div className={`wrap ${styles.bottom}`}>
         <span>© {new Date().getFullYear()} Zenno. {t.rights}</span>
-        <span className={styles.made}>{t.made}</span>
+        <nav className={styles.langs} aria-label={t.languages}>
+          {LANGS.map((l) => (
+            <a
+              key={l}
+              href={homePath(l)}
+              hrefLang={l}
+              lang={l}
+              aria-current={l === lang ? 'true' : undefined}
+              className={styles.langLink}
+            >
+              {LANG_NAME[l]}
+            </a>
+          ))}
+        </nav>
+        <span className={styles.made}>
+          {t.previously} · <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
+        </span>
       </div>
     </footer>
   )

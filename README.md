@@ -20,20 +20,17 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Configuration
 
-One environment variable controls where "Get started free" / "Sign in"
-buttons point, since the app dashboard is a different deployment:
+The site does not link into the app: there is no sign-in or sign-up button
+for book.zennohq.com. Every "Start free" button goes to one place, set at
+build time:
 
 ```bash
-NEXT_PUBLIC_APP_URL=https://your-app-domain.com
+NEXT_PUBLIC_START_URL=https://your-signup-form-or-calendar
 ```
 
-Defaults to `https://app.zennohq.studio` if unset. Set this as a build-time
-environment variable on whichever host you use (see below).
-
-The site's own canonical domain is hardcoded as `SITE_URL` in three files
-(`src/app/layout.tsx`, `src/app/sitemap.ts`, `src/app/robots.ts`,
-`src/lib/marketing/jsonld.ts`) for metadata, hreflang, sitemap, and
-structured-data URLs. Update those to your real domain before launch.
+Unset, it opens an email to support@zennohq.com. The canonical domain is
+`SITE_URL` in `src/lib/marketing/config.ts` (zennohq.com); zennohq.studio is
+retired and should redirect there at the DNS/host level.
 
 ## Deploying to Vercel
 
@@ -41,16 +38,16 @@ structured-data URLs. Update those to your real domain before launch.
    and set the project's **Root Directory** to `website/` in Vercel's
    project settings).
 2. Import the repo in Vercel — framework preset "Next.js" is auto-detected.
-3. Add the `NEXT_PUBLIC_APP_URL` environment variable in Project Settings →
+3. Optionally add `NEXT_PUBLIC_START_URL` in Project Settings →
    Environment Variables.
 4. Deploy. Vercel runs `next build` and serves the static export directly —
    no server function cost since every route is static.
 
 ## Deploying to Hostinger (or any static host)
 
-1. Set `NEXT_PUBLIC_APP_URL` locally and build:
+1. Build (optionally with `NEXT_PUBLIC_START_URL` set):
    ```bash
-   NEXT_PUBLIC_APP_URL=https://your-app-domain.com npm run build
+   npm run build
    ```
 2. This produces a static site in `out/` — plain HTML, CSS, JS, and images,
    no Node.js server required.
@@ -83,3 +80,25 @@ src/
 Adding a new language: give each section component a `de`-style entry in its
 `STRINGS`/content object, then add a new `app/<locale>/page.tsx` rendering
 `<HomePage lang="<locale>" />`.
+
+## Locales, URLs & SEO
+
+German is the primary market and lives at the root; English and Thai are prefixed:
+
+| Locale | Home | Booking | Root layout |
+|---|---|---|---|
+| Deutsch | `/` | `/booking/` | `src/app/(de)/layout.tsx` |
+| English | `/en/` | `/en/booking/` | `src/app/en/layout.tsx` |
+| ไทย | `/th/` | `/th/booking/` | `src/app/th/layout.tsx` |
+
+- Each locale has its own root layout so the static HTML ships the right `<html lang>`. Build every
+  locale URL with `localePath()` / `homePath()` from `src/lib/marketing/lang.ts` and page metadata
+  with `pageMetadata()` from `src/lib/marketing/seo.ts` (canonical + hreflang + Open Graph).
+- Content pages (pricing, industries, no-shows, tax-datev, commission-free) are listed in
+  `src/lib/marketing/pages.ts`, rendered by `components/marketing/landing/`, with copy per locale in
+  `src/lib/marketing/content/landing/`. Every page exists in all three locales at the same slug.
+- Old URLs (`/de/`, `/de/booking/`, `/comparison/`, `/en/comparison/`) 301-redirect via
+  `public/.htaccess` (Hostinger/Apache) and `vercel.json` (Vercel).
+- `public/llms.txt` summarises the product for AI assistants — keep it in sync with real features.
+- Canonical domain: `https://zennohq.com` (`SITE_URL` in `src/lib/marketing/config.ts`, overridable
+  with `NEXT_PUBLIC_SITE_URL`).

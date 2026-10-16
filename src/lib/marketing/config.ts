@@ -1,27 +1,21 @@
 /**
- * The marketing site is deployed independently of the product app (see
- * README for Vercel/Hostinger setup), so "Get started" / "Sign in" links
- * must point at the app's own domain instead of a relative path.
- * Set NEXT_PUBLIC_APP_URL at build time to override the default.
- */
-export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.zennohq.studio'
-
-export function appHref(path: string = '/'): string {
-  return `${APP_URL}${path}`
-}
-
-/**
  * This site's own canonical domain — used for metadataBase, sitemap.xml,
- * robots.txt, and JSON-LD. Single source of truth; update this one constant
- * before launch instead of hunting across files.
+ * robots.txt, and JSON-LD. Single source of truth; zennohq.studio is retired
+ * and should redirect here.
  */
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://zen-agent.vercel.app'
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://zennohq.com'
+
+/** Help centre and support inbox, linked from the FAQ and the footer. */
+export const HELP_URL = 'https://docs.zennohq.com'
+export const SUPPORT_EMAIL = 'support@zennohq.com'
 
 /**
- * Zenno Booking (previously onbuuk.com) keeps its own accounts and billing, so
- * its sign-up / sign-in buttons point at its own app, not the Zenno dashboard.
+ * Where every "Start free" button goes. The site does not link into the app
+ * (no sign-in or sign-up on book.zennohq.com from here), so new shops write to
+ * us and get set up. Point NEXT_PUBLIC_START_URL at a form or calendar later.
  */
-export const BOOKING_APP_URL = process.env.NEXT_PUBLIC_BOOKING_APP_URL || 'https://app.onbuuk.com'
+export const START_URL =
+  process.env.NEXT_PUBLIC_START_URL || `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent('Zenno – start')}`
 
-/** The legacy domain, shown as "previously onbuuk" small print. */
+/** The legacy domain, shown as "previously onbuuk" small print in the footer. */
 export const LEGACY_BOOKING_DOMAIN = 'onbuuk.com'

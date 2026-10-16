@@ -1,0 +1,161 @@
+/* Proportions of a 6.3" modern iPhone (393 × 852 pt). The wrapper is the size
+   container, so every cqw inside scales with the phone's own width. */
+.phone {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  container-type: inline-size;
+}
+.frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 393 / 852;
+  border-radius: 16.5cqw;
+}
+
+/* ---- Titanium ---- */
+.titanium {
+  padding: 1cqw;
+  background: linear-gradient(145deg, #c9c6c0 0%, #8e8b86 22%, #d6d3cd 45%, #7c7974 70%, #b9b6b0 100%);
+  box-shadow:
+    inset 0 0 0 0.3cqw rgba(255, 255, 255, 0.5),
+    0 40px 70px -35px rgba(26, 23, 20, 0.5),
+    0 12px 28px rgba(26, 23, 20, 0.14);
+}
+.titanium .screen {
+  border: 2.4cqw solid #0b0b0b;
+}
+
+.button {
+  position: absolute;
+  width: 0.9cqw;
+  border-radius: 1cqw;
+  background: linear-gradient(90deg, #6d6a65, #c9c5be 50%, #6d6a65);
+}
+.action {
+  left: -0.6cqw;
+  top: 19%;
+  height: 6%;
+}
+.volUp {
+  left: -0.6cqw;
+  top: 28%;
+  height: 10%;
+}
+.volDown {
+  left: -0.6cqw;
+  top: 40%;
+  height: 10%;
+}
+.power {
+  right: -0.6cqw;
+  top: 30%;
+  height: 15%;
+}
+
+
+.screen {
+  position: relative;
+  height: 100%;
+  border-radius: 15cqw;
+  overflow: hidden;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+}
+.titanium .screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(118deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 38%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.status {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 13cqw;
+  padding: 0 7cqw 0 9.5cqw;
+  color: var(--ink);
+  flex-shrink: 0;
+  z-index: 4;
+}
+.statusLight {
+  color: #fff;
+}
+.time {
+  font-size: 4.4cqw;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.island {
+  position: absolute;
+  left: 50%;
+  top: 3cqw;
+  width: 31cqw;
+  height: 9.2cqw;
+  border-radius: 999px;
+  background: #050505;
+  transform: translateX(-50%);
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 1.6cqw;
+}
+.icons svg {
+  width: 4.6cqw;
+  height: auto;
+}
+.battery {
+  position: relative;
+  width: 7cqw;
+  height: 3.5cqw;
+  border-radius: 1.1cqw;
+  border: 0.35cqw solid currentColor;
+  opacity: 0.95;
+}
+.battery::after {
+  content: '';
+  position: absolute;
+  right: -1.1cqw;
+  top: 30%;
+  width: 0.6cqw;
+  height: 40%;
+  border-radius: 0 0.5cqw 0.5cqw 0;
+  background: currentColor;
+}
+.battery i {
+  position: absolute;
+  inset: 0.45cqw;
+  right: 1.8cqw;
+  border-radius: 0.5cqw;
+  background: currentColor;
+}
+
+.content {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeBar {
+  position: absolute;
+  left: 50%;
+  bottom: 2.2cqw;
+  width: 34cqw;
+  height: 1.3cqw;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.85;
+  transform: translateX(-50%);
+  color: var(--ink);
+  z-index: 4;
+}

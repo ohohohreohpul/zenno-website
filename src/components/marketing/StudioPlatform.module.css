@@ -1,0 +1,144 @@
+/* ---- Spotlights: no-shows + tax ---- */
+.spotlights {
+  margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 0.6rem + 1.5vw, 1.6rem);
+}
+.spotlight {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: clamp(1.4rem, 1rem + 1.8vw, 2.4rem);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh);
+}
+.spotKicker {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--t3);
+}
+.spotTitle {
+  margin: 0;
+}
+.spotBody {
+  margin: 0;
+  color: var(--t2);
+  line-height: 1.55;
+  max-width: 46ch;
+}
+
+/* A small, real-looking ledger — shows the outcome instead of an icon. */
+.ledger {
+  margin: auto 0 0;
+  padding-top: 0.6rem;
+}
+.ledgerLabel {
+  font-size: 0.72rem;
+  color: var(--t3);
+  margin-bottom: 0.5rem;
+}
+.rows {
+  margin: 0;
+  border-radius: var(--r);
+  background: var(--bg-warm);
+  border: 1px solid var(--line);
+  padding: 4px 14px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 10px 0;
+  font-size: 0.86rem;
+}
+.row + .row {
+  border-top: 1px solid var(--line);
+}
+.row dt {
+  color: var(--t2);
+}
+.row dd {
+  margin: 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.positive {
+  color: var(--green);
+}
+
+/* ---- The rest of the toolkit ---- */
+.features {
+  list-style: none;
+  margin: clamp(2.5rem, 1.8rem + 2vw, 3.5rem) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line-strong);
+}
+.feature {
+  padding: 1.4rem 1.6rem 1.6rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.feature:not(:nth-child(3n + 1)) {
+  padding-left: 1.6rem;
+  border-left: 1px solid var(--line);
+}
+.featureTitle {
+  margin: 0 0 0.45rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.tag {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--t2);
+  padding: 0.2em 0.6em;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+}
+.featureBody {
+  margin: 0;
+  color: var(--t2);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .spotlights {
+    grid-template-columns: 1fr;
+  }
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .feature:not(:nth-child(3n + 1)) {
+    padding-left: 0;
+    border-left: 0;
+  }
+  .feature:nth-child(2n) {
+    padding-left: 1.4rem;
+    border-left: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 560px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .feature:nth-child(2n) {
+    padding-left: 0;
+    border-left: 0;
+  }
+}

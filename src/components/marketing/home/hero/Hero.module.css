@@ -1,0 +1,57 @@
+.shot {
+  padding: clamp(3.5rem, 2.5rem + 4vw, 6rem) 0 clamp(4rem, 3rem + 4vw, 7rem);
+}
+.shotLine {
+  margin: 0 auto clamp(1.75rem, 1.25rem + 1.5vw, 2.75rem);
+  max-width: 28ch;
+  text-align: center;
+  font-size: clamp(1.5rem, 1rem + 1.6vw, 2.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+.shotLine:lang(th) {
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+/* The shop photo with the guest's phone (left) and the calendar (right) on it */
+.stage {
+  display: grid;
+  grid-template-columns: minmax(0, 290px) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 48px);
+  align-items: center;
+  padding: clamp(28px, 4vw, 64px);
+  min-height: 560px;
+}
+.phoneSlot {
+  display: flex;
+  justify-content: center;
+}
+.phoneSlot > * {
+  width: min(270px, 100%);
+}
+.windowSlot {
+  min-width: 0;
+  max-width: 760px;
+  justify-self: end;
+  width: 100%;
+}
+.pillText {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 960px) {
+  .stage {
+    grid-template-columns: 1fr;
+    padding: 24px 16px;
+  }
+}
+@media (max-width: 560px) {
+  .pillText {
+    display: none;
+  }
+}

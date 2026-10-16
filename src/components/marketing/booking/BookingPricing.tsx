@@ -1,7 +1,6 @@
 import type { Lang } from '@/lib/marketing/lang'
-import { BOOKING_APP_URL } from '@/lib/marketing/config'
+import { START_URL } from '@/lib/marketing/config'
 import { BOOKING_TIERS, BOOKING_PRICING_NOTE } from '@/lib/marketing/content/booking'
-import { PRICING_TIERS } from '@/lib/marketing/content/pricing'
 import { SectionHeader } from '../primitives/SectionHeader'
 import { Magnetic } from '../primitives/Magnetic'
 import pricing from '../Pricing.module.css'
@@ -17,33 +16,42 @@ const STRINGS: Record<
     per: string
     addonKicker: string
     addonTitle: string
-    addonBody: (price: string) => string
+    addonBody: string
     addonCta: string
   }
 > = {
   en: {
-    kicker: 'Zenno Booking pricing',
+    kicker: 'Pricing',
     titlePre: 'Start free.',
     titleGhost: 'Grow into it.',
     badge: 'Popular',
     per: '/mo',
-    addonKicker: 'Add-on · billed separately by Zenno',
-    addonTitle: 'Want the chats answered and booked too?',
-    addonBody: (price) =>
-      `The Zenno AI receptionist starts at ${price}/mo and books straight into your Zenno Booking calendar.`,
-    addonCta: 'See Zenno plans',
+    addonKicker: 'AI receptionist',
+    addonTitle: 'The receptionist is part of the same app.',
+    addonBody: 'AI usage is unlimited for now. Write to us and we will set it up for your shop.',
+    addonCta: 'Write to us',
   },
   de: {
-    kicker: 'Zenno Booking Preise',
+    kicker: 'Preise',
     titlePre: 'Kostenlos starten.',
     titleGhost: 'Mitwachsen.',
     badge: 'Beliebt',
     per: '/Monat',
-    addonKicker: 'Zusatz · separat abgerechnet von Zenno',
-    addonTitle: 'Sollen Chats auch beantwortet und gebucht werden?',
-    addonBody: (price) =>
-      `Der Zenno KI-Empfang startet ab ${price}/Monat und bucht direkt in Ihren Zenno-Booking-Kalender.`,
-    addonCta: 'Zenno-Tarife ansehen',
+    addonKicker: 'KI-Rezeption',
+    addonTitle: 'Die Rezeption ist Teil derselben App.',
+    addonBody: 'Die KI-Nutzung ist derzeit unbegrenzt. Schreiben Sie uns, und wir richten sie für Ihren Laden ein.',
+    addonCta: 'Schreiben Sie uns',
+  },
+  th: {
+    kicker: 'ราคา',
+    titlePre: 'เริ่มใช้ฟรี',
+    titleGhost: 'โตไปด้วยกัน',
+    badge: 'ยอดนิยม',
+    per: '/เดือน',
+    addonKicker: 'พนักงานต้อนรับ AI',
+    addonTitle: 'พนักงานต้อนรับอยู่ในแอปเดียวกัน',
+    addonBody: 'ตอนนี้ใช้งาน AI ได้ไม่จำกัด ส่งข้อความหาเรา แล้วเราจะตั้งค่าให้ร้านของคุณ',
+    addonCta: 'ติดต่อเรา',
   },
 }
 
@@ -52,13 +60,11 @@ interface BookingPricingProps {
 }
 
 /**
- * Zenno Booking has its own plans and billing (inherited from onbuuk), so it
- * reuses the Zenno pricing-card look but links to its own app — and points to
- * the AI receptionist as a separately billed add-on rather than a tier.
+ * The published plans (inherited from onbuuk), plus a note on the AI
+ * receptionist: it lives in the same app and its usage is unlimited for now.
  */
 export function BookingPricing({ lang = 'en' }: BookingPricingProps) {
   const t = STRINGS[lang]
-  const zennoEntryPrice = PRICING_TIERS[lang][0].price
 
   return (
     <section id="pricing" className="pad-y">
@@ -91,13 +97,13 @@ export function BookingPricing({ lang = 'en' }: BookingPricingProps) {
               <ul className={pricing.features}>
                 {tier.features.map((f) => (
                   <li key={f}>
-                    <span className={`${pricing.tick} ${tier.popular ? styles.tickOnDark : styles.tick}`}>✓</span>
+                    <span className={`${pricing.tick} ${styles.tick}`}>✓</span>
                     {f}
                   </li>
                 ))}
               </ul>
               <Magnetic strength={0.25}>
-                <a href={BOOKING_APP_URL} className={`btn ${tier.popular ? 'on-dark' : 'ghost'} ${pricing.btn}`}>
+                <a href={START_URL} className={`btn ${tier.popular ? '' : 'ghost'} ${pricing.btn}`}>
                   {tier.cta} <span className="arrow">→</span>
                 </a>
               </Magnetic>
@@ -109,9 +115,9 @@ export function BookingPricing({ lang = 'en' }: BookingPricingProps) {
           <div>
             <span className={styles.addonKicker}>{t.addonKicker}</span>
             <p className={styles.addonTitle}>{t.addonTitle}</p>
-            <p className={styles.addonBody}>{t.addonBody(zennoEntryPrice)}</p>
+            <p className={styles.addonBody}>{t.addonBody}</p>
           </div>
-          <a href="/pricing" className="btn">
+          <a href={START_URL} className="btn">
             {t.addonCta} <span className="arrow">→</span>
           </a>
         </div>

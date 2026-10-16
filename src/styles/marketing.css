@@ -71,7 +71,7 @@
 
   background: var(--bg);
   color: var(--t1);
-  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-geist-sans), var(--font-thai, -apple-system), BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: var(--step-0);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -126,6 +126,7 @@
   font-weight: 620;
   margin: 0;
 }
+.zx h1.title,
 .zx h2.title {
   font-size: var(--step-4);
   line-height: 1.02;
@@ -155,6 +156,18 @@
 }
 .zx .ghost-word {
   color: var(--t3);
+}
+
+/* ---- Thai ----
+   Thai stacks tone marks above and vowels below the line, so the tight Latin
+   leading clips them (headline lines sit in overflow-hidden masks), and
+   letter-spacing breaks up the script. Loosen both for Thai only. */
+.zx :is(h1, h2, h3):lang(th) {
+  line-height: 1.32;
+  letter-spacing: 0;
+}
+.zx .kicker:lang(th) {
+  letter-spacing: 0.02em;
 }
 
 /* ---- Buttons ---- */
@@ -278,4 +291,17 @@
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* ---- Visually hidden, still read by screen readers ---- */
+.zx .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }

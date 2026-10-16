@@ -1,0 +1,94 @@
+.calWrap {
+  position: relative;
+  padding-top: 14px;
+}
+
+.pop {
+  position: absolute;
+  right: 8px;
+  bottom: 12px;
+  width: min(270px, calc(100% - 16px));
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  z-index: 3;
+}
+.row {
+  font-weight: 500;
+  color: var(--muted);
+}
+.field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--radius-md);
+  border: 1px solid #a8a29e;
+  background: #fff;
+  padding: 8px 12px;
+  box-shadow: 0 0 0 4px rgba(28, 25, 23, 0.05);
+  color: var(--ink);
+}
+.field svg {
+  color: var(--muted-2);
+}
+.caret {
+  width: 1px;
+  height: 16px;
+  background: var(--ink);
+  animation: blink 1s steps(2) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.swatches {
+  display: flex;
+  gap: 6px;
+}
+.swatches i {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+.swatchOn {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--ink);
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  background: rgba(28, 25, 23, 0.04);
+}
+.result :global(.zn-avatar) {
+  width: 32px;
+  height: 32px;
+  font-size: 12px;
+}
+.result > span:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.times {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.pair {
+  display: flex;
+  gap: 8px;
+}
+
+.toast {
+  position: absolute;
+  right: 12px;
+  bottom: 14px;
+  z-index: 3;
+  box-shadow: var(--shadow-lift);
+}

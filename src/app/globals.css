@@ -13,7 +13,7 @@ body {
 
 body {
   margin: 0;
-  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-geist-sans), var(--font-thai, -apple-system), BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 

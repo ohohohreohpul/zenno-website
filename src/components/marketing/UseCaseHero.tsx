@@ -1,33 +1,25 @@
-import { appHref } from '@/lib/marketing/config'
+import { START_URL } from '@/lib/marketing/config'
+import type { Headline } from '@/lib/marketing/content/landing/types'
 import { ChatAutoplay, type ChatScript } from './ChatAutoplay'
 import styles from './UseCaseHero.module.css'
 
 interface UseCaseHeroProps {
   image: string
   kicker: string
-  titlePre: string
-  titleGhost: string
+  title: Headline
   lead: string
   ctaPrimary: string
   ctaSecondary: string
-  chatScript: ChatScript
+  /** In-page anchor for the secondary button. */
+  secondaryHref: string
+  chat?: ChatScript
 }
 
 /**
- * A lighter, reusable hero for the vertical landing pages — same photographic
- * treatment as the homepage hero, but shorter and without the frame-breaking
- * proof card (kept simple since these pages don't carry the full GSAP timeline).
+ * Photo hero for the industry landing pages — same treatment as the homepage
+ * hero, shorter, and without the GSAP timeline.
  */
-export function UseCaseHero({
-  image,
-  kicker,
-  titlePre,
-  titleGhost,
-  lead,
-  ctaPrimary,
-  ctaSecondary,
-  chatScript,
-}: UseCaseHeroProps) {
+export function UseCaseHero({ image, kicker, title, lead, ctaPrimary, ctaSecondary, secondaryHref, chat }: UseCaseHeroProps) {
   return (
     <section id="top" className={styles.hero}>
       <div className={styles.media}>
@@ -43,22 +35,24 @@ export function UseCaseHero({
             <span className="dot" /> {kicker}
           </span>
           <h1 className={styles.headline}>
-            {titlePre} <span className={styles.ghost}>{titleGhost}</span>
+            {title[0]} <span className={styles.ghost}>{title[1]}</span>
           </h1>
           <p className={styles.lead}>{lead}</p>
           <div className={styles.ctas}>
-            <a href={appHref()} className="btn on-dark">
+            <a href={START_URL} className="btn on-dark">
               {ctaPrimary} <span className="arrow">→</span>
             </a>
-            <a href="#demo" className={`btn ${styles.ghostOnPhoto}`}>
+            <a href={secondaryHref} className={`btn ${styles.ghostOnPhoto}`}>
               {ctaSecondary}
             </a>
           </div>
         </div>
 
-        <div className={styles.chatCol} data-reveal>
-          <ChatAutoplay script={chatScript} />
-        </div>
+        {chat && (
+          <div className={styles.chatCol} data-reveal>
+            <ChatAutoplay script={chat} />
+          </div>
+        )}
       </div>
     </section>
   )

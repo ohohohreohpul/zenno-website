@@ -9,7 +9,7 @@ const STRINGS: Record<
   { kicker: string; titlePre: string; titleGhost: string; lead: string; gift: string; flow: [string, string][] }
 > = {
   en: {
-    kicker: 'What Zenno Booking does',
+    kicker: 'What carries over from onbuuk',
     titlePre: 'Everything behind the appointment,',
     titleGhost: 'in one place.',
     lead: 'Built for salons, spas, massage and wellness studios.',
@@ -21,7 +21,7 @@ const STRINGS: Record<
     ],
   },
   de: {
-    kicker: 'Was Zenno Booking kann',
+    kicker: 'Was von onbuuk bleibt',
     titlePre: 'Alles rund um den Termin,',
     titleGhost: 'an einem Ort.',
     lead: 'Gemacht für Salons, Spas, Massage- und Wellnessstudios.',
@@ -30,6 +30,18 @@ const STRINGS: Record<
       ['Leistung', 'Balayage · 2 Std.'],
       ['Fachkraft', 'Mia'],
       ['Uhrzeit', 'Do. 11:00'],
+    ],
+  },
+  th: {
+    kicker: 'สิ่งที่ยังอยู่จาก onbuuk',
+    titlePre: 'ทุกอย่างเบื้องหลังการนัดหมาย',
+    titleGhost: 'อยู่ในที่เดียว',
+    lead: 'สร้างมาเพื่อซาลอน สปา ร้านนวด และสตูดิโอเวลเนส',
+    gift: 'บัตรของขวัญ',
+    flow: [
+      ['บริการ', 'ทำสีบาลายาจ · 2 ชม.'],
+      ['ผู้ให้บริการ', 'Mia'],
+      ['เวลา', 'พฤหัส 11:00'],
     ],
   },
 }

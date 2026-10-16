@@ -1,0 +1,149 @@
+.cal {
+  font-size: 12px;
+  line-height: 16px;
+  user-select: none;
+}
+
+.head {
+  display: grid;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.staff {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  padding-left: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.staff i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dot1 {
+  background: var(--staff-1-border);
+}
+.dot2 {
+  background: var(--staff-2-border);
+}
+.dot3 {
+  background: var(--staff-3-border);
+}
+
+.body {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+}
+.hours {
+  position: relative;
+}
+.hours span {
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: var(--muted-2);
+  font-variant-numeric: tabular-nums;
+}
+.hours span:first-child {
+  transform: none;
+}
+
+.cols {
+  display: grid;
+  position: relative;
+}
+.col {
+  position: relative;
+  border-left: 1px solid var(--line);
+}
+.line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--line);
+  opacity: 0.7;
+}
+.item {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+}
+.paid {
+  margin-left: auto;
+  color: var(--success);
+  flex-shrink: 0;
+}
+.highlight {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 2px var(--ink), var(--shadow-card-hover) !important;
+}
+
+.ghost {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  border-radius: var(--radius-md);
+  border: 1px dashed #a8a29e;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-variant-numeric: tabular-nums;
+  transition: top 0.18s var(--zn-ease);
+}
+
+.fill {
+  animation: fill 0.45s var(--zn-ease) both;
+  transform-origin: top;
+}
+@keyframes fill {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.now {
+  position: absolute;
+  left: 44px;
+  right: 0;
+  height: 2px;
+  background: var(--now-line);
+  pointer-events: none;
+}
+.now i {
+  position: absolute;
+  left: -4px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--now-line);
+}
+
+.compact .staff {
+  font-size: 12px;
+}
+.compact :global(.zn-booking) {
+  padding: 4px 8px;
+}
+
+@media (max-width: 520px) {
+  .staff {
+    font-size: 12px;
+  }
+}

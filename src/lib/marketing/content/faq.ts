@@ -5,94 +5,124 @@ export interface FaqItem {
   a: string
 }
 
-/** Shared with the FAQPage JSON-LD schema so the structured data never drifts from the visible copy. */
+/**
+ * The homepage FAQ: the owner's real objections, answered plainly.
+ * Shared with the FAQPage JSON-LD schema so the structured data never drifts
+ * from the visible copy.
+ */
 export const HOMEPAGE_FAQ: Record<Lang, FaqItem[]> = {
   en: [
     {
+      q: 'Will the AI say something wrong?',
+      a: 'It only uses your prices, times and offers from the app. When it is unsure, or a guest complains or asks about health, it hands the chat to you. With draft mode on, you approve every reply before it is sent.',
+    },
+    {
       q: 'Will WhatsApp ban my number?',
-      a: 'Zenno warms your number up automatically — daily limits start small (20/day) and grow with the number’s age, up to a ceiling, with enforced gaps between bulk sends. Replies to customers who message you first are the safest traffic there is, and always go through.',
+      a: 'It answers guests who wrote to you. Bulk messages go out slowly, and only to people who agreed to get them.',
     },
     {
-      q: 'Do I need Meta business verification or a BSP?',
-      a: 'No. WhatsApp connects with the linked-device method — the same as WhatsApp Web. You scan a QR with your own phone. Telegram is a bot token, LINE and Messenger use keys, and web chat is a single script tag.',
+      q: 'Where does the receptionist answer?',
+      a: 'On WhatsApp with your own number, by email and in the chat on your website. Every conversation lands in one inbox in the app.',
     },
     {
-      q: 'Can I take over a conversation?',
-      a: 'Any time. The moment you type a reply, the AI pauses for that contact — no bot talking over a human. One button hands the thread back to the agent when you’re done.',
+      q: 'Do I have to change everything?',
+      a: 'No. Import your customers, appointments and blocked times from EasyWeek, Shore or Treatwell. You can move in an afternoon.',
     },
     {
-      q: 'What happens with refunds or medical questions?',
-      a: 'Risky topics auto-escalate with an Attention Required flag. The agent never guesses on refunds, complaints, or medical questions — it hands them to you.',
+      q: 'Is it hard to use?',
+      a: 'If you can use WhatsApp, you can use Zenno. The app works in German, English and Thai, and there are step-by-step guides at docs.zennohq.com.',
     },
     {
-      q: 'How does the agent learn my business?',
-      a: 'Point the setup wizard at your website. Zenno scrapes it, generates the agent’s knowledge and personality, and lets you test-drive the agent privately before any customer talks to it.',
+      q: 'How do vouchers work?',
+      a: 'Sell value vouchers, voucher sets and multi-visit passes online or at the counter. Each voucher gets a QR code, and you redeem it by scanning.',
+    },
+    {
+      q: 'What about no-shows and tax?',
+      a: 'Charge a no-show fee right from the booking. The cash book and the DATEV export are ready for your tax advisor.',
+    },
+    {
+      q: 'Can ChatGPT or Siri book my shop?',
+      a: 'Yes. Your booking page is set up so AI assistants like ChatGPT and Siri can find your services and book a free time for a guest, in your name.',
+    },
+    {
+      q: 'I used onbuuk. Do I need to do anything?',
+      a: 'No. onbuuk is now Zenno. Your account, services, booking link and client data carry over.',
     },
   ],
   de: [
     {
-      q: 'Wird WhatsApp meine Nummer sperren?',
-      a: 'Zenno wärmt die Nummer automatisch auf — Tageslimits starten klein (20/Tag) und wachsen mit dem Alter der Nummer, bis zu einer Obergrenze, mit festen Abständen zwischen Massenversänden. Antworten an Kunden, die zuerst schreiben, sind der sicherste Traffic überhaupt und gehen immer durch.',
+      q: 'Sagt die KI etwas Falsches?',
+      a: 'Sie nutzt nur Ihre Preise, Zeiten und Angebote aus der App. Wenn sie unsicher ist, ein Gast sich beschwert oder nach Gesundheit fragt, übergibt sie den Chat an Sie. Im Entwurfsmodus geben Sie jede Antwort frei, bevor sie rausgeht.',
     },
     {
-      q: 'Brauche ich eine Meta-Unternehmensverifizierung oder einen BSP?',
-      a: 'Nein. WhatsApp verbindet sich über die Linked-Device-Methode — genau wie WhatsApp Web. Ein QR-Code wird mit dem eigenen Handy gescannt. Telegram läuft über einen Bot-Token, LINE und Messenger über Schlüssel, und Webchat ist ein einziges Script-Tag.',
+      q: 'Sperrt WhatsApp meine Nummer?',
+      a: 'Sie antwortet Gästen, die Ihnen geschrieben haben. Rundnachrichten gehen langsam raus, und nur an Gäste, die zugestimmt haben.',
     },
     {
-      q: 'Kann ich ein Gespräch übernehmen?',
-      a: 'Jederzeit. Sobald selbst eine Antwort getippt wird, pausiert die KI für diesen Kontakt — kein Bot spricht über einen Menschen hinweg. Ein Klick gibt den Thread zurück an den Agenten.',
+      q: 'Wo antwortet die Rezeption?',
+      a: 'Auf WhatsApp mit Ihrer eigenen Nummer, per E-Mail und im Chat auf Ihrer Website. Jedes Gespräch landet in einem Posteingang in der App.',
     },
     {
-      q: 'Was passiert bei Rückerstattungen oder medizinischen Fragen?',
-      a: 'Riskante Themen eskalieren automatisch mit einer Markierung „Aufmerksamkeit nötig“. Der Agent rät nie bei Rückerstattungen, Beschwerden oder medizinischen Fragen — er gibt sie weiter.',
+      q: 'Muss ich alles umstellen?',
+      a: 'Nein. Importieren Sie Kunden, Termine und geblockte Zeiten aus EasyWeek, Shore oder Treatwell. Der Umzug ist an einem Nachmittag erledigt.',
     },
     {
-      q: 'Wie lernt der Agent den Betrieb kennen?',
-      a: 'Der Einrichtungsassistent bekommt die Website-URL. Zenno durchsucht sie, erzeugt das Wissen und die Persönlichkeit des Agenten und lässt eine private Testfahrt zu, bevor ein Kunde mit ihm spricht.',
+      q: 'Ist das kompliziert?',
+      a: 'Wer WhatsApp bedienen kann, kann auch Zenno. Die App gibt es auf Deutsch, Englisch und Thai, mit Schritt-für-Schritt-Anleitungen auf docs.zennohq.com.',
+    },
+    {
+      q: 'Wie funktionieren Gutscheine?',
+      a: 'Verkaufen Sie Wertgutscheine, Gutscheinsets und Mehrfachkarten online oder an der Theke. Jeder Gutschein hat einen QR-Code und wird per Scan eingelöst.',
+    },
+    {
+      q: 'Und No-Shows und Steuern?',
+      a: 'Berechnen Sie eine No-Show-Gebühr direkt aus der Buchung. Kassenbuch und DATEV-Export sind fertig für Ihre Steuerberatung.',
+    },
+    {
+      q: 'Können ChatGPT oder Siri bei mir buchen?',
+      a: 'Ja. Ihre Buchungsseite ist so eingerichtet, dass KI-Assistenten wie ChatGPT und Siri Ihre Leistungen finden und einen freien Termin für einen Gast buchen können, in Ihrem Namen.',
+    },
+    {
+      q: 'Ich habe onbuuk genutzt. Muss ich etwas tun?',
+      a: 'Nein. onbuuk ist jetzt Zenno. Ihr Konto, Ihre Leistungen, Ihr Buchungslink und Ihre Kundendaten bleiben erhalten.',
+    },
+  ],
+  th: [
+    {
+      q: 'AI จะตอบอะไรผิดไหม',
+      a: 'ใช้เฉพาะราคา เวลา และโปรโมชันจากแอปของคุณ ถ้าไม่แน่ใจ หรือมีลูกค้าร้องเรียนหรือถามเรื่องสุขภาพ จะส่งแชทต่อให้คุณ ถ้าเปิดโหมดร่างข้อความ คุณจะอนุมัติทุกคำตอบก่อนส่ง',
+    },
+    {
+      q: 'WhatsApp จะแบนเบอร์ของฉันไหม',
+      a: 'ตอบเฉพาะลูกค้าที่ทักมาหาร้าน ข้อความถึงหลายคนส่งช้าๆ และส่งเฉพาะคนที่ยินยอมเท่านั้น',
+    },
+    {
+      q: 'พนักงานต้อนรับตอบที่ช่องทางไหนบ้าง',
+      a: 'WhatsApp ด้วยเบอร์ของร้านเอง อีเมล และแชทบนเว็บไซต์ของคุณ ทุกบทสนทนาอยู่ในกล่องข้อความเดียวในแอป',
+    },
+    {
+      q: 'ต้องเปลี่ยนทุกอย่างไหม',
+      a: 'ไม่ต้อง นำเข้าลูกค้า นัดหมาย และเวลาที่บล็อกไว้จาก EasyWeek, Shore หรือ Treatwell ได้ ย้ายเสร็จได้ในบ่ายเดียว',
+    },
+    {
+      q: 'ใช้งานยากไหม',
+      a: 'ถ้าใช้ WhatsApp เป็น ก็ใช้ Zenno ได้ แอปมีภาษาเยอรมัน อังกฤษ และไทย พร้อมคู่มือทีละขั้นตอนที่ docs.zennohq.com',
+    },
+    {
+      q: 'บัตรของขวัญใช้งานอย่างไร',
+      a: 'ขายบัตรมูลค่า เซ็ตบัตรของขวัญ และบัตรหลายครั้ง ได้ทั้งออนไลน์และที่เคาน์เตอร์ ทุกใบมี QR code ใช้งานด้วยการสแกน',
+    },
+    {
+      q: 'ลูกค้าไม่มาตามนัดและเรื่องภาษีล่ะ',
+      a: 'เรียกเก็บค่าปรับไม่มาตามนัดจากการจองได้เลย สมุดเงินสดและไฟล์ส่งออก DATEV พร้อมส่งให้นักบัญชี',
+    },
+    {
+      q: 'ChatGPT หรือ Siri จองร้านของฉันได้ไหม',
+      a: 'ได้ หน้าจองของคุณตั้งค่าไว้ให้ผู้ช่วย AI อย่าง ChatGPT และ Siri ค้นหาบริการของคุณและจองเวลาว่างให้ลูกค้าได้ ในชื่อร้านของคุณ',
+    },
+    {
+      q: 'ฉันเคยใช้ onbuuk ต้องทำอะไรไหม',
+      a: 'ไม่ต้อง onbuuk เปลี่ยนเป็น Zenno แล้ว บัญชี บริการ ลิงก์จอง และข้อมูลลูกค้าของคุณยังอยู่ครบ',
     },
   ],
 }
-
-/** English only — deep-dive pages are not yet translated. */
-export const PRICING_FAQ: FaqItem[] = [
-  {
-    q: 'What counts as a reply?',
-    a: 'Every message the agent sends counts as one reply. Customer messages you receive don’t count against your limit.',
-  },
-  {
-    q: 'What happens if I go over my monthly limit?',
-    a: 'You’ll get a heads-up before you hit the ceiling. Upgrade any time — there’s no hard cutoff mid-conversation.',
-  },
-  {
-    q: 'Can I change plans anytime?',
-    a: 'Yes. Upgrade or downgrade whenever the calendar changes shape — changes apply from your next billing cycle.',
-  },
-  {
-    q: 'Is there a setup fee?',
-    a: 'No setup fee on any plan. Connecting a channel and running the setup wizard takes minutes, not an onboarding project.',
-  },
-  {
-    q: 'What’s included in the free trial?',
-    a: 'Full access to the Growth plan for 14 days — every channel, the AI agent, and the daily summary — no card required to start.',
-  },
-]
-
-/** English only — deep-dive pages are not yet translated. */
-export const COMPARISON_FAQ: FaqItem[] = [
-  {
-    q: 'Can I migrate my existing ManyChat or DMChamp flows?',
-    a: 'There’s nothing to migrate one-to-one — Zenno replaces flow-building with a setup wizard that scrapes your site and writes the agent’s knowledge directly. Most studios are live within the hour.',
-  },
-  {
-    q: 'Do I lose my existing automations?',
-    a: 'You’ll rebuild the outcomes, not the flowcharts. Lifecycle stages, follow-ups, and broadcasts are built in and configured through the dashboard, not a drag-and-drop canvas.',
-  },
-  {
-    q: 'Why not just keep ManyChat and add a booking tool?',
-    a: 'Stitching two tools together means the chat and the calendar never fully agree on availability. Zenno reads the live schedule directly, so the offer the agent makes is always the real one.',
-  },
-  {
-    q: 'Is switching risky during a busy season?',
-    a: 'Run Zenno alongside your current setup during the test-drive step — nothing goes live until you approve the agent’s knowledge and tone.',
-  },
-]

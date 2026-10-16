@@ -1,0 +1,37 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/de",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/de/booking",
+      "destination": "/booking/",
+      "permanent": true
+    },
+    {
+      "source": "/comparison",
+      "destination": "/commission-free/",
+      "permanent": true
+    },
+    {
+      "source": "/en/comparison",
+      "destination": "/en/commission-free/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)opengraph-image(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/png"
+        }
+      ]
+    }
+  ]
+}
