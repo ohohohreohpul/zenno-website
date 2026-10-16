@@ -1,5 +1,6 @@
 import type { Lang } from '../../lang'
 import type { FaqItem } from '../faq'
+import { CREDITS_LINE, PLAN_LINE } from '../plans'
 import type { Headline, TitledItem } from './types'
 
 export interface PricingPageContent {
@@ -11,144 +12,138 @@ export interface PricingPageContent {
   og: { line1: string; line2: string; sub: string }
 }
 
-/** Target searches (DE): Buchungssoftware Preise, Terminbuchung kostenlos, Online-Buchung Salon Kosten. */
+/** Target searches (DE): Buchungssoftware Preise, Terminbuchung kostenlos, KI-Rezeption Kosten. */
 export const PRICING_PAGE: Record<Lang, PricingPageContent> = {
   de: {
     meta: {
-      title: 'Preise: Buchungssoftware für Studios ab 0 € | Zenno',
+      title: 'Preise: Buchungssoftware ab 0 €, mit KI-Rezeption 49 € | Zenno',
       description:
-        'Zenno Preise: Free 0 €, Standard 29 € und Pro 45 € pro Monat. Feste Monatstarife, keine Provision auf KI-Buchungen, keine Kreditkarte zum Start. Die KI-Rezeption ist Teil derselben App.',
+        'Zenno Preise: Free 0 € für 1 Therapeutin und 5 Behandlungen, Zenno 49 € im Monat mit allem und 1.000 KI-Antworten, Custom zum Preis für Ihren Betrieb. KI-Credits zum Aufladen ab 10 €.',
     },
     label: 'Preise',
     hero: {
       kicker: 'Preise',
-      title: ['Feste Monatstarife.', 'Keine Provision auf KI-Buchungen.'],
-      lead: 'Kostenlos starten, upgraden wenn der Kalender voll ist. Keine Kreditkarte nötig.',
+      title: ['Ein Preis für den Empfang.', 'Kostenlos starten.'],
+      lead: 'Free zum Ausprobieren, Zenno für alles, Custom für größere Betriebe. Keine Kreditkarte zum Start.',
     },
     billing: {
       kicker: 'So wird abgerechnet',
-      title: ['Ein Preis pro Monat,', 'nicht pro Buchung.'],
+      title: ['Ein Monatspreis,', 'KI-Antworten inklusive.'],
       items: [
-        { title: 'Fester Monatstarif', body: 'Free, Standard oder Pro. Sie wissen vorher, was der Monat kostet.' },
-        { title: 'Keine Provision auf KI-Buchungen', body: 'Bucht ein KI-Assistent Sie direkt, landet die Buchung ohne Provision in Ihrem Kalender.' },
-        { title: 'Zahlungsgebühren von Stripe', body: 'Nehmen Sie Zahlungen online an, berechnet Stripe dafür seine üblichen Gebühren.' },
-        { title: 'Jederzeit wechseln', body: 'Starten Sie kostenlos und wechseln Sie den Tarif, wenn Sie mehr Fachkräfte oder Leistungen brauchen.' },
+        { title: 'Fester Monatstarif', body: 'Free oder Zenno. Sie wissen vorher, was der Monat kostet.' },
+        { title: '1.000 KI-Antworten inklusive', body: 'Im Zenno-Tarif beantwortet die KI-Rezeption bis zu 1.000 Nachrichten im Monat.' },
+        { title: 'KI-Credits aufladen', body: '500, 2.000 oder 10.000 Antworten für 10 €, 29 € oder 99 €, bezahlt über Stripe.' },
+        { title: 'Nichts geht verloren', body: 'Sind die Credits aufgebraucht, pausiert die KI und neue Nachrichten warten in Ihrem Posteingang.' },
       ],
     },
     faq: {
       kicker: 'Fragen zu Preisen',
       title: ['Klare Antworten', 'zur Rechnung.'],
       items: [
+        { q: 'Welche Tarife gibt es?', a: PLAN_LINE.de },
         {
-          q: 'Gibt es einen kostenlosen Tarif?',
-          a: 'Ja. Free kostet 0 € mit 50 Buchungen pro Monat, 1 Fachkraft und bis zu 3 Leistungen. Eine Kreditkarte brauchen Sie zum Start nicht.',
+          q: 'Was kann der kostenlose Tarif?',
+          a: 'Free hat Kassenkalender und Online-Buchungsseite für 1 Therapeutin und 5 Behandlungen. Die KI-Rezeption ist nicht dabei, und auf Ihrer Buchungsseite steht „Powered by Zenno“. Eine Kreditkarte brauchen Sie zum Start nicht.',
+        },
+        { q: 'Was passiert, wenn die KI-Antworten aufgebraucht sind?', a: CREDITS_LINE.de },
+        {
+          q: 'Wie funktioniert Custom?',
+          a: 'Custom hat dieselben Funktionen wie Zenno, mit einem Preis und KI-Antworten passend zu Ihrem Betrieb. Schreiben Sie uns an support@zennohq.com.',
         },
         {
           q: 'Zahle ich Provision pro Buchung?',
-          a: 'Zenno kostet einen festen Monatsbetrag. Auf Buchungen über KI-Assistenten fällt keine Provision an. Für Online-Zahlungen berechnet Stripe seine üblichen Gebühren.',
-        },
-        {
-          q: 'Was ist der Unterschied zwischen Standard und Pro?',
-          a: 'Standard (29 €) hat unbegrenzte Buchungen, 3 Fachkräfte, bis zu 10 Leistungen, Gutscheine, Treueprogramm und Kundenportal. Pro (45 €) hat unbegrenzte Leistungen und Fachkräfte, volles Branding ohne „Powered by“, eigene Domain und priorisierten Support.',
-        },
-        {
-          q: 'Ist der KI-Empfang im Preis enthalten?',
-          a: 'Die KI-Rezeption ist Teil derselben App. Die KI-Nutzung ist derzeit unbegrenzt.',
+          a: 'Nein. Auf Buchungen fällt keine Provision an. Für Online-Zahlungen berechnet Stripe seine üblichen Gebühren.',
         },
       ],
     },
-    og: { line1: 'Ab 0 € im Monat.', line2: 'Keine Provision auf KI-Buchungen.', sub: 'Zenno Preise' },
+    og: { line1: 'Ab 0 € im Monat.', line2: 'Mit KI-Rezeption 49 €.', sub: 'Zenno Preise' },
   },
   en: {
     meta: {
-      title: 'Pricing: booking software for studios from €0 | Zenno',
+      title: 'Pricing: booking software from €0, with AI receptionist €49 | Zenno',
       description:
-        'Zenno pricing: Free €0, Standard €29 and Pro €45 a month. Flat monthly plans, no commission on AI bookings, no credit card to start. The AI receptionist is part of the same app.',
+        'Zenno pricing: Free €0 for 1 therapist and 5 treatments, Zenno €49 a month with everything and 1,000 AI replies, Custom priced for your business. AI credit top-ups from €10.',
     },
     label: 'Pricing',
     hero: {
       kicker: 'Pricing',
-      title: ['Flat monthly plans.', 'No commission on AI bookings.'],
-      lead: 'Start free and upgrade when the calendar is full. No credit card required.',
+      title: ['One price for the front desk.', 'Start free.'],
+      lead: 'Free to try it, Zenno for everything, Custom for bigger businesses. No credit card to start.',
     },
     billing: {
       kicker: 'How billing works',
-      title: ['One price a month,', 'not per booking.'],
+      title: ['One monthly price,', 'AI replies included.'],
       items: [
-        { title: 'Flat monthly plan', body: 'Free, Standard or Pro. You know what the month costs up front.' },
-        { title: 'No commission on AI bookings', body: 'When an AI assistant books you directly, the booking lands in your calendar with no commission.' },
-        { title: 'Stripe payment fees', body: 'If you take payments online, Stripe charges its usual fees for them.' },
-        { title: 'Switch any time', body: 'Start free and change plan when you need more specialists or services.' },
+        { title: 'Flat monthly plan', body: 'Free or Zenno. You know what the month costs up front.' },
+        { title: '1,000 AI replies included', body: 'On the Zenno plan, the AI receptionist answers up to 1,000 messages a month.' },
+        { title: 'Top up AI credits', body: '500, 2,000 or 10,000 replies for €10, €29 or €99, paid through Stripe.' },
+        { title: 'Nothing is lost', body: 'If credits run out, the AI pauses and new messages wait in your inbox.' },
       ],
     },
     faq: {
       kicker: 'Pricing questions',
       title: ['Straight answers', 'about the bill.'],
       items: [
+        { q: 'Which plans are there?', a: PLAN_LINE.en },
         {
-          q: 'Is there a free plan?',
-          a: 'Yes. Free costs €0 with 50 bookings a month, 1 specialist and up to 3 services. You don’t need a credit card to start.',
+          q: 'What does the free plan include?',
+          a: 'Free has the POS calendar and online booking page for 1 therapist and 5 treatments. It has no AI receptionist, and your booking page shows “Powered by Zenno”. You don’t need a credit card to start.',
+        },
+        { q: 'What happens when the AI replies run out?', a: CREDITS_LINE.en },
+        {
+          q: 'How does Custom work?',
+          a: 'Custom has the same features as Zenno, with a price and AI replies set for your business. Write to support@zennohq.com.',
         },
         {
           q: 'Do I pay commission per booking?',
-          a: 'Zenno costs a flat monthly amount. There is no commission on bookings made through AI assistants. For online payments, Stripe charges its usual fees.',
-        },
-        {
-          q: 'What’s the difference between Standard and Pro?',
-          a: 'Standard (€29) has unlimited bookings, 3 specialists, up to 10 services, gift cards, loyalty and the client portal. Pro (€45) has unlimited services and specialists, full branding without “Powered by”, a custom domain and priority support.',
-        },
-        {
-          q: 'Is the AI receptionist included?',
-          a: 'The AI receptionist is part of the same app. AI usage is unlimited for now.',
+          a: 'No. There is no commission on bookings. For online payments, Stripe charges its usual fees.',
         },
       ],
     },
-    og: { line1: 'From €0 a month.', line2: 'No commission on AI bookings.', sub: 'Zenno pricing' },
+    og: { line1: 'From €0 a month.', line2: 'With AI receptionist €49.', sub: 'Zenno pricing' },
   },
   th: {
     meta: {
-      title: 'ราคา: ระบบจองคิวสำหรับสตูดิโอ เริ่มต้น €0 | Zenno',
+      title: 'ราคา: ระบบจองคิวเริ่มต้น €0 พร้อมพนักงานต้อนรับ AI €49 | Zenno',
       description:
-        'ราคา Zenno: Free €0, Standard €29 และ Pro €45 ต่อเดือน แพ็กเกจรายเดือนราคาคงที่ ไม่มีค่าคอมมิชชั่นสำหรับการจองผ่าน AI ไม่ต้องใช้บัตรเครดิตเพื่อเริ่มต้น พนักงานต้อนรับ AI อยู่ในแอปเดียวกัน',
+        'ราคา Zenno: Free €0 สำหรับพนักงาน 1 คนและบริการ 5 รายการ, Zenno €49 ต่อเดือน ได้ทุกอย่างพร้อมการตอบด้วย AI 1,000 ข้อความ, Custom ราคาตามธุรกิจของคุณ เติมเครดิต AI เริ่มต้น €10',
     },
     label: 'ราคา',
     hero: {
       kicker: 'ราคา',
-      title: ['แพ็กเกจรายเดือนราคาคงที่', 'ไม่มีค่าคอมมิชชั่นสำหรับการจองผ่าน AI'],
-      lead: 'เริ่มใช้ฟรี แล้วอัปเกรดเมื่อปฏิทินเต็ม ไม่ต้องใช้บัตรเครดิต',
+      title: ['ราคาเดียวสำหรับงานหน้าเคาน์เตอร์', 'เริ่มใช้ฟรี'],
+      lead: 'Free สำหรับลองใช้ Zenno สำหรับทุกอย่าง และ Custom สำหรับธุรกิจที่ใหญ่ขึ้น ไม่ต้องใช้บัตรเครดิตเพื่อเริ่มต้น',
     },
     billing: {
-      kicker: 'วิธีการเรียกเก็บเงิน',
-      title: ['ราคาเดียวต่อเดือน', 'ไม่ใช่ต่อการจอง'],
+      kicker: 'วิธีคิดค่าบริการ',
+      title: ['ราคารายเดือนเดียว', 'รวมการตอบด้วย AI'],
       items: [
-        { title: 'แพ็กเกจรายเดือนราคาคงที่', body: 'Free, Standard หรือ Pro คุณรู้ล่วงหน้าว่าแต่ละเดือนจ่ายเท่าไร' },
-        { title: 'ไม่มีค่าคอมมิชชั่นสำหรับการจองผ่าน AI', body: 'เมื่อผู้ช่วย AI จองกับคุณโดยตรง การจองจะเข้าปฏิทินของคุณโดยไม่มีค่าคอมมิชชั่น' },
-        { title: 'ค่าธรรมเนียมการชำระเงินของ Stripe', body: 'ถ้าคุณรับชำระเงินออนไลน์ Stripe จะเรียกเก็บค่าธรรมเนียมตามปกติสำหรับการชำระเงินนั้น' },
-        { title: 'เปลี่ยนได้ทุกเมื่อ', body: 'เริ่มใช้ฟรี แล้วเปลี่ยนแพ็กเกจเมื่อคุณต้องการผู้ให้บริการหรือบริการเพิ่ม' },
+        { title: 'แพ็กเกจรายเดือนราคาคงที่', body: 'Free หรือ Zenno คุณรู้ล่วงหน้าว่าแต่ละเดือนจ่ายเท่าไร' },
+        { title: 'รวมการตอบด้วย AI 1,000 ข้อความ', body: 'ในแพ็กเกจ Zenno พนักงานต้อนรับ AI ตอบได้สูงสุด 1,000 ข้อความต่อเดือน' },
+        { title: 'เติมเครดิต AI', body: '500, 2,000 หรือ 10,000 ข้อความ ในราคา €10, €29 หรือ €99 ชำระผ่าน Stripe' },
+        { title: 'ไม่มีข้อความหาย', body: 'ถ้าเครดิตหมด AI จะหยุดตอบชั่วคราว และข้อความใหม่จะรออยู่ในกล่องข้อความ' },
       ],
     },
     faq: {
       kicker: 'คำถามเรื่องราคา',
-      title: ['คำตอบตรงๆ', 'เรื่องค่าใช้จ่าย'],
+      title: ['ตอบตรงๆ', 'เรื่องค่าใช้จ่าย'],
       items: [
+        { q: 'มีแพ็กเกจอะไรบ้าง', a: PLAN_LINE.th },
         {
-          q: 'มีแพ็กเกจฟรีไหม',
-          a: 'มี Free ราคา €0 พร้อม 50 การจองต่อเดือน ผู้ให้บริการ 1 คน และบริการได้สูงสุด 3 รายการ ไม่ต้องใช้บัตรเครดิตเพื่อเริ่มต้น',
+          q: 'แพ็กเกจฟรีมีอะไรบ้าง',
+          a: 'Free มีปฏิทินหน้าร้านและหน้าจองออนไลน์ สำหรับพนักงาน 1 คนและบริการ 5 รายการ ไม่มีพนักงานต้อนรับ AI และหน้าจองจะมีป้าย “Powered by Zenno” ไม่ต้องใช้บัตรเครดิตเพื่อเริ่มต้น',
+        },
+        { q: 'ถ้าการตอบด้วย AI หมดจะเป็นอย่างไร', a: CREDITS_LINE.th },
+        {
+          q: 'Custom ทำงานอย่างไร',
+          a: 'Custom มีฟีเจอร์เหมือน Zenno แต่ราคาและจำนวนการตอบด้วย AI ตั้งให้เหมาะกับธุรกิจของคุณ ติดต่อเราได้ที่ support@zennohq.com',
         },
         {
-          q: 'ต้องจ่ายค่าคอมมิชชั่นต่อการจองไหม',
-          a: 'Zenno มีค่าใช้จ่ายรายเดือนคงที่ ไม่มีค่าคอมมิชชั่นสำหรับการจองที่ทำผ่านผู้ช่วย AI สำหรับการชำระเงินออนไลน์ Stripe เรียกเก็บค่าธรรมเนียมตามปกติของ Stripe',
-        },
-        {
-          q: 'Standard กับ Pro ต่างกันอย่างไร',
-          a: 'Standard (€29) จองได้ไม่จำกัด มีผู้ให้บริการ 3 คน บริการได้สูงสุด 10 รายการ บัตรของขวัญ ระบบสะสมแต้ม และพอร์ทัลลูกค้า Pro (€45) มีบริการและผู้ให้บริการไม่จำกัด แบรนด์ของคุณเต็มรูปแบบโดยไม่มี “Powered by” โดเมนของคุณเอง และการซัพพอร์ตแบบเร่งด่วน',
-        },
-        {
-          q: 'พนักงานต้อนรับ AI รวมอยู่ในราคาไหม',
-          a: 'พนักงานต้อนรับ AI อยู่ในแอปเดียวกัน ตอนนี้ใช้งาน AI ได้ไม่จำกัด',
+          q: 'มีค่าคอมมิชชั่นต่อการจองไหม',
+          a: 'ไม่มี ไม่มีค่าคอมมิชชั่นสำหรับการจอง สำหรับการชำระเงินออนไลน์ Stripe เรียกเก็บค่าธรรมเนียมตามปกติ',
         },
       ],
     },
-    og: { line1: 'เริ่มต้น €0 ต่อเดือน', line2: 'ไม่มีค่าคอมมิชชั่นสำหรับการจองผ่าน AI', sub: 'ราคา Zenno' },
+    og: { line1: 'เริ่มต้น €0 ต่อเดือน', line2: 'พร้อม AI €49', sub: 'ราคา Zenno' },
   },
 }

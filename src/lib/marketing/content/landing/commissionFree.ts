@@ -1,10 +1,11 @@
 import type { Lang } from '../../lang'
 import type { LandingContent } from './types'
+import { PLAN_LINE } from '../plans'
 
 /**
  * Target searches (DE): Buchungssystem ohne Provision, Online-Terminbuchung ohne Provision,
  * Alternative zu Buchungsplattformen. Per the positioning brief no marketplace is named.
- * Claims: flat monthly plans (Free/Standard/Pro); no commission on AI bookings; Stripe's own
+ * Claims: flat monthly plans (Free/Zenno/Custom); no commission on AI bookings; Stripe's own
  * payment fees apply to online payments.
  */
 export const COMMISSION_FREE: Record<Lang, LandingContent> = {
@@ -29,7 +30,7 @@ export const COMMISSION_FREE: Record<Lang, LandingContent> = {
       items: [
         {
           title: 'Fester Preis statt Provision',
-          body: 'Free 0 €, Standard 29 €, Pro 45 € im Monat. Auf KI-Buchungen fällt keine Provision an. Für Online-Zahlungen gelten die Gebühren von Stripe.',
+          body: 'Free 0 €, Zenno 49 € im Monat, Custom nach Absprache. Auf Buchungen fällt keine Provision an. Für Online-Zahlungen gelten die Gebühren von Stripe.',
         },
         {
           title: 'Ihr Name, nicht der des Marktplatzes',
@@ -60,7 +61,7 @@ export const COMMISSION_FREE: Record<Lang, LandingContent> = {
       items: [
         {
           q: 'Fällt bei Zenno wirklich keine Provision an?',
-          a: 'Zenno Booking kostet einen festen Monatsbetrag: Free 0 €, Standard 29 €, Pro 45 €. Auf Buchungen über KI-Assistenten fällt keine Provision an. Für Online-Zahlungen berechnet Stripe seine üblichen Zahlungsgebühren.',
+          a: `Nein. ${PLAN_LINE.de} Für Online-Zahlungen berechnet Stripe seine üblichen Zahlungsgebühren.`,
         },
         {
           q: 'Verliere ich Sichtbarkeit, wenn ich nicht auf einem Marktplatz bin?',
@@ -99,7 +100,7 @@ export const COMMISSION_FREE: Record<Lang, LandingContent> = {
       items: [
         {
           title: 'A flat price, not a cut',
-          body: 'Free €0, Standard €29, Pro €45 a month. No commission on AI bookings. Stripe’s own fees apply to online payments.',
+          body: 'Free €0, Zenno €49 a month, Custom priced for you. No commission on bookings. Stripe’s own fees apply to online payments.',
         },
         {
           title: 'Your name, not the marketplace’s',
@@ -130,7 +131,7 @@ export const COMMISSION_FREE: Record<Lang, LandingContent> = {
       items: [
         {
           q: 'Is there really no commission with Zenno?',
-          a: 'Zenno Booking costs a flat monthly amount: Free €0, Standard €29, Pro €45. There is no commission on bookings made through AI assistants. For online payments, Stripe charges its usual payment fees.',
+          a: `No. ${PLAN_LINE.en} For online payments, Stripe charges its usual payment fees.`,
         },
         {
           q: 'Will I lose visibility if I’m not on a marketplace?',
@@ -169,7 +170,7 @@ export const COMMISSION_FREE: Record<Lang, LandingContent> = {
       items: [
         {
           title: 'ราคาคงที่ ไม่ใช่การหักส่วนแบ่ง',
-          body: 'Free €0, Standard €29, Pro €45 ต่อเดือน ไม่มีค่าคอมมิชชั่นสำหรับการจองผ่าน AI สำหรับการชำระเงินออนไลน์ มีค่าธรรมเนียมของ Stripe เอง',
+          body: 'Free €0, Zenno €49 ต่อเดือน, Custom ราคาตามธุรกิจของคุณ ไม่มีค่าคอมมิชชั่นสำหรับการจอง สำหรับการชำระเงินออนไลน์ มีค่าธรรมเนียมของ Stripe เอง',
         },
         {
           title: 'ชื่อของคุณ ไม่ใช่ชื่อแพลตฟอร์มตัวกลาง',
@@ -200,7 +201,7 @@ export const COMMISSION_FREE: Record<Lang, LandingContent> = {
       items: [
         {
           q: 'Zenno ไม่มีค่าคอมมิชชั่นจริงหรือ',
-          a: 'Zenno Booking มีค่าใช้จ่ายรายเดือนคงที่: Free €0, Standard €29, Pro €45 ไม่มีค่าคอมมิชชั่นสำหรับการจองที่ทำผ่านผู้ช่วย AI สำหรับการชำระเงินออนไลน์ Stripe เรียกเก็บค่าธรรมเนียมการชำระเงินตามปกติของ Stripe',
+          a: `ไม่มี ${PLAN_LINE.th} สำหรับการชำระเงินออนไลน์ Stripe เรียกเก็บค่าธรรมเนียมตามปกติ`,
         },
         {
           q: 'ถ้าไม่อยู่บนแพลตฟอร์มตัวกลาง ฉันจะมีคนเห็นน้อยลงไหม',

@@ -1,6 +1,6 @@
 import type { Lang } from './lang'
 import type { FaqItem } from './content/faq'
-import { BOOKING_TIERS } from './content/booking'
+import { PLANS } from './content/plans'
 import { SITE_URL } from './config'
 import { absoluteUrl } from './seo'
 
@@ -85,12 +85,14 @@ export function bookingApplicationSchema(lang: Lang, path: string = '/') {
     inLanguage: lang,
     description: BOOKING_APP_DESCRIPTION[lang],
     publisher: { '@id': `${SITE_URL}/#organization` },
-    offers: BOOKING_TIERS[lang].map((tier) => ({
-      '@type': 'Offer',
-      name: tier.name,
-      price: tier.price.replace(/[^0-9.]/g, ''),
-      priceCurrency: 'EUR',
-      description: tier.line,
-    })),
+    offers: PLANS[lang]
+      .filter((plan) => plan.monthlyEur !== undefined)
+      .map((plan) => ({
+        '@type': 'Offer',
+        name: plan.name,
+        price: String(plan.monthlyEur),
+        priceCurrency: 'EUR',
+        description: plan.line,
+      })),
   }
 }

@@ -1,139 +1,12 @@
 import { localePath, type Lang } from '../lang'
 import type { FaqItem } from './faq'
+import { PLAN_LINE } from './plans'
 
 /**
- * Copy + data for the Zenno Booking page (previously onbuuk.com).
- * Tiers mirror onbuuk.com's published pricing at the time of the acquisition —
- * Update here and the page, pricing cards, and JSON-LD all follow.
+ * Copy for the /booking page (onbuuk is now Zenno). Plans live in ./plans.
  */
 
-export interface BookingTier {
-  name: string
-  price: string
-  line: string
-  cta: string
-  popular?: boolean
-  features: string[]
-}
-
-export const BOOKING_TIERS: Record<Lang, BookingTier[]> = {
-  en: [
-    {
-      name: 'Free',
-      price: '€0',
-      line: '50 bookings / mo · 1 specialist',
-      cta: 'Start free',
-      features: ['Basic booking system', 'Up to 3 services', 'Customer management', 'Email notifications', 'Owner-only admin'],
-    },
-    {
-      name: 'Standard',
-      price: '€29',
-      line: 'Unlimited bookings · 3 specialists',
-      cta: 'Choose Standard',
-      popular: true,
-      features: [
-        'Up to 10 services',
-        'Gift cards & basic loyalty',
-        'Customer portal & calendar view',
-        'Custom logo & booking form',
-        'Up to 3 admin users',
-      ],
-    },
-    {
-      name: 'Pro',
-      price: '€45',
-      line: 'Unlimited everything',
-      cta: 'Choose Pro',
-      features: [
-        'Unlimited services & specialists',
-        'Advanced gift cards & loyalty',
-        'Full branding, no “Powered by” badge',
-        'Custom domain & advanced permissions',
-        'Priority support',
-      ],
-    },
-  ],
-  de: [
-    {
-      name: 'Free',
-      price: '€0',
-      line: '50 Buchungen / Monat · 1 Fachkraft',
-      cta: 'Kostenlos starten',
-      features: [
-        'Einfaches Buchungssystem',
-        'Bis zu 3 Leistungen',
-        'Kundenverwaltung',
-        'E-Mail-Benachrichtigungen',
-        'Nur Inhaber:in als Admin',
-      ],
-    },
-    {
-      name: 'Standard',
-      price: '€29',
-      line: 'Unbegrenzte Buchungen · 3 Fachkräfte',
-      cta: 'Standard wählen',
-      popular: true,
-      features: [
-        'Bis zu 10 Leistungen',
-        'Gutscheine & Basis-Treueprogramm',
-        'Kundenportal & Kalenderansicht',
-        'Eigenes Logo & Buchungsformular',
-        'Bis zu 3 Admin-Nutzer',
-      ],
-    },
-    {
-      name: 'Pro',
-      price: '€45',
-      line: 'Alles unbegrenzt',
-      cta: 'Pro wählen',
-      features: [
-        'Unbegrenzte Leistungen & Fachkräfte',
-        'Erweiterte Gutscheine & Treueprogramm',
-        'Volles Branding, ohne „Powered by“-Badge',
-        'Eigene Domain & erweiterte Rechte',
-        'Priorisierter Support',
-      ],
-    },
-  ],
-  th: [
-    {
-      name: 'Free',
-      price: '€0',
-      line: '50 การจอง / เดือน · ผู้ให้บริการ 1 คน',
-      cta: 'เริ่มใช้ฟรี',
-      features: ['ระบบจองพื้นฐาน', 'สูงสุด 3 บริการ', 'จัดการข้อมูลลูกค้า', 'แจ้งเตือนทางอีเมล', 'แอดมินเฉพาะเจ้าของร้าน'],
-    },
-    {
-      name: 'Standard',
-      price: '€29',
-      line: 'จองได้ไม่จำกัด · ผู้ให้บริการ 3 คน',
-      cta: 'เลือก Standard',
-      popular: true,
-      features: [
-        'สูงสุด 10 บริการ',
-        'บัตรของขวัญและระบบสะสมแต้มพื้นฐาน',
-        'พอร์ทัลลูกค้าและมุมมองปฏิทิน',
-        'โลโก้และแบบฟอร์มจองของคุณเอง',
-        'ผู้ดูแลระบบสูงสุด 3 คน',
-      ],
-    },
-    {
-      name: 'Pro',
-      price: '€45',
-      line: 'ไม่จำกัดทุกอย่าง',
-      cta: 'เลือก Pro',
-      features: [
-        'บริการและผู้ให้บริการไม่จำกัด',
-        'บัตรของขวัญและระบบสะสมแต้มขั้นสูง',
-        'แบรนด์ของคุณเต็มรูปแบบ ไม่มีป้าย “Powered by”',
-        'โดเมนของคุณเองและสิทธิ์การใช้งานขั้นสูง',
-        'ซัพพอร์ตแบบเร่งด่วน',
-      ],
-    },
-  ],
-}
-
-/** Straight from onbuuk.com's pricing footnote. */
+/** The line under the pricing heading. */
 export const BOOKING_PRICING_NOTE: Record<Lang, string> = {
   en: 'Start for free · No credit card required · Upgrade anytime',
   de: 'Kostenlos starten · Keine Kreditkarte nötig · Jederzeit upgraden',
@@ -244,8 +117,8 @@ export const BOOKING_FAQ: Record<Lang, FaqItem[]> = {
       a: 'No. Your account, services, booking link and client data carry over. You will see the new name and the new features in the same app.',
     },
     {
-      q: 'Did my plan change?',
-      a: 'Free, Standard (€29/mo) and Pro (€45/mo) stay as they are. The AI receptionist is in the same app, and AI usage is unlimited for now.',
+      q: 'Which plans are there now?',
+      a: `Zenno now has three plans. ${PLAN_LINE.en}`,
     },
     {
       q: 'Where do I get help?',
@@ -262,8 +135,8 @@ export const BOOKING_FAQ: Record<Lang, FaqItem[]> = {
       a: 'Nein. Ihr Konto, Ihre Leistungen, Ihr Buchungslink und Ihre Kundendaten bleiben erhalten. Sie sehen den neuen Namen und die neuen Funktionen in derselben App.',
     },
     {
-      q: 'Hat sich mein Tarif geändert?',
-      a: 'Free, Standard (29 €/Monat) und Pro (45 €/Monat) bleiben, wie sie sind. Die KI-Rezeption ist in derselben App, und die KI-Nutzung ist derzeit unbegrenzt.',
+      q: 'Welche Tarife gibt es jetzt?',
+      a: `Zenno hat jetzt drei Tarife. ${PLAN_LINE.de}`,
     },
     {
       q: 'Wo bekomme ich Hilfe?',
@@ -280,8 +153,8 @@ export const BOOKING_FAQ: Record<Lang, FaqItem[]> = {
       a: 'ไม่ต้อง บัญชี บริการ ลิงก์จอง และข้อมูลลูกค้าของคุณย้ายมาครบ คุณจะเห็นชื่อใหม่และฟีเจอร์ใหม่ในแอปเดียวกัน',
     },
     {
-      q: 'แพ็กเกจของฉันเปลี่ยนไหม',
-      a: 'Free, Standard (€29/เดือน) และ Pro (€45/เดือน) ยังเหมือนเดิม พนักงานต้อนรับ AI อยู่ในแอปเดียวกัน และตอนนี้ใช้งาน AI ได้ไม่จำกัด',
+      q: 'ตอนนี้มีแพ็กเกจอะไรบ้าง',
+      a: `ตอนนี้ Zenno มีสามแพ็กเกจ ${PLAN_LINE.th}`,
     },
     {
       q: 'ขอความช่วยเหลือได้ที่ไหน',

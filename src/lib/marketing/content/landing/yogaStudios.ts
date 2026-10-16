@@ -1,5 +1,6 @@
 import type { Lang } from '../../lang'
 import type { LandingContent } from './types'
+import { PLAN_LINE } from '../plans'
 
 /**
  * Target searches (DE): Buchungssoftware Yogastudio, Online-Buchung Fitnessstudio, Terminbuchung Personal Training.
@@ -88,11 +89,11 @@ export const YOGA_STUDIOS: Record<Lang, LandingContent> = {
         },
         {
           q: 'Kann ich Gutscheine verkaufen?',
-          a: 'Ja. Gutscheine verkaufen Sie online, und Stammkundschaft sammelt Treuepunkte. Beides ist ab dem Standard-Tarif enthalten.',
+          a: 'Ja. Gutscheine verkaufen Sie online, und Stammkundschaft sammelt Treuepunkte.',
         },
         {
           q: 'Was kostet Zenno für ein Studio?',
-          a: 'Free kostet 0 € (50 Buchungen pro Monat, 1 Fachkraft), Standard 29 € pro Monat (unbegrenzte Buchungen, 3 Fachkräfte), Pro 45 € pro Monat ohne Limits. Auf KI-Buchungen fällt keine Provision an.',
+          a: `${PLAN_LINE.de} Auf Buchungen fällt keine Provision an.`,
         },
       ],
     },
@@ -179,11 +180,11 @@ export const YOGA_STUDIOS: Record<Lang, LandingContent> = {
         },
         {
           q: 'Can I sell gift cards?',
-          a: 'Yes. You sell gift cards online and regulars collect loyalty points. Both are included from the Standard plan.',
+          a: 'Yes. You sell gift cards online and regulars collect loyalty points.',
         },
         {
           q: 'What does Zenno cost for a studio?',
-          a: 'Free is €0 (50 bookings a month, 1 specialist), Standard €29 a month (unlimited bookings, 3 specialists), Pro €45 a month with no limits. There is no commission on AI bookings.',
+          a: `${PLAN_LINE.en} There is no commission on bookings.`,
         },
       ],
     },
@@ -270,11 +271,11 @@ export const YOGA_STUDIOS: Record<Lang, LandingContent> = {
         },
         {
           q: 'ขายบัตรของขวัญได้ไหม',
-          a: 'ได้ คุณขายบัตรของขวัญออนไลน์ได้ และลูกค้าประจำสะสมแต้มได้ ทั้งสองอย่างมีให้ตั้งแต่แพ็กเกจ Standard',
+          a: 'ได้ คุณขายบัตรของขวัญออนไลน์ได้ และลูกค้าประจำสะสมแต้มได้',
         },
         {
           q: 'Zenno สำหรับสตูดิโอราคาเท่าไร',
-          a: 'Free ราคา €0 (50 การจองต่อเดือน ผู้ให้บริการ 1 คน) Standard €29 ต่อเดือน (จองได้ไม่จำกัด ผู้ให้บริการ 3 คน) Pro €45 ต่อเดือน ไม่มีข้อจำกัด ไม่มีค่าคอมมิชชั่นสำหรับการจองผ่าน AI',
+          a: `${PLAN_LINE.th} ไม่มีค่าคอมมิชชั่นสำหรับการจอง`,
         },
       ],
     },

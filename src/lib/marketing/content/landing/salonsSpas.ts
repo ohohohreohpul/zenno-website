@@ -1,5 +1,6 @@
 import type { Lang } from '../../lang'
 import type { LandingContent } from './types'
+import { PLAN_LINE } from '../plans'
 
 /** Target searches (DE): Online-Terminbuchung Friseur, Buchungssystem Kosmetikstudio, Terminbuchung Spa. */
 export const SALONS_SPAS: Record<Lang, LandingContent> = {
@@ -88,7 +89,7 @@ export const SALONS_SPAS: Record<Lang, LandingContent> = {
         },
         {
           q: 'Was kostet Zenno für einen Salon?',
-          a: 'Der Free-Tarif ist kostenlos (50 Buchungen pro Monat, 1 Fachkraft). Standard kostet 29 € pro Monat mit unbegrenzten Buchungen und 3 Fachkräften, Pro 45 € pro Monat ohne Limits. Auf KI-Buchungen fällt keine Provision an.',
+          a: `${PLAN_LINE.de} Auf Buchungen fällt keine Provision an.`,
         },
       ],
     },
@@ -179,7 +180,7 @@ export const SALONS_SPAS: Record<Lang, LandingContent> = {
         },
         {
           q: 'What does Zenno cost for a salon?',
-          a: 'The Free plan costs nothing (50 bookings a month, 1 specialist). Standard is €29 a month with unlimited bookings and 3 specialists, Pro is €45 a month with no limits. There is no commission on AI bookings.',
+          a: `${PLAN_LINE.en} There is no commission on bookings.`,
         },
       ],
     },
@@ -270,7 +271,7 @@ export const SALONS_SPAS: Record<Lang, LandingContent> = {
         },
         {
           q: 'Zenno สำหรับซาลอนราคาเท่าไร',
-          a: 'แพ็กเกจ Free ไม่มีค่าใช้จ่าย (50 การจองต่อเดือน ผู้ให้บริการ 1 คน) Standard ราคา €29 ต่อเดือน จองได้ไม่จำกัดและมีผู้ให้บริการ 3 คน ส่วน Pro ราคา €45 ต่อเดือน ไม่มีข้อจำกัด ไม่มีค่าคอมมิชชั่นสำหรับการจองผ่าน AI',
+          a: `${PLAN_LINE.th} ไม่มีค่าคอมมิชชั่นสำหรับการจอง`,
         },
       ],
     },

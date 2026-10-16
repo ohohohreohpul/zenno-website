@@ -1,5 +1,6 @@
 import type { Lang } from '../../lang'
 import type { LandingContent } from './types'
+import { PLAN_LINE } from '../plans'
 
 /**
  * Target searches (DE): Online-Terminbuchung Kosmetikpraxis, Buchungssystem Ästhetik, Terminbuchung Wellnesspraxis.
@@ -56,7 +57,7 @@ export const CLINICS: Record<Lang, LandingContent> = {
         },
         {
           title: 'Mehrere Fachkräfte, ein Kalender',
-          body: 'Behandlungen nach Fachkraft und Dauer. Im Standard-Tarif 3 Fachkräfte, im Pro-Tarif unbegrenzt.',
+          body: 'Behandlungen nach Fachkraft und Dauer. Im Free-Tarif 1 Therapeutin, im Zenno-Tarif beliebig viele.',
         },
         {
           title: 'Steuern sauber vorbereitet',
@@ -92,7 +93,7 @@ export const CLINICS: Record<Lang, LandingContent> = {
         },
         {
           q: 'Was kostet Zenno?',
-          a: 'Free 0 €, Standard 29 € und Pro 45 € pro Monat. Auf KI-Buchungen fällt keine Provision an.',
+          a: `${PLAN_LINE.de} Auf Buchungen fällt keine Provision an.`,
         },
       ],
     },
@@ -147,7 +148,7 @@ export const CLINICS: Record<Lang, LandingContent> = {
         },
         {
           title: 'Several specialists, one calendar',
-          body: 'Treatments by specialist and duration. 3 specialists on Standard, unlimited on Pro.',
+          body: 'Treatments by specialist and duration. 1 therapist on Free, as many as you need on Zenno.',
         },
         {
           title: 'Tax, prepared',
@@ -183,7 +184,7 @@ export const CLINICS: Record<Lang, LandingContent> = {
         },
         {
           q: 'What does Zenno cost?',
-          a: 'Free €0, Standard €29 and Pro €45 a month. There is no commission on AI bookings.',
+          a: `${PLAN_LINE.en} There is no commission on bookings.`,
         },
       ],
     },
@@ -238,7 +239,7 @@ export const CLINICS: Record<Lang, LandingContent> = {
         },
         {
           title: 'ผู้ให้บริการหลายคน ปฏิทินเดียว',
-          body: 'จัดทรีตเมนต์ตามผู้ให้บริการและระยะเวลา แพ็กเกจ Standard มีผู้ให้บริการ 3 คน Pro ไม่จำกัด',
+          body: 'จัดทรีตเมนต์ตามผู้ให้บริการและระยะเวลา แพ็กเกจ Free มีพนักงาน 1 คน Zenno เพิ่มได้ไม่จำกัด',
         },
         {
           title: 'ภาษีเตรียมไว้ให้แล้ว',
@@ -274,7 +275,7 @@ export const CLINICS: Record<Lang, LandingContent> = {
         },
         {
           q: 'Zenno ราคาเท่าไร',
-          a: 'Free €0, Standard €29 และ Pro €45 ต่อเดือน ไม่มีค่าคอมมิชชั่นสำหรับการจองผ่าน AI',
+          a: `${PLAN_LINE.th} ไม่มีค่าคอมมิชชั่นสำหรับการจอง`,
         },
       ],
     },

@@ -16,10 +16,11 @@ The website is available in German (primary), English and Thai. The app works in
 
 ## Pricing (per month)
 
-- Free: €0, 50 bookings per month, 1 specialist, up to 3 services.
-- Standard: €29, unlimited bookings, 3 specialists, up to 10 services.
-- Pro: €45, unlimited services and specialists, full branding, custom domain.
-- The AI receptionist is part of the same app; AI usage is unlimited for now. No credit card required to start.
+- Free: €0. 1 therapist, 5 treatments, no AI receptionist, "Powered by Zenno" badge on the booking page.
+- Zenno: €49 a month. Everything, with 1,000 AI replies a month included.
+- Custom: same features as Zenno, priced individually for the business.
+- AI credits: top-up packs of 500, 2,000 or 10,000 AI replies for €10, €29 or €99, paid through Stripe. When credits run out, the AI pauses and new messages wait in the inbox.
+- No commission on bookings. No credit card required to start.
 
 ## Pages
 
@@ -27,7 +28,7 @@ The website is available in German (primary), English and Thai. The app works in
 - [KI-Rezeption](https://zennohq.com/ai-receptionist/): KI-Rezeption für WhatsApp, E-Mail und Website
 - [Gutscheine](https://zennohq.com/vouchers/): Gutscheine verkaufen und per QR einlösen
 - [onbuuk ist jetzt Zenno](https://zennohq.com/booking/)
-- [Preise](https://zennohq.com/pricing/): Free 0 €, Standard 29 €, Pro 45 € pro Monat
+- [Preise](https://zennohq.com/pricing/): Free 0 €, Zenno 49 € pro Monat, Custom; KI-Credits ab 10 €
 - [Friseure, Kosmetik & Spas](https://zennohq.com/salons-spas/)
 - [Yoga- & Fitnessstudios](https://zennohq.com/yoga-studios/)
 - [Ästhetik- & Wellnesspraxen](https://zennohq.com/clinics/)
