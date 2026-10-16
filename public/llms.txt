@@ -38,6 +38,10 @@ The website is available in German (primary), English and Thai. The app works in
 - [Homepage (English)](https://zennohq.com/en/): Booking software that books itself
 - English versions of every page live under https://zennohq.com/en/; Thai under https://zennohq.com/th/
 
+## Sign up
+
+- [Start free](https://book.zennohq.com/)
+
 ## Help
 
 - [Help centre](https://docs.zennohq.com): guides in German, English and Thai
