@@ -20,17 +20,15 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Configuration
 
-The site does not link into the app: there is no sign-in or sign-up button
-for book.zennohq.com. Every "Start free" button goes to one place, set at
-build time:
+Every "Start free" button opens the Zenno app at https://book.zennohq.com/.
+Override it at build time if needed:
 
 ```bash
-NEXT_PUBLIC_START_URL=https://your-signup-form-or-calendar
+NEXT_PUBLIC_START_URL=https://book.zennohq.com/
 ```
 
-Unset, it opens an email to support@zennohq.com. The canonical domain is
-`SITE_URL` in `src/lib/marketing/config.ts` (zennohq.com); zennohq.studio is
-retired and should redirect there at the DNS/host level.
+The canonical domain is `SITE_URL` in `src/lib/marketing/config.ts`
+(zennohq.com); zennohq.studio is retired and redirects there (`public/.htaccess`).
 
 ## Deploying to Vercel
 
