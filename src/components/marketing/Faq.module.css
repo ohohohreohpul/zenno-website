@@ -17,3 +17,37 @@
     position: static;
   }
 }
+
+.help {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 2rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  background: var(--card);
+  max-width: 360px;
+}
+.helpTitle {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.help a {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--t1);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.35rem 0;
+}
+.help a span {
+  color: var(--t2);
+  font-weight: 400;
+}
+.help a:hover span {
+  color: var(--t1);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

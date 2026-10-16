@@ -1,0 +1,53 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(28, 25, 23, 0.06), var(--shadow-lift);
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.header :global(.zn-avatar) {
+  width: 34px;
+  height: 34px;
+  font-size: 13px;
+}
+.who {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.who b {
+  font-size: 14px;
+  font-weight: 600;
+}
+.thread {
+  flex: 1;
+  justify-content: flex-end;
+  min-height: 0;
+  overflow: hidden;
+}
+.booked {
+  align-self: center;
+  margin-top: 4px;
+}
+.bare {
+  flex: 1;
+  min-height: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.bare .thread :global(.zn-bubble) {
+  font-size: 12.5px;
+  line-height: 17px;
+}
+.bare .thread {
+  padding: 10px 10px 22px;
+}

@@ -17,6 +17,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  // Each locale has its own root layout (so <html lang> is right in the static
+  // HTML); with no single root layout, the 404 page needs global-not-found.
+  experimental: {
+    globalNotFound: true,
+  },
 };
 
 export default nextConfig;

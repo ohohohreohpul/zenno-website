@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import type { Lang } from '@/lib/marketing/lang'
-import { appHref } from '@/lib/marketing/config'
-import { bookingPath } from '@/lib/marketing/content/booking'
+import { Menu, X } from 'lucide-react'
+import { LANGS, LANG_LABEL, LANG_NAME, homePath, localePath, type Lang } from '@/lib/marketing/lang'
+import { HELP_URL, START_URL } from '@/lib/marketing/config'
 import { Magnetic } from './primitives/Magnetic'
 import styles from './Nav.module.css'
 
@@ -16,32 +16,48 @@ interface NavLink {
   isNew?: boolean
 }
 
-const STRINGS: Record<Lang, { links: NavLink[]; newBadge: string; signin: string; cta: string; ctaShort: string }> = {
-  en: {
-    links: [
-      { label: 'How it works', hash: '#how' },
-      { label: 'Features', hash: '#features' },
-      { label: 'Channels', hash: '#channels' },
-      { label: 'Pricing', hash: '#pricing' },
-      { label: 'Booking', path: bookingPath('en'), isNew: true },
-    ],
-    newBadge: 'New',
-    signin: 'Sign in',
-    cta: 'Get started free',
-    ctaShort: 'Get started',
-  },
+const STRINGS: Record<Lang, { links: NavLink[]; newBadge: string; cta: string; ctaShort: string; switchTo: string; menu: string }> = {
   de: {
     links: [
-      { label: 'So funktioniert’s', hash: '#how' },
-      { label: 'Funktionen', hash: '#features' },
-      { label: 'Kanäle', hash: '#channels' },
+      { label: 'Kalender', hash: '#calendar' },
+      { label: 'KI-Rezeption', path: localePath('de', '/ai-receptionist'), isNew: true },
+      { label: 'Gutscheine', path: localePath('de', '/vouchers') },
       { label: 'Preise', hash: '#pricing' },
-      { label: 'Buchung', path: bookingPath('de'), isNew: true },
+      { label: 'Hilfe', path: HELP_URL },
     ],
     newBadge: 'Neu',
-    signin: 'Anmelden',
     cta: 'Kostenlos starten',
-    ctaShort: 'Loslegen',
+    ctaShort: 'Starten',
+    switchTo: 'Sprache wechseln zu',
+    menu: 'Menü',
+  },
+  en: {
+    links: [
+      { label: 'Calendar', hash: '#calendar' },
+      { label: 'AI receptionist', path: localePath('en', '/ai-receptionist'), isNew: true },
+      { label: 'Vouchers', path: localePath('en', '/vouchers') },
+      { label: 'Pricing', hash: '#pricing' },
+      { label: 'Help', path: HELP_URL },
+    ],
+    newBadge: 'New',
+    cta: 'Start free',
+    ctaShort: 'Start',
+    switchTo: 'Switch language to',
+    menu: 'Menu',
+  },
+  th: {
+    links: [
+      { label: 'ปฏิทิน', hash: '#calendar' },
+      { label: 'พนักงานต้อนรับ AI', path: localePath('th', '/ai-receptionist'), isNew: true },
+      { label: 'บัตรของขวัญ', path: localePath('th', '/vouchers') },
+      { label: 'ราคา', hash: '#pricing' },
+      { label: 'ช่วยเหลือ', path: HELP_URL },
+    ],
+    newBadge: 'ใหม่',
+    cta: 'เริ่มใช้ฟรี',
+    ctaShort: 'เริ่ม',
+    switchTo: 'เปลี่ยนภาษาเป็น',
+    menu: 'เมนู',
   },
 }
 
@@ -53,17 +69,20 @@ interface NavProps {
    * of the white-on-photo scheme, which is otherwise invisible until scrolled.
    */
   onLightBg?: boolean
-  /** Same page in the other language; defaults to the other homepage. */
-  alternatePath?: string
+  /**
+   * Locale-free path of this page when it exists in every locale (e.g.
+   * '/booking'), so the switcher stays on the same page. Omit on English-only
+   * pages: the switcher then points at each locale's homepage.
+   */
+  localizedPath?: string
 }
 
-export function Nav({ lang = 'en', onLightBg = false, alternatePath }: NavProps) {
+export function Nav({ lang = 'en', onLightBg = false, localizedPath }: NavProps) {
   const [scrolled, setScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const t = STRINGS[lang]
-  const home = lang === 'de' ? '/de' : '/'
-  const switchTo =
-    lang === 'de' ? { href: alternatePath ?? '/', label: 'EN' } : { href: alternatePath ?? '/de', label: 'DE' }
-  const solid = scrolled || onLightBg
+  const otherLangs = LANGS.filter((l) => l !== lang)
+  const solid = scrolled || onLightBg || isMenuOpen
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -72,10 +91,19 @@ export function Nav({ lang = 'en', onLightBg = false, alternatePath }: NavProps)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    if (!isMenuOpen) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMenuOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [isMenuOpen])
+
   return (
     <header className={`${styles.nav} ${solid ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
-        <a href={`${home}#top`} className={styles.logo} aria-label="Zenno home">
+        <a href={homePath(lang, '#top')} className={styles.logo} aria-label="Zenno home">
           <img
             src={solid ? '/logo/wordmark-black.svg' : '/logo/wordmark-cream.svg'}
             alt="Zenno"
@@ -87,7 +115,7 @@ export function Nav({ lang = 'en', onLightBg = false, alternatePath }: NavProps)
 
         <nav className={styles.links} aria-label="Primary">
           {t.links.map((l) => (
-            <a key={l.label} href={l.path ?? `${home}${l.hash ?? ''}`} className={styles.link}>
+            <a key={l.label} href={l.path ?? homePath(lang, l.hash)} className={styles.link}>
               {l.label}
               {l.isNew && <span className={styles.newBadge}>{t.newBadge}</span>}
             </a>
@@ -95,21 +123,55 @@ export function Nav({ lang = 'en', onLightBg = false, alternatePath }: NavProps)
         </nav>
 
         <div className={styles.actions}>
-          <a href={switchTo.href} className={styles.langSwitch} aria-label={`Switch language to ${switchTo.label}`}>
-            {switchTo.label}
-          </a>
-          <a href={appHref()} className={styles.signin}>
-            {t.signin}
-          </a>
+          <span className={styles.langs}>
+            {otherLangs.map((l) => (
+              <a
+                key={l}
+                href={localePath(l, localizedPath ?? '/')}
+                hrefLang={l}
+                lang={l}
+                className={styles.langSwitch}
+                aria-label={`${t.switchTo} ${LANG_NAME[l]}`}
+              >
+                {LANG_LABEL[l]}
+              </a>
+            ))}
+          </span>
           <Magnetic strength={0.4}>
-            <a href={appHref()} className={`btn ${styles.cta}`}>
+            <a href={START_URL} className={`btn ${styles.cta}`}>
               <span className={styles.ctaFull}>{t.cta}</span>
               <span className={styles.ctaShort}>{t.ctaShort}</span>
               <span className="arrow">→</span>
             </a>
           </Magnetic>
+          <button
+            type="button"
+            className={styles.menuButton}
+            aria-label={t.menu}
+            aria-expanded={isMenuOpen}
+            aria-controls="site-menu"
+            onClick={() => setIsMenuOpen((o) => !o)}
+          >
+            {isMenuOpen ? <X size={18} aria-hidden /> : <Menu size={18} aria-hidden />}
+          </button>
         </div>
       </div>
+
+      {isMenuOpen && (
+        <nav id="site-menu" className={styles.panel} aria-label={t.menu}>
+          {t.links.map((l) => (
+            <a
+              key={l.label}
+              href={l.path ?? homePath(lang, l.hash)}
+              className={styles.panelLink}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {l.label}
+              {l.isNew && <span className={styles.newBadge}>{t.newBadge}</span>}
+            </a>
+          ))}
+        </nav>
+      )}
     </header>
   )
 }

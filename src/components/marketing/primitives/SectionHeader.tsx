@@ -6,17 +6,19 @@ interface SectionHeaderProps {
   title: ReactNode
   lead?: ReactNode
   align?: 'left' | 'center'
+  /** Heading level for the title; page-top headers pass 'h1'. */
+  as?: 'h1' | 'h2'
 }
 
-export function SectionHeader({ kicker, title, lead, align = 'left' }: SectionHeaderProps) {
+export function SectionHeader({ kicker, title, lead, align = 'left', as: Heading = 'h2' }: SectionHeaderProps) {
   return (
     <div className={`${styles.head} ${align === 'center' ? styles.center : ''}`}>
       <span data-reveal className="kicker">
         {kicker}
       </span>
-      <h2 data-reveal className="title">
+      <Heading data-reveal className="title">
         {title}
-      </h2>
+      </Heading>
       {lead && (
         <p data-reveal className={`lead ${styles.lead}`}>
           {lead}

@@ -19,13 +19,14 @@
   box-shadow: var(--sh-lg);
 }
 .popular {
-  background: var(--ink);
-  color: var(--inv);
-  transform: translateY(-14px) scale(1.02);
+  background: var(--card);
+  color: var(--t1);
+  border: 2px solid var(--ink);
+  transform: translateY(-14px);
   box-shadow: var(--sh-lg);
 }
 .popular:hover {
-  transform: translateY(-20px) scale(1.02);
+  transform: translateY(-18px);
 }
 
 .badge {
@@ -46,9 +47,6 @@
   font-weight: 600;
   color: var(--t2);
 }
-.popular .name {
-  color: var(--inv-2);
-}
 .price {
   display: flex;
   align-items: baseline;
@@ -64,18 +62,11 @@
   font-size: 0.95rem;
   color: var(--t3);
 }
-.popular .per {
-  color: var(--inv-2);
-}
 .line {
   font-size: 0.9rem;
   color: var(--t2);
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--line);
-}
-.popular .line {
-  color: var(--inv-2);
-  border-color: rgba(255, 255, 255, 0.14);
 }
 
 .features {

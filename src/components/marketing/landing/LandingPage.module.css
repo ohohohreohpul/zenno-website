@@ -1,0 +1,8 @@
+/* The example ledger under a text hero, sized like a product shot. */
+.ledgerCard {
+  max-width: 560px;
+  margin: clamp(1rem, 0.5rem + 2vw, 2.5rem) auto 0;
+  padding: clamp(1.2rem, 1rem + 1vw, 1.8rem);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-lg);
+}

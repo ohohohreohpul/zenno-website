@@ -92,6 +92,23 @@
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.72rem;
 }
+.langs {
+  display: flex;
+  gap: 14px;
+}
+.langLink {
+  color: var(--t2);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.langLink:hover,
+.langLink:focus-visible {
+  color: var(--t1);
+}
+.langLink[aria-current='true'] {
+  color: var(--t1);
+  font-weight: 600;
+}
 
 @media (max-width: 760px) {
   .inner {

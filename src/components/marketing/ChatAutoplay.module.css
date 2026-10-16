@@ -36,8 +36,8 @@
   width: 12px;
   height: 12px;
   border-radius: 999px;
-  background: var(--wa);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--wa) 22%, transparent);
+  background: var(--dot, var(--wa));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--dot, var(--wa)) 22%, transparent);
 }
 .chan {
   font-size: 0.72rem;

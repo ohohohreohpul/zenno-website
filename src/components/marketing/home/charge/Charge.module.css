@@ -1,0 +1,136 @@
+.stack {
+  display: grid;
+  gap: 12px;
+}
+
+.panes {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  min-height: 320px;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(28, 25, 23, 0.05);
+  overflow: hidden;
+}
+
+.list {
+  border-right: 1px solid var(--line);
+  min-width: 0;
+}
+.filters {
+  display: flex;
+  gap: 6px;
+  padding: 10px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.filters :global(.zn-chip) {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+.rowText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.rowTop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+.rowTop b {
+  font-weight: 500;
+  white-space: nowrap;
+}
+.preview {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.thread {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--chat-ground);
+}
+.empty {
+  flex: 1;
+}
+.chat {
+  flex: 1;
+  justify-content: flex-start;
+}
+.chat :global(.zn-bubble) {
+  font-size: 13px;
+  line-height: 18px;
+}
+.note {
+  align-self: center;
+  font-size: 12px;
+  padding: 3px 10px;
+}
+.ownerReply {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 10px;
+  background: #fff;
+  border-top: 1px solid var(--line);
+}
+.typing {
+  flex: 1;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--ink);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  animation: type 1.6s steps(40) both;
+}
+@keyframes type {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.draftRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+}
+.draftRow > span:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 640px) {
+  .panes {
+    grid-template-columns: 1fr;
+  }
+  .list {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .thread {
+    min-height: 240px;
+  }
+}

@@ -1,0 +1,170 @@
+.stack {
+  display: grid;
+  gap: 16px;
+}
+
+.stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 330px;
+  padding: 18px 0 4px;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(rgba(26, 23, 20, 0.04), rgba(26, 23, 20, 0.04)),
+    var(--sand);
+}
+
+.popup {
+  width: min(320px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+.amounts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.issuedRow {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 200px);
+  gap: 16px;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.voucher {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(28, 25, 23, 0.06), var(--shadow-lift);
+}
+.voucherTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.shop {
+  font-size: 12px;
+  font-weight: 600;
+}
+.value {
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+}
+.voucherBottom {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.qr {
+  position: relative;
+  display: block;
+  line-height: 0;
+  color: var(--ink);
+}
+.scanLine {
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  top: 0;
+  height: 2px;
+  background: var(--success-fill);
+  box-shadow: 0 0 10px var(--success-fill);
+  animation: scan 1.2s var(--zn-ease) 2 both;
+}
+@keyframes scan {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
+}
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.redeem {
+  display: grid;
+  place-items: center;
+  min-height: 130px;
+  padding: 14px;
+  border-radius: var(--radius-lg);
+  border: 1px dashed #a8a29e;
+  text-align: center;
+  transition: background 0.25s, border-color 0.25s;
+}
+.redeem > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+.redeemOn {
+  background: var(--success-tint);
+  border-color: #a7f3d0;
+  border-style: solid;
+}
+.redeemTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #064e3b;
+  font-weight: 600;
+}
+
+.tiles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.tile {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+}
+.tile > span:last-child {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.tile b {
+  font-size: 14px;
+  font-weight: 600;
+}
+.tileIcon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--sand);
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .issuedRow {
+    grid-template-columns: 1fr;
+    padding: 0 4px 8px;
+  }
+  .tiles {
+    grid-template-columns: 1fr;
+  }
+}

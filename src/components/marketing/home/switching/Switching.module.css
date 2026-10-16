@@ -1,0 +1,133 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 230px;
+  gap: 16px;
+  align-items: stretch;
+}
+.importWin {
+  min-width: 0;
+}
+
+.import {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(28, 25, 23, 0.05);
+}
+.sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.file {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px dashed #a8a29e;
+  background: var(--sand);
+  font-weight: 500;
+}
+.rows {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.rows li {
+  display: grid;
+  grid-template-columns: 22px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 2px;
+  color: var(--muted-2);
+  transition: color 0.2s;
+}
+.rows li + li {
+  border-top: 1px solid var(--line);
+}
+.rowDone {
+  color: var(--ink) !important;
+}
+.check {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  color: #fff;
+}
+.rowDone .check {
+  background: var(--success-fill);
+  border-color: var(--success-fill);
+}
+.done {
+  align-self: flex-start;
+  white-space: normal;
+}
+
+.night {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 12px 12px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, var(--night-1), var(--night-2) 50%, var(--night-3));
+  color: #fff;
+  box-shadow: 0 30px 60px -30px rgba(26, 23, 20, 0.5);
+}
+.night img {
+  margin-left: 8px;
+}
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.navActive {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.guides {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  color: var(--t1);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 4px;
+}
+.guides:hover {
+  text-decoration-color: var(--t1);
+}
+.guides span {
+  color: var(--t2);
+}
