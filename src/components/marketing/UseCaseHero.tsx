@@ -5,6 +5,8 @@ import styles from './UseCaseHero.module.css'
 
 interface UseCaseHeroProps {
   image: string
+  /** Empty when the photo is decorative. */
+  imageAlt?: string
   kicker: string
   title: Headline
   lead: string
@@ -19,11 +21,11 @@ interface UseCaseHeroProps {
  * Photo hero for the industry landing pages — same treatment as the homepage
  * hero, shorter, and without the GSAP timeline.
  */
-export function UseCaseHero({ image, kicker, title, lead, ctaPrimary, ctaSecondary, secondaryHref, chat }: UseCaseHeroProps) {
+export function UseCaseHero({ image, imageAlt = '', kicker, title, lead, ctaPrimary, ctaSecondary, secondaryHref, chat }: UseCaseHeroProps) {
   return (
     <section id="top" className={styles.hero}>
       <div className={styles.media}>
-        <img src={image} alt="" className={styles.img} fetchPriority="high" decoding="async" />
+        <img src={image} alt={imageAlt} width={2000} height={1131} className={styles.img} fetchPriority="high" decoding="async" />
       </div>
       <div className={styles.scrim} aria-hidden />
       <div className={styles.scrimBottom} aria-hidden />

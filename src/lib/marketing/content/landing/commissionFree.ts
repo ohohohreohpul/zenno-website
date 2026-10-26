@@ -75,6 +75,54 @@ export const COMMISSION_FREE: Record<Lang, LandingContent> = {
           q: 'Ich nutze bereits onbuuk. Muss ich wechseln?',
           a: 'Nein. onbuuk heißt jetzt Zenno Booking. Konto, Leistungen, Buchungslink und Kundendaten bleiben erhalten.',
         },
+        {
+          q: 'Kostet eine Buchung über einen KI-Assistenten extra?',
+          a: 'Nein. Auch wenn jemand über ChatGPT, Google oder Perplexity zu Ihnen findet und auf Ihrer Seite bucht, fällt keine Provision an.',
+        },
+        {
+          q: 'Wem gehören die Kundendaten?',
+          a: 'Kontakte und Buchungshistorie liegen in Ihrem eigenen Zenno-Konto, unter Ihrem Namen. Wie Sie die Daten im Einklang mit dem Datenschutz nutzen, klären Sie bei Bedarf mit Ihrer Rechtsberatung.',
+        },
+        {
+          q: 'Wie erfährt meine Kundschaft vom neuen Buchungslink?',
+          a: 'Teilen Sie ihn dort, wo man Sie schon findet: im Instagram-Profil, im Google-Unternehmensprofil, auf Ihrer Website und in Ihren WhatsApp-Nachrichten. Bestätigungen und Erinnerungen per SMS und E-Mail kommen danach automatisch.',
+        },
+        {
+          q: 'Kann ich ohne Marktplatz eine Anzahlung verlangen?',
+          a: 'Ja. Auf Ihrer Zenno-Seite verlangen Sie eine Anzahlung oder Vorkasse, oder Kundschaft hinterlegt die Karte für eine Ausfallgebühr. Bezahlt wird über Stripe.',
+        },
+      ],
+    },
+    story: {
+      kicker: 'Ihr Name über der Tür',
+      title: ['Sie haben das Studio aufgebaut.', 'Die Buchung gehört auch Ihnen.'],
+      paragraphs: [
+        'Über der Tür steht Ihr Name, und Ihre Stammkundinnen kennen Sie seit Jahren. Trotzdem lief die Online-Buchung lange über fremde Seiten, mit fremdem Logo und einer Provision, die bei neuer Kundschaft fällig wurde.',
+        'Auf einem Marktplatz stehen Sie in einer Liste neben anderen Studios aus der Nachbarschaft. Wer Sie dort gefunden hat, sieht beim nächsten Mal zuerst die Empfehlungen daneben. Die Kontakte liegen beim Marktplatz, und neue Buchungen kosten Sie einen Anteil vom Umsatz. Für ein kleines Studio mit knapper Marge macht das am Monatsende einen spürbaren Unterschied, und auf die Beziehung zur eigenen Kundschaft haben Sie weniger Einfluss, als Sie möchten.',
+        'Mit Zenno bucht man Sie auf Ihrer eigenen Seite, mit Ihrem Logo, Ihren Leistungen und Ihren Preisen. Sie zahlen einen festen Monatstarif, auf Buchungen fällt keine Provision an. Kontakte und Buchungshistorie liegen in Ihrem Zenno-Konto. Und weil Ihre Seite in einem Format steht, das KI-Assistenten wie ChatGPT, Google und Perplexity lesen, ist sie bereit dafür, dass diese Assistenten Sie direkt buchen.',
+      ],
+      image: '/images/features/commission-owner.webp',
+      imageAlt: 'Stolze Inhaberin steht in der Tür ihres kleinen Kosmetikstudios',
+      note: { label: 'Provision', value: '0 € auf jede Buchung' },
+    },
+    scenes: {
+      kicker: 'Gebucht bei Ihnen',
+      title: ['Zwei Buchungen,', 'kein Umweg.'],
+      items: [
+        {
+          title: 'Spät in der Bahn gebucht',
+          body: 'Kurz vor Mitternacht, in der letzten Bahn nach Hause, fällt ihm ein, dass er einen Haarschnitt braucht. Er tippt auf den Link in Ihrem Instagram-Profil und landet auf Ihrer Seite, nicht in einer Liste mit anderen Salons. Er sieht Ihre Preise und freien Zeiten, bucht für Freitag und bekommt die Bestätigung sofort. Kein Anteil geht an eine Plattform, und sein Kontakt steht ab jetzt in Ihrem Konto.',
+          image: '/images/features/commission-tram.webp',
+          imageAlt: 'Junger Mann bucht nachts in der Straßenbahn einen Termin auf seinem Handy',
+          note: { label: 'Neue Buchung', value: 'Fr 17:30, Herrenschnitt' },
+        },
+        {
+          title: 'Nach Feierabend',
+          body: 'Das Licht ist aus, die Theke aufgeräumt. Auf dem Handy sieht die Inhaberin die Buchungen für morgen, alle über ihre eigene Seite. Keine Abrechnung mit Provisionsabzug, keine Gebühr pro Neukundin, nur der feste Monatstarif. Für Online-Zahlungen gelten die üblichen Gebühren von Stripe. Der Umsatz aus diesen Terminen bleibt bei ihr, und die Kontakte der Kundinnen, die gebucht haben, auch.',
+          image: '/images/verticals/salon-story.webp',
+          imageAlt: 'Salonbesitzerin schaut nach Ladenschluss im leeren Salon auf ihr Handy',
+          note: { label: 'Morgen', value: '7 Buchungen, 0 € Provision' },
+        },
       ],
     },
     og: { line1: 'Ihre Kundschaft.', line2: 'Ihre Seite. Keine Provision.', sub: 'Buchungssystem ohne Provision' },
@@ -145,6 +193,54 @@ export const COMMISSION_FREE: Record<Lang, LandingContent> = {
           q: 'I already use onbuuk. Do I need to switch?',
           a: 'No. onbuuk is now Zenno Booking. Your account, services, booking link and client data carry over.',
         },
+        {
+          q: 'Does a booking through an AI assistant cost extra?',
+          a: 'No. Even when someone finds you through ChatGPT, Google or Perplexity and books on your page, there is no commission.',
+        },
+        {
+          q: 'Who owns the client data?',
+          a: 'Contacts and booking history sit in your own Zenno account, under your name. How to use that data in line with data-protection rules is worth checking with your legal advisor.',
+        },
+        {
+          q: 'How do my clients find the new booking link?',
+          a: 'Share it where people already find you: your Instagram profile, your Google Business Profile, your website and your WhatsApp messages. Confirmations and reminders by SMS and email go out automatically after that.',
+        },
+        {
+          q: 'Can I take deposits without a marketplace?',
+          a: 'Yes. On your Zenno page you ask for a deposit or prepayment, or clients save a card for a no-show fee. Payments run through Stripe.',
+        },
+      ],
+    },
+    story: {
+      kicker: 'Your name above the door',
+      title: ['You built the studio.', 'The bookings are yours too.'],
+      paragraphs: [
+        'Your name is above the door, and your regulars have known you for years. Still, online booking ran through someone else’s site for a long time, with someone else’s logo and a commission due on new clients.',
+        'On a marketplace you sit in a list next to other studios in the neighbourhood. Someone who found you there sees the recommendations beside you first the next time they look. The contacts stay with the marketplace, and new bookings cost you a share of the revenue. For a small studio on tight margins, that shows at the end of the month, and you have less say over the relationship with your own clients than you would like.',
+        'With Zenno, people book you on your own page, with your logo, your services and your prices. You pay a fixed monthly plan, with no commission on bookings. Contacts and booking history stay in your Zenno account. And because your page is published in a format that AI assistants like ChatGPT, Google and Perplexity read, it is ready for those assistants to book you directly.',
+      ],
+      image: '/images/features/commission-owner.webp',
+      imageAlt: 'A proud owner standing in the doorway of her small beauty studio',
+      note: { label: 'Commission', value: '€0 on every booking' },
+    },
+    scenes: {
+      kicker: 'Booked with you',
+      title: ['Two bookings,', 'no detour.'],
+      items: [
+        {
+          title: 'Booked on the last tram',
+          body: 'Just before midnight, on the last tram home, he remembers he needs a haircut. He taps the link in your Instagram profile and lands on your page, not in a list of other salons. He sees your prices and free times, books for Friday and gets the confirmation straight away. No share goes to a platform, and from now on his contact is in your account.',
+          image: '/images/features/commission-tram.webp',
+          imageAlt: 'A young man on a night tram booking an appointment on his phone',
+          note: { label: 'New booking', value: 'Fri 5:30 pm, men’s cut' },
+        },
+        {
+          title: 'After closing',
+          body: 'The lights are off and the counter is tidy. On her phone the owner checks tomorrow’s bookings, all of them made on her own page. No statement with commission taken off, no fee per new client, just the fixed monthly plan. Online payments carry Stripe’s usual fees. The revenue from these appointments stays with her, and so do the contacts of the clients who booked.',
+          image: '/images/verticals/salon-story.webp',
+          imageAlt: 'A salon owner checking her phone in her empty salon after closing',
+          note: { label: 'Tomorrow', value: '7 bookings, €0 commission' },
+        },
       ],
     },
     og: { line1: 'Your clients.', line2: 'Your page. No commission.', sub: 'Commission-free booking for studios' },
@@ -214,6 +310,54 @@ export const COMMISSION_FREE: Record<Lang, LandingContent> = {
         {
           q: 'ฉันใช้ onbuuk อยู่แล้ว ต้องเปลี่ยนไหม',
           a: 'ไม่ต้อง onbuuk ตอนนี้คือ Zenno Booking บัญชี บริการ ลิงก์จอง และข้อมูลลูกค้าของคุณย้ายมาครบ',
+        },
+        {
+          q: 'การจองผ่านผู้ช่วย AI มีค่าใช้จ่ายเพิ่มไหม',
+          a: 'ไม่มี แม้ลูกค้าจะเจอร้านคุณผ่าน ChatGPT, Google หรือ Perplexity แล้วจองบนหน้าของคุณ ก็ไม่มีค่าคอมมิชชั่น',
+        },
+        {
+          q: 'ข้อมูลลูกค้าเป็นของใคร',
+          a: 'รายชื่อติดต่อและประวัติการจองอยู่ในบัญชี Zenno ของคุณเอง ภายใต้ชื่อของคุณ ส่วนการใช้ข้อมูลให้ถูกต้องตามกฎคุ้มครองข้อมูลส่วนบุคคล ควรตรวจสอบกับที่ปรึกษากฎหมายของคุณ',
+        },
+        {
+          q: 'ลูกค้าจะรู้จักลิงก์จองใหม่ได้อย่างไร',
+          a: 'แชร์ลิงก์ในที่ที่ลูกค้าเจอคุณอยู่แล้ว เช่น โปรไฟล์ Instagram, Google Business Profile, เว็บไซต์ และข้อความ WhatsApp หลังจากนั้นคำยืนยันและการแจ้งเตือนทาง SMS และอีเมลจะส่งอัตโนมัติ',
+        },
+        {
+          q: 'ไม่อยู่บนแพลตฟอร์มตัวกลาง ยังเก็บมัดจำได้ไหม',
+          a: 'ได้ บนหน้า Zenno ของคุณ คุณเก็บมัดจำหรือให้ชำระเต็มจำนวนล่วงหน้า หรือให้ลูกค้าบันทึกบัตรไว้สำหรับค่าธรรมเนียมเมื่อไม่มาตามนัด ชำระเงินผ่าน Stripe',
+        },
+      ],
+    },
+    story: {
+      kicker: 'ชื่อของคุณบนป้ายหน้าร้าน',
+      title: ['คุณสร้างร้านนี้ขึ้นมาเอง', 'การจองก็ควรเป็นของคุณ'],
+      paragraphs: [
+        'ป้ายหน้าร้านเป็นชื่อของคุณ ลูกค้าประจำรู้จักคุณมาหลายปี แต่การจองออนไลน์กลับต้องผ่านเว็บของคนอื่นมานาน มีโลโก้ของคนอื่น และมีค่าคอมมิชชั่นทุกครั้งที่ได้ลูกค้าใหม่',
+        'บนแพลตฟอร์มตัวกลาง ร้านของคุณอยู่ในรายชื่อเดียวกับร้านอื่นๆ ในละแวกเดียวกัน ลูกค้าที่เจอคุณที่นั่น ครั้งหน้าก็จะเห็นร้านที่แพลตฟอร์มแนะนำอยู่ข้างๆ ก่อน รายชื่อติดต่อลูกค้าอยู่กับแพลตฟอร์ม และการจองใหม่ก็ต้องแบ่งรายได้ส่วนหนึ่งให้เขา สำหรับร้านเล็กที่กำไรไม่มาก ตัวเลขนี้เห็นชัดตอนสิ้นเดือน และคุณก็ดูแลความสัมพันธ์กับลูกค้าของตัวเองได้น้อยกว่าที่ต้องการ',
+        'กับ Zenno ลูกค้าจองบนหน้าของคุณเอง มีโลโก้ บริการ และราคาของคุณ คุณจ่ายค่าแพ็กเกจรายเดือนคงที่ ไม่มีค่าคอมมิชชั่นจากการจอง รายชื่อติดต่อและประวัติการจองอยู่ในบัญชี Zenno ของคุณ และเพราะหน้าของคุณเผยแพร่ในรูปแบบที่ผู้ช่วย AI อย่าง ChatGPT, Google และ Perplexity อ่านได้ หน้าของคุณจึงพร้อมให้ผู้ช่วย AI จองกับคุณได้โดยตรง',
+      ],
+      image: '/images/features/commission-owner.webp',
+      imageAlt: 'เจ้าของร้านยืนอย่างภูมิใจที่ประตูร้านเสริมสวยเล็กๆ ของเธอ',
+      note: { label: 'ค่าคอมมิชชั่น', value: '€0 ทุกการจอง' },
+    },
+    scenes: {
+      kicker: 'จองกับคุณโดยตรง',
+      title: ['สองการจอง', 'ไม่ต้องอ้อมผ่านใคร'],
+      items: [
+        {
+          title: 'จองบนรถรางเที่ยวสุดท้าย',
+          body: 'เกือบเที่ยงคืน บนรถรางเที่ยวสุดท้ายกลับบ้าน เขานึกขึ้นได้ว่าต้องตัดผม เขากดลิงก์ในโปรไฟล์ Instagram ของคุณ แล้วเข้ามาที่หน้าของคุณ ไม่ใช่รายชื่อร้านอื่นๆ เขาเห็นราคาและเวลาว่าง จองวันศุกร์ และได้รับคำยืนยันทันที ไม่มีส่วนแบ่งให้แพลตฟอร์ม และรายชื่อติดต่อของเขาก็อยู่ในบัญชีของคุณตั้งแต่นี้',
+          image: '/images/features/commission-tram.webp',
+          imageAlt: 'ชายหนุ่มบนรถรางตอนกลางคืน กำลังจองนัดผ่านมือถือ',
+          note: { label: 'การจองใหม่', value: 'ศุกร์ 17:30 ตัดผมชาย' },
+        },
+        {
+          title: 'หลังปิดร้าน',
+          body: 'ไฟปิดแล้ว เคาน์เตอร์เก็บเรียบร้อย เจ้าของร้านเปิดมือถือดูการจองของพรุ่งนี้ ทั้งหมดจองผ่านหน้าของเธอเอง ไม่มีใบสรุปที่หักค่าคอมมิชชั่น ไม่มีค่าธรรมเนียมต่อลูกค้าใหม่ มีแค่ค่าแพ็กเกจรายเดือนคงที่ การชำระเงินออนไลน์มีค่าธรรมเนียมปกติของ Stripe รายได้จากนัดเหล่านี้เป็นของเธอ รายชื่อติดต่อของลูกค้าที่จองก็เช่นกัน',
+          image: '/images/verticals/salon-story.webp',
+          imageAlt: 'เจ้าของร้านทำผมดูมือถือในร้านที่ว่างเปล่าหลังปิดร้าน',
+          note: { label: 'พรุ่งนี้', value: '7 การจอง ค่าคอมมิชชั่น €0' },
         },
       ],
     },

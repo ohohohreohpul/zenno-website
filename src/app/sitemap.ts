@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { SITE_URL } from '@/lib/marketing/config'
 import { LANGS, localizedAlternates, localePath, type Lang } from '@/lib/marketing/lang'
 import { FEATURE_SLUGS, INDUSTRY_SLUGS } from '@/lib/marketing/pages'
+import { CITY_INDUSTRIES, CITY_LANGS, CITY_SLUGS, cityPath } from '@/lib/marketing/cities'
 
 export const dynamic = 'force-static'
 
@@ -16,10 +17,20 @@ const LOCALIZED_ROUTES = [
   ...FEATURE_SLUGS.map((slug) => ({ path: `/${slug}`, priority: 0.8 })),
 ]
 
+/** Location pages: every industry × city, German and English only. */
+const CITY_ROUTES = CITY_INDUSTRIES.flatMap((industry) =>
+  CITY_SLUGS.map((city) => ({ path: cityPath(industry, city), priority: 0.6 })),
+)
+
 const absolute = (path: string) => `${SITE_URL}${path}`
 
-function localizedEntry(lang: Lang, path: string, priority: number): MetadataRoute.Sitemap[number] {
-  const { languages } = localizedAlternates(lang, path)
+function localizedEntry(
+  lang: Lang,
+  path: string,
+  priority: number,
+  langs: readonly Lang[] = LANGS,
+): MetadataRoute.Sitemap[number] {
+  const { languages } = localizedAlternates(lang, path, langs)
   return {
     url: absolute(localePath(lang, path)),
     changeFrequency: 'weekly',
@@ -35,5 +46,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const localized = LOCALIZED_ROUTES.flatMap(({ path, priority }) =>
     LANGS.map((lang) => localizedEntry(lang, path, priority)),
   )
-  return localized
+  const cities = CITY_ROUTES.flatMap(({ path, priority }) =>
+    CITY_LANGS.map((lang) => localizedEntry(lang, path, priority, CITY_LANGS)),
+  )
+  return [...localized, ...cities]
 }

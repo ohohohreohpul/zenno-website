@@ -85,14 +85,44 @@ export function bookingApplicationSchema(lang: Lang, path: string = '/') {
     inLanguage: lang,
     description: BOOKING_APP_DESCRIPTION[lang],
     publisher: { '@id': `${SITE_URL}/#organization` },
-    offers: PLANS[lang]
-      .filter((plan) => plan.monthlyEur !== undefined)
-      .map((plan) => ({
-        '@type': 'Offer',
-        name: plan.name,
-        price: String(plan.monthlyEur),
-        priceCurrency: 'EUR',
-        description: plan.line,
-      })),
+    offers: planOffers(lang),
+  }
+}
+
+/** The fixed-price plans as schema.org Offers. */
+function planOffers(lang: Lang) {
+  return PLANS[lang]
+    .filter((plan) => plan.monthlyEur !== undefined)
+    .map((plan) => ({
+      '@type': 'Offer',
+      name: plan.name,
+      price: String(plan.monthlyEur),
+      priceCurrency: 'EUR',
+      description: plan.line,
+    }))
+}
+
+interface CityServiceInput {
+  lang: Lang
+  /** Locale-free route path of the location page. */
+  path: string
+  name: string
+  description: string
+  city: string
+}
+
+/** A location page: the booking software offered to businesses in one city. */
+export function cityServiceSchema({ lang, path, name, description, city }: CityServiceInput) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name,
+    description,
+    url: absoluteUrl(lang, path),
+    inLanguage: lang,
+    serviceType: 'Booking software',
+    provider: { '@id': `${SITE_URL}/#organization` },
+    areaServed: { '@type': 'City', name: city, containedInPlace: { '@type': 'Country', name: 'Germany' } },
+    offers: planOffers(lang),
   }
 }

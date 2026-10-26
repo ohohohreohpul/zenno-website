@@ -37,15 +37,14 @@ export function homePath(lang: Lang, hash: string = ''): string {
 
 /**
  * Next.js `alternates` for a route that exists in every locale: canonical for
- * `lang` plus the full hreflang set, with x-default on the German root.
+ * `lang` plus the hreflang set (every locale unless `langs` narrows it), with
+ * x-default on the German root.
  */
-export function localizedAlternates(lang: Lang, path: string = '/') {
+export function localizedAlternates(lang: Lang, path: string = '/', langs: readonly Lang[] = LANGS) {
   return {
     canonical: localePath(lang, path),
     languages: {
-      de: localePath('de', path),
-      en: localePath('en', path),
-      th: localePath('th', path),
+      ...Object.fromEntries(langs.map((l) => [l, localePath(l, path)])),
       'x-default': localePath(DEFAULT_LANG, path),
     },
   }

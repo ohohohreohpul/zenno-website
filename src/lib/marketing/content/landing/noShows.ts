@@ -69,6 +69,54 @@ export const NO_SHOWS: Record<Lang, LandingContent> = {
           q: 'Helfen Erinnerungen zusätzlich?',
           a: 'Ja. Zenno schickt Bestätigungen und Erinnerungen automatisch per SMS und E-Mail, und Kundschaft kann im Kundenportal selbst verschieben statt einfach fernzubleiben.',
         },
+        {
+          q: 'Wird die Karte schon bei der Buchung belastet?',
+          a: 'Bei der hinterlegten Karte nicht. Sie wird über Stripe gespeichert, und belastet wird erst, wenn Sie bei No-Show oder zu später Absage die Ausfallgebühr berechnen.',
+        },
+        {
+          q: 'Wie hoch sollte die Ausfallgebühr sein?',
+          a: 'Das legen Sie selbst fest. Wichtig ist, dass Kundschaft den Betrag vor der Buchung kennt und versteht. Ob Ihre Regelung rechtlich passt, klären Sie mit Ihrer Rechtsberatung.',
+        },
+        {
+          q: 'Schreckt eine Anzahlung neue Kundschaft ab?',
+          a: 'Das hängt von Ihrem Studio ab. Wer bucht, sieht die Regel vorher auf Ihrer Seite und weiß, woran er ist. Wenn Sie unsicher sind, beginnen Sie mit der hinterlegten Karte: Dann wird zunächst nichts belastet.',
+        },
+        {
+          q: 'Was passiert, wenn jemand rechtzeitig verschiebt?',
+          a: 'Kundschaft wählt im Kundenportal selbst einen neuen Termin. Der alte Platz ist damit wieder frei und kann online neu gebucht werden.',
+        },
+      ],
+    },
+    story: {
+      kicker: 'Dienstag, 10:10 Uhr',
+      title: ['Der Raum ist vorbereitet.', 'Die Kundin kommt nicht.'],
+      paragraphs: [
+        'Die Liege ist frisch bezogen, das Öl angewärmt, die nächste Stunde gehört einer einzigen Kundin. Um zehn nach zehn ist klar, dass sie nicht kommt. Kein Anruf, keine Nachricht, nur ein leerer Raum und eine Stunde Arbeitszeit.',
+        'So sieht der Alltag in vielen kleinen Studios aus. Eine Massage über 60 Minuten lässt sich kurzfristig kaum neu vergeben, und wer am Sonntagabend online gebucht hat, denkt am Dienstagmorgen oft schon an etwas anderes. Hinterhertelefonieren kostet Zeit, und eine Rechnung im Nachhinein zu schicken fühlt sich unangenehm an. Also bleibt der Ausfall bei Ihnen hängen, Woche für Woche, und außer Ihrer Kasse merkt es niemand.',
+        'Mit Zenno legen Sie vorher fest, wie verbindlich eine Buchung ist. Die Kundin zahlt beim Buchen eine Anzahlung oder den vollen Preis, oder sie hinterlegt ihre Karte über Stripe. Erscheint sie nicht oder sagt zu spät ab, berechnen Sie die Ausfallgebühr von dieser Karte. Vorher bekommt sie Erinnerungen per SMS und E-Mail und kann im Kundenportal selbst verschieben. Wer verhindert ist, hat damit einen einfachen Weg, Bescheid zu geben.',
+      ],
+      image: '/images/features/noshow-empty.webp',
+      imageAlt: 'Vorbereitete Massageliege in einem abgedunkelten Behandlungsraum, die Therapeutin wartet in der Tür',
+      note: { label: 'Ausfallgebühr', value: '35 € von der hinterlegten Karte' },
+    },
+    scenes: {
+      kicker: 'Zwei Momente',
+      title: ['Wo ein Termin verbindlich wird,', 'und wo es darauf ankommt.'],
+      items: [
+        {
+          title: 'Abends auf dem Sofa gebucht',
+          body: 'Viele buchen dann, wenn das Studio längst geschlossen ist: abends auf dem Handy, zwischen Abendessen und Serie. Genau in diesem Moment wird die Anzahlung fällig oder die Karte hinterlegt, direkt auf Ihrer Buchungsseite über Stripe. Niemand muss am nächsten Morgen hinterhertelefonieren, und die Kundin weiß von Anfang an, woran sie ist. Die Bestätigung bekommt sie sofort per E-Mail oder SMS.',
+          image: '/images/features/noshow-sofa.webp',
+          imageAlt: 'Frau bucht abends auf dem Sofa eine Behandlung auf ihrem Smartphone',
+          note: { label: 'Anzahlung', value: '20 € bei der Buchung bezahlt' },
+        },
+        {
+          title: 'Drei Stunden für eine Farbe',
+          body: 'Eine Coloration mit Strähnen blockiert den halben Nachmittag, und die Farbe ist oft schon angemischt, wenn die Kundin eigentlich da sein sollte. Fällt so ein Termin aus, lässt sich die Lücke kaum füllen. Gerade bei langen Terminen lohnt sich Vorkasse: Der volle Preis ist bei der Buchung bezahlt, und an der Kasse ist nichts mehr zu tun. Wer rechtzeitig im Kundenportal verschiebt, macht den Platz für andere frei.',
+          image: '/images/verticals/salon-colour.webp',
+          imageAlt: 'Coloristin trägt Farbe auf Strähnen in Folie auf, ein langer Termin im Salon',
+          note: { label: 'Vorkasse', value: 'Voller Preis bei der Buchung' },
+        },
       ],
     },
     og: { line1: 'Leerer Stuhl,', line2: 'trotzdem bezahlt.', sub: 'Anzahlung & Ausfallgebühr für Studios' },
@@ -135,6 +183,54 @@ export const NO_SHOWS: Record<Lang, LandingContent> = {
           q: 'Do reminders help as well?',
           a: 'Yes. Zenno sends confirmations and reminders automatically by SMS and email, and clients can reschedule in the client portal instead of simply not turning up.',
         },
+        {
+          q: 'Is the card charged when the client books?',
+          a: 'Not with a card on file. It is saved through Stripe, and it is only charged when you charge the fee for a no-show or late cancellation.',
+        },
+        {
+          q: 'How high should the no-show fee be?',
+          a: 'You decide. What matters is that clients see and understand the amount before they book. Whether your terms hold up legally is a question for your legal advisor.',
+        },
+        {
+          q: 'Will a deposit put new clients off?',
+          a: 'That depends on your studio. Clients see the rule on your page before they book, so nobody is surprised. If you are unsure, start with a card on file: nothing is charged up front.',
+        },
+        {
+          q: 'What happens when someone reschedules in time?',
+          a: 'Clients pick a new time themselves in the client portal. The old slot opens up again and can be booked online by someone else.',
+        },
+      ],
+    },
+    story: {
+      kicker: 'Tuesday, 10:10 am',
+      title: ['The room is ready.', 'The client isn’t coming.'],
+      paragraphs: [
+        'The table is freshly made, the oil is warm, and the next hour belongs to one client. By ten past ten it is clear she is not coming. No call, no message, just an empty room and an hour of paid work time.',
+        'This is an ordinary week in a lot of small studios. A 60-minute massage is hard to fill at short notice, and someone who booked on Sunday evening is often thinking about something else by Tuesday morning. Chasing them by phone takes time, and sending a bill afterwards feels awkward. So the loss stays with you, week after week, and nobody notices except your till.',
+        'With Zenno you decide in advance how firm a booking is. The client pays a deposit or the full price when she books, or saves her card through Stripe. If she doesn’t show or cancels too late, you charge the no-show fee to that card. Before the appointment she gets reminders by SMS and email and can reschedule herself in the client portal. If something comes up, she has an easy way to let you know.',
+      ],
+      image: '/images/features/noshow-empty.webp',
+      imageAlt: 'A prepared massage table in a dimly lit treatment room, the therapist waiting in the doorway',
+      note: { label: 'No-show fee', value: '€35 from the card on file' },
+    },
+    scenes: {
+      kicker: 'Two moments',
+      title: ['Where a booking becomes firm,', 'and where it counts.'],
+      items: [
+        {
+          title: 'Booked on the sofa, after dinner',
+          body: 'A lot of people book when your studio is long closed: in the evening, on their phone, somewhere between dinner and the next episode. That is exactly when the deposit is paid or the card is saved, right on your booking page through Stripe. Nobody has to call the next morning to confirm, and the client knows the terms from the start. Her confirmation arrives straight away by email or SMS.',
+          image: '/images/features/noshow-sofa.webp',
+          imageAlt: 'A woman on her sofa in the evening booking a treatment on her phone',
+          note: { label: 'Deposit', value: '€20 paid at booking' },
+        },
+        {
+          title: 'Three hours for one colour',
+          body: 'A full colour with highlights takes up half an afternoon, and the mix is often ready before the client is due. If that appointment falls through, the gap is almost impossible to fill. Long appointments are where prepayment makes the most sense: the full price is paid at booking, and there is nothing left to do at the till. Anyone who reschedules in time through the client portal frees the slot for someone else.',
+          image: '/images/verticals/salon-colour.webp',
+          imageAlt: 'A colourist painting colour onto foils during a long salon appointment',
+          note: { label: 'Prepayment', value: 'Full price at booking' },
+        },
       ],
     },
     og: { line1: 'Empty chair,', line2: 'still paid.', sub: 'Deposits & no-show fees for studios' },
@@ -200,6 +296,54 @@ export const NO_SHOWS: Record<Lang, LandingContent> = {
         {
           q: 'การแจ้งเตือนช่วยด้วยไหม',
           a: 'ช่วย Zenno ส่งคำยืนยันและการแจ้งเตือนอัตโนมัติทาง SMS และอีเมล และลูกค้าเลื่อนนัดได้ในพอร์ทัลลูกค้า แทนที่จะไม่มาเฉยๆ',
+        },
+        {
+          q: 'บัตรจะถูกตัดเงินตั้งแต่ตอนจองเลยไหม',
+          a: 'ถ้าเป็นแบบบันทึกบัตรไว้ จะยังไม่ตัดเงิน บัตรถูกบันทึกผ่าน Stripe และจะถูกเรียกเก็บก็ต่อเมื่อคุณเรียกเก็บค่าธรรมเนียมตอนลูกค้าไม่มาหรือยกเลิกกระชั้นชิด',
+        },
+        {
+          q: 'ค่าธรรมเนียมเมื่อไม่มาตามนัดควรตั้งเท่าไร',
+          a: 'คุณกำหนดเองได้ สิ่งสำคัญคือลูกค้าต้องเห็นและเข้าใจยอดเงินก่อนจอง ส่วนเงื่อนไขของคุณถูกต้องตามกฎหมายหรือไม่ โปรดตรวจสอบกับที่ปรึกษากฎหมายของคุณ',
+        },
+        {
+          q: 'การเก็บมัดจำจะทำให้ลูกค้าใหม่ไม่กล้าจองไหม',
+          a: 'ขึ้นอยู่กับร้านของคุณ ลูกค้าเห็นเงื่อนไขบนหน้าจองก่อนจองเสมอ จึงไม่มีใครถูกเซอร์ไพรส์ ถ้ายังไม่แน่ใจ เริ่มจากแบบบันทึกบัตรไว้ก่อนก็ได้ เพราะยังไม่มีการตัดเงินในตอนแรก',
+        },
+        {
+          q: 'ถ้าลูกค้าเลื่อนนัดล่วงหน้าทันเวลา จะเป็นอย่างไร',
+          a: 'ลูกค้าเลือกเวลาใหม่เองในพอร์ทัลลูกค้า ช่องเวลาเดิมจะว่างอีกครั้ง และคนอื่นจองออนไลน์ได้ทันที',
+        },
+      ],
+    },
+    story: {
+      kicker: 'วันอังคาร 10:10 น.',
+      title: ['ห้องเตรียมไว้พร้อมแล้ว', 'แต่ลูกค้าไม่มา'],
+      paragraphs: [
+        'ผ้าปูเตียงนวดเพิ่งเปลี่ยนใหม่ น้ำมันอุ่นไว้แล้ว ชั่วโมงถัดไปเป็นของลูกค้าคนเดียว พอสิบโมงสิบนาทีก็รู้แล้วว่าเธอไม่มา ไม่มีโทรมา ไม่มีข้อความ เหลือแค่ห้องว่างกับเวลางานหนึ่งชั่วโมงที่เสียไป',
+        'นี่คือสัปดาห์ปกติของร้านเล็กๆ หลายร้าน นวด 60 นาทีหาคนมาแทนในเวลากระชั้นชิดได้ยาก และลูกค้าที่จองไว้ตั้งแต่คืนวันอาทิตย์ พอถึงเช้าวันอังคารก็อาจลืมไปแล้ว จะโทรตามก็เสียเวลา จะส่งบิลไปทีหลังก็รู้สึกไม่สบายใจ สุดท้ายความเสียหายก็ตกอยู่ที่คุณ สัปดาห์แล้วสัปดาห์เล่า โดยไม่มีใครเห็นนอกจากยอดในลิ้นชักเก็บเงิน',
+        'กับ Zenno คุณกำหนดไว้ล่วงหน้าว่าการจองควรผูกมัดแค่ไหน ลูกค้าจ่ายมัดจำหรือราคาเต็มตอนจอง หรือบันทึกบัตรไว้ผ่าน Stripe ถ้าเธอไม่มาหรือยกเลิกกระชั้นชิด คุณเรียกเก็บค่าธรรมเนียมจากบัตรนั้นได้ ก่อนถึงวันนัด เธอได้รับการแจ้งเตือนทาง SMS และอีเมล และเลื่อนนัดเองได้ในพอร์ทัลลูกค้า ถ้ามีธุระกะทันหัน เธอก็มีทางแจ้งร้านได้ง่ายๆ',
+      ],
+      image: '/images/features/noshow-empty.webp',
+      imageAlt: 'เตียงนวดที่จัดเตรียมไว้ในห้องทรีตเมนต์ที่แสงสลัว นักบำบัดยืนรออยู่ที่ประตู',
+      note: { label: 'ค่าธรรมเนียมไม่มาตามนัด', value: '€35 จากบัตรที่บันทึกไว้' },
+    },
+    scenes: {
+      kicker: 'สองช่วงเวลา',
+      title: ['ช่วงที่การจองเริ่มผูกมัด', 'และช่วงที่มันสำคัญจริงๆ'],
+      items: [
+        {
+          title: 'จองบนโซฟาหลังมื้อเย็น',
+          body: 'ลูกค้าจำนวนมากจองตอนที่ร้านปิดไปนานแล้ว ตอนค่ำ บนมือถือ ระหว่างกินข้าวเสร็จกับดูซีรีส์ตอนต่อไป ตอนนั้นเองที่ลูกค้าจ่ายมัดจำหรือบันทึกบัตร บนหน้าจองของคุณผ่าน Stripe ไม่ต้องมีใครโทรยืนยันในเช้าวันรุ่งขึ้น และลูกค้ารู้เงื่อนไขตั้งแต่แรก คำยืนยันส่งถึงเธอทันทีทางอีเมลหรือ SMS',
+          image: '/images/features/noshow-sofa.webp',
+          imageAlt: 'ผู้หญิงนั่งบนโซฟาตอนค่ำ กำลังจองทรีตเมนต์ผ่านมือถือ',
+          note: { label: 'มัดจำ', value: 'จ่าย €20 ตอนจอง' },
+        },
+        {
+          title: 'สามชั่วโมงสำหรับการทำสีหนึ่งครั้ง',
+          body: 'การทำสีผมพร้อมไฮไลต์ใช้เวลาครึ่งบ่าย และบ่อยครั้งสีก็ผสมไว้แล้วก่อนลูกค้าจะมาถึง ถ้านัดแบบนี้หลุดไป ช่องว่างนั้นแทบหาคนมาแทนไม่ได้ นัดที่ใช้เวลานานแบบนี้เหมาะกับการชำระเต็มจำนวนล่วงหน้าที่สุด ลูกค้าจ่ายราคาเต็มตอนจอง และไม่ต้องทำอะไรที่เคาน์เตอร์อีก ใครที่เลื่อนนัดทันเวลาในพอร์ทัลลูกค้า ก็เปิดช่องเวลาให้คนอื่นได้จอง',
+          image: '/images/verticals/salon-colour.webp',
+          imageAlt: 'ช่างทำสีกำลังทาสีลงบนผมที่ห่อฟอยล์ ระหว่างนัดที่ใช้เวลานานในร้านทำผม',
+          note: { label: 'ชำระล่วงหน้า', value: 'ราคาเต็มตอนจอง' },
         },
       ],
     },

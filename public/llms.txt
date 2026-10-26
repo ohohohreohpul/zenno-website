@@ -35,6 +35,7 @@ The website is available in German (primary), English and Thai. The app works in
 - [No-Show-Schutz](https://www.zennohq.com/no-shows/)
 - [Umsatzsteuer & DATEV](https://www.zennohq.com/tax-datev/)
 - [Buchen ohne Provision](https://www.zennohq.com/commission-free/)
+- Städteseiten je Branche unter /{branche}/{stadt}/ für Berlin, Hamburg, München, Köln, Frankfurt, Düsseldorf, Stuttgart und Leipzig, z. B. https://www.zennohq.com/yoga-studios/berlin/ (Deutsch und Englisch)
 - [Homepage (English)](https://www.zennohq.com/en/): Booking software that books itself
 - English versions of every page live under https://www.zennohq.com/en/; Thai under https://www.zennohq.com/th/
 
