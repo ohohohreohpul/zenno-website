@@ -24,19 +24,19 @@ The website is available in German (primary), English and Thai. The app works in
 
 ## Pages
 
-- [Startseite (Deutsch)](https://zennohq.com/): Die Buchungssoftware, die für Sie bucht
-- [KI-Rezeption](https://zennohq.com/ai-receptionist/): KI-Rezeption für WhatsApp, E-Mail und Website
-- [Gutscheine](https://zennohq.com/vouchers/): Gutscheine verkaufen und per QR einlösen
-- [onbuuk ist jetzt Zenno](https://zennohq.com/booking/)
-- [Preise](https://zennohq.com/pricing/): Free 0 €, Zenno 49 € pro Monat, Custom; KI-Credits ab 10 €
-- [Friseure, Kosmetik & Spas](https://zennohq.com/salons-spas/)
-- [Yoga- & Fitnessstudios](https://zennohq.com/yoga-studios/)
-- [Ästhetik- & Wellnesspraxen](https://zennohq.com/clinics/)
-- [No-Show-Schutz](https://zennohq.com/no-shows/)
-- [Umsatzsteuer & DATEV](https://zennohq.com/tax-datev/)
-- [Buchen ohne Provision](https://zennohq.com/commission-free/)
-- [Homepage (English)](https://zennohq.com/en/): Booking software that books itself
-- English versions of every page live under https://zennohq.com/en/; Thai under https://zennohq.com/th/
+- [Startseite (Deutsch)](https://www.zennohq.com/): Die Buchungssoftware, die für Sie bucht
+- [KI-Rezeption](https://www.zennohq.com/ai-receptionist/): KI-Rezeption für WhatsApp, E-Mail und Website
+- [Gutscheine](https://www.zennohq.com/vouchers/): Gutscheine verkaufen und per QR einlösen
+- [onbuuk ist jetzt Zenno](https://www.zennohq.com/booking/)
+- [Preise](https://www.zennohq.com/pricing/): Free 0 €, Zenno 49 € pro Monat, Custom; KI-Credits ab 10 €
+- [Friseure, Kosmetik & Spas](https://www.zennohq.com/salons-spas/)
+- [Yoga- & Fitnessstudios](https://www.zennohq.com/yoga-studios/)
+- [Ästhetik- & Wellnesspraxen](https://www.zennohq.com/clinics/)
+- [No-Show-Schutz](https://www.zennohq.com/no-shows/)
+- [Umsatzsteuer & DATEV](https://www.zennohq.com/tax-datev/)
+- [Buchen ohne Provision](https://www.zennohq.com/commission-free/)
+- [Homepage (English)](https://www.zennohq.com/en/): Booking software that books itself
+- English versions of every page live under https://www.zennohq.com/en/; Thai under https://www.zennohq.com/th/
 
 ## Sign up
 
