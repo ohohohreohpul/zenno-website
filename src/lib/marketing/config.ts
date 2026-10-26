@@ -1,9 +1,10 @@
 /**
  * This site's own canonical domain — used for metadataBase, sitemap.xml,
  * robots.txt, and JSON-LD. Single source of truth; zennohq.studio is retired
- * and should redirect here.
+ * and should redirect here. Must match the host Vercel serves: the apex
+ * zennohq.com redirects to www, so canonicals point at www.
  */
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://zennohq.com'
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zennohq.com'
 
 /** Help centre and support inbox, linked from the FAQ and the footer. */
 export const HELP_URL = 'https://docs.zennohq.com'

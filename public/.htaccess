@@ -2,12 +2,13 @@
 # German is the primary locale at "/"; English lives at /en/, Thai at /th/.
 RewriteEngine On
 
-# One canonical host: https://zennohq.com (no www, always HTTPS).
-# zennohq.studio is retired: send it to the same path on zennohq.com.
+# One canonical host: https://www.zennohq.com (always www, always HTTPS),
+# matching SITE_URL and the Vercel domain setup.
+# zennohq.studio is retired: send it to the same path on www.zennohq.com.
 RewriteCond %{HTTP_HOST} ^(www\.)?zennohq\.studio$ [NC]
-RewriteRule ^ https://zennohq.com%{REQUEST_URI} [R=301,L]
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+RewriteRule ^ https://www.zennohq.com%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTP_HOST} ^zennohq\.com$ [NC]
+RewriteRule ^ https://www.zennohq.com%{REQUEST_URI} [R=301,L]
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
