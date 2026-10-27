@@ -10,15 +10,33 @@ export const STUTTGART: CityContentSet = {
         districts: ['Stuttgart-West', 'Stuttgart-Mitte', 'Stuttgart-Süd', 'Bad Cannstatt', 'Degerloch', 'Stuttgart-Ost'],
         hero: {
           title: ['Salons in Stuttgart,', 'gebucht vor der ersten S-Bahn.'],
-          lead: 'Haarschnitt um 7:30, Maniküre nach Feierabend, Massage am Samstag in Bad Cannstatt: Ihre Kundschaft bucht ihre Zeit auf Ihrer eigenen Seite, auch über KI-Assistenten. SMS-Erinnerungen und Anzahlungen halten Ihren Kalender verlässlich.',
+          lead: 'Ihre Kundschaft kommt vor der Arbeit oder nach Feierabend und bucht diese Zeiten auf Ihrer eigenen Seite, auch über KI-Assistenten. SMS-Erinnerungen und Anzahlungen halten Ihren Kalender verlässlich.',
         },
         local: {
           title: ['Früh rein, spät raus.', 'Ihr Kalender kennt die Randzeiten.'],
           paragraphs: [
             'Im Stuttgarter Westen und in der Innenstadt öffnen viele Salons früh, weil die Kundschaft vor der Arbeit kommt und abends lange im Büro bleibt. Diese Randzeiten sind schnell vergeben, und genau um sie dreht sich der Anruf, den Sie während eines Schnitts nicht annehmen können. Auf Ihrer Zenno-Seite sieht die Kundschaft, ob Dienstag um 7:30 oder Donnerstag um 19:00 noch frei ist, und bucht sofort.',
-            'Wer aus Degerloch, Vaihingen oder dem Remstal anreist, rechnet Parkplatzsuche und Steigungen mit ein und möchte nicht umsonst kommen. Bestätigungen und Erinnerungen per SMS und E-Mail geben beiden Seiten Sicherheit, und wer verschieben muss, erledigt das selbst im Kundenportal. Für Strähnen, Farbe oder lange Wellness-Behandlungen verlangen Sie eine Anzahlung über Stripe, damit ein leerer Stuhl kein Verlust ist.',
+            'Wer aus Degerloch, Vaihingen oder dem Remstal anreist, rechnet Parkplatzsuche und Steigungen mit ein und möchte nicht umsonst kommen. Bestätigungen und Erinnerungen per SMS und E-Mail geben beiden Seiten Sicherheit, und wer verschieben muss, erledigt das selbst im Kundenportal. Für Strähnen, Farbe oder lange Wellness-Behandlungen verlangen Sie eine Anzahlung über Stripe, damit ein leerer Stuhl nicht allein auf Ihre Kosten geht.',
           ],
         },
+        neighbourhoods: [
+          {
+            name: 'Stuttgart-West',
+            body: 'Im Westen stehen die Altbauten dicht, rund um Bismarckplatz und Feuersee, und einen Parkplatz findet hier kaum jemand. Die Kundschaft kommt zu Fuß oder mit der U-Bahn, arbeitet im Büro oder im Homeoffice und bucht abends am Handy. Donnerstag nach 18 Uhr und Samstagvormittag sind schnell voll, besonders für Balayage und moderne Kurzhaarschnitte. Öffnen Sie einen langen Abend pro Woche bis 20 Uhr und machen Sie ihn online buchbar. Wer im Westen wohnt, schaut nach der Arbeit auf das Handy und nimmt, was dann noch frei ist.',
+          },
+          {
+            name: 'Bad Cannstatt',
+            body: 'Wenn auf dem Cannstatter Wasen das Volksfest oder das Frühlingsfest läuft, gehen viele in Tracht hin und vorher in den Salon. An diesen Wochenenden sind Flechtfrisuren und geflochtene Kränze gefragt, oft schon morgens um acht. Den Rest des Jahres bucht in der Altstadt eine treue Kundschaft aus dem Viertel. Legen Sie die Wasen-Frisur als eigene kurze Leistung mit festem Preis an, öffnen Sie an diesen Samstagen frühe Zeiten und verlangen Sie eine Anzahlung, damit niemand fünf Termine reserviert und einen nimmt.',
+          },
+          {
+            name: 'Degerloch',
+            body: 'Degerloch liegt oben auf den Fildern, erreichbar mit der Zahnradbahn vom Marienplatz, und wer hier wohnt, fährt ungern für einen Friseurtermin in den Kessel hinunter. Die Kundschaft ist eher gesetzt, viele Familien und Paare, die seit Jahren im selben Haus leben und mit dem Auto kommen. Farbe im Sechs-Wochen-Rhythmus und Dauerwellen werden lange im Voraus geplant. Lassen Sie Buchungen acht Wochen im Voraus zu, damit Stammkundinnen den nächsten Farbtermin gleich nach dem letzten festmachen, und schicken Sie die Erinnerung zwei Tage vorher per SMS.',
+          },
+          {
+            name: 'Stuttgart-Ost',
+            body: 'In Gablenberg, Ostheim und am Stöckach wohnen viele Familien, oft mit Eltern oder Großeltern, die aus anderen Ländern nach Stuttgart kamen. Salons und Barbershops sind hier Nachbarschaftsläden, und der Preis für einen Herrenschnitt ist bekannt. Viele kommen spontan vorbei, schreiben aber vorher kurz auf WhatsApp, ob gerade frei ist. Lassen Sie die KI-Rezeption diese Nachrichten beantworten und gleich einen Termin vorschlagen, und stellen Sie die Preise offen auf Ihre Seite. Dann muss niemand nachfragen, und wer zufrieden war, bucht beim nächsten Mal gleich online.',
+          },
+        ],
         chat: {
           studio: 'KI-Assistent',
           channel: 'Beispielgespräch',
@@ -38,7 +56,11 @@ export const STUTTGART: CityContentSet = {
           },
           {
             q: 'Wie verhindere ich, dass Kundinnen einfach nicht kommen?',
-            a: 'Erinnerungen per SMS und E-Mail helfen schon viel. Zusätzlich verlangen Sie bei der Buchung eine Anzahlung oder den vollen Preis, oder Sie lassen die Karte hinterlegen und berechnen bei No-Show eine Gebühr. Bezahlt wird über Stripe.',
+            a: 'Erinnerungen per SMS und E-Mail sind der erste Schritt. Zusätzlich verlangen Sie bei der Buchung eine Anzahlung oder den vollen Preis, oder Sie lassen die Karte hinterlegen und berechnen bei No-Show eine Gebühr. Bezahlt wird über Stripe.',
+          },
+          {
+            q: 'Vor dem Cannstatter Wasen wollen alle gleichzeitig eine Flechtfrisur. Wie verteile ich die Termine?',
+            a: 'Legen Sie die Flechtfrisur als eigene Leistung mit fester Dauer und festem Preis an, zum Beispiel 40 Minuten für 45 €. Im Kalender hat jede Mitarbeiterin ihre Spalte, und die Buchungsseite zeigt nur Zeiten, die wirklich frei sind. Mit einer Anzahlung bei der Buchung reserviert niemand drei Termine auf Verdacht.',
           },
         ],
       },
@@ -55,6 +77,24 @@ export const STUTTGART: CityContentSet = {
             'Im Süden und Westen liegen viele Studios an steilen Straßen oder oben an den Stäffele, und mancher Weg dauert im Berufsverkehr länger als gedacht. Im Kundenportal verschiebt Ihre Kundschaft dann selbst, statt einfach wegzubleiben. Für Einzelstunden und Personal Training verlangen Sie Vorkasse oder lassen die Karte hinterlegen, und bei zu später Absage wird eine Gebühr fällig.',
           ],
         },
+        neighbourhoods: [
+          {
+            name: 'Stuttgart-Süd',
+            body: 'Im Süden, rund um Marienplatz, Heusteigviertel und Lehenviertel, wohnen viele Familien in Altbauten an steilen Straßen, und manches Studio liegt oben an einer Stäffele. Wer zum ersten Mal kommt, steht gern einmal vor der falschen Treppe. Gebucht wird am Sonntagvormittag und an Wochentagen nach 19 Uhr, wenn die Kinder im Bett sind, oft Yin, sanftes Vinyasa oder Rückbildungsyoga als Einzelstunde. Schreiben Sie den Weg in die Beschreibung, mit Haltestelle und welcher Treppe, und schicken Sie die Erinnerung am Vorabend mit Adresse.',
+          },
+          {
+            name: 'Stuttgart-Nord',
+            body: 'Am Killesberg liegen Villen in Halbhöhenlage und das neuere Quartier an der Killesberghöhe, dazu der Höhenpark mit seinen Wiesen. Die Kundschaft hier legt Wert auf persönliche Betreuung und bucht Personal Training oder Einzelstunden zu festen Zeiten, oft am frühen Morgen. Im Sommer möchten viele draußen üben. Legen Sie dafür eine eigene Leistung an, etwa eine Einzelstunde im Park von Mai bis September, schreiben Sie den Treffpunkt in die Beschreibung, und klären Sie in den Bedingungen, was bei Regen passiert.',
+          },
+          {
+            name: 'Stuttgart-West',
+            body: 'Viele, die in Stuttgart als Ingenieurinnen oder Entwickler arbeiten, wohnen im Westen, und ein Teil von ihnen ist aus dem Ausland hergezogen. Sie schreiben auf Englisch, kennen Yoga aus ihrer Heimat oder von früheren Stationen und suchen eine Lehrerin, die ihre Sprache spricht. Gebucht wird werktags um 19:30 nach der Rückkehr vom Werk oder samstags zur Mittagszeit. Bieten Sie Ihre Buchungsseite auf Englisch an und schreiben Sie in die Beschreibung jeder Einzelstunde, in welcher Sprache Sie unterrichten. So wählt niemand die falsche Stunde.',
+          },
+          {
+            name: 'Stuttgart-Mitte',
+            body: 'In der Innenstadt, zwischen Königstraße und Hauptbahnhof, arbeiten viele in Büros, Behörden und Läden, und ein großer Teil fährt abends mit der S-Bahn wieder hinaus. Eine Stunde nach Feierabend muss also so liegen, dass die Bahn danach noch passt: Beginn um 17:15, Ende um 18:15. Mittags sind 45-minütige Einheiten gefragt. Wenn die S-Bahn wieder einmal Verspätung hat, verschiebt die Kundin im Kundenportal, statt nicht zu erscheinen. Machen Sie in der Bestätigung deutlich, bis wann ein Verschieben ohne Gebühr möglich ist.',
+          },
+        ],
         chat: {
           studio: 'KI-Assistent',
           channel: 'Beispielgespräch',
@@ -76,6 +116,10 @@ export const STUTTGART: CityContentSet = {
             q: 'Kann ich Gutscheine für Einzelstunden verkaufen?',
             a: 'Ja. Gutscheine und Geschenkkarten verkaufen Sie online, bezahlt wird über Stripe. Für Ihre Stammkundschaft können Sie außerdem Treuepunkte vergeben.',
           },
+          {
+            q: 'Viele meiner Kundinnen sind für einen Job in der Industrie nach Stuttgart gezogen und sprechen wenig Deutsch. Können sie trotzdem problemlos buchen?',
+            a: 'Ja. Ihre Buchungsseite gibt es auf Deutsch und Englisch, und Bestätigungen und Erinnerungen gehen in der Sprache der Buchung raus. Die KI-Rezeption beantwortet Nachrichten auf WhatsApp, per E-Mail und im Website-Chat auf Deutsch, Englisch oder Thai.',
+          },
         ],
       },
       clinics: {
@@ -91,6 +135,24 @@ export const STUTTGART: CityContentSet = {
             'Die KI-Rezeption beantwortet Fragen zu Ablauf, Dauer und Kosten aus Ihren eigenen Angaben, auf WhatsApp, per E-Mail und im Website-Chat. Gesundheitliche Fragen übergibt sie an Sie, und im Entwurfsmodus prüfen Sie jede Antwort vor dem Versand. Längere Behandlungen sichern Sie mit einer Anzahlung über Stripe ab, und die Umsatzsteuer legen Sie pro Leistung fest, passend für den DATEV-Export.',
           ],
         },
+        neighbourhoods: [
+          {
+            name: 'Stuttgart-Mitte',
+            body: 'Für Kundinnen aus Ludwigsburg, Esslingen oder Böblingen ist die Innenstadt der Ort, an dem man am Samstag ohnehin ist, zum Einkaufen auf der Königstraße oder für einen Kaffee am Schlossplatz. Eine Praxis in der Mitte bekommt deshalb viele Buchungen für Samstag, oft zwei Wochen im Voraus und mit der S-Bahn-Verbindung im Hinterkopf. Gefragt sind Erstberatungen und Behandlungen von einer Stunde. Weil Samstage knapp sind, lohnt sich hier eine Anzahlung bei der Buchung. Unter der Woche bleiben die Vormittage frei für Kundschaft aus der Stadt.',
+          },
+          {
+            name: 'Stuttgart-Nord',
+            body: 'In den Villen am Killesberg und an der Halbhöhe liegen einige Praxen in umgebauten Wohnhäusern, mit eigenem Eingang und Parkplatz vor der Tür. Die Kundschaft kommt mit dem Auto, oft aus den Höhenlagen ringsum, und möchte vor der ersten Behandlung genau wissen, was sie erwartet. Fragen kommen schriftlich, abends und ausführlich. Die KI-Rezeption beantwortet sie aus Ihren eigenen Angaben, und im Entwurfsmodus lesen Sie jede Antwort, bevor sie rausgeht. Alles, was die Gesundheit betrifft, landet ohnehin bei Ihnen.',
+          },
+          {
+            name: 'Degerloch',
+            body: 'Von Degerloch sind es über die B27 nur wenige Minuten bis zum Flughafen, und viele Kundinnen aus Degerloch und den Fildern fliegen beruflich regelmäßig. Ihr Kalender richtet sich nach Reisen, und eine Behandlung wird zwischen zwei Dienstreisen gelegt, gern am Montagmorgen oder am Freitagnachmittag nach der Landung. Gefragt sind Gesichtsbehandlungen, Beratungen und Nachtermine. Schicken Sie Erinnerungen per E-Mail, die auch am Gate gelesen werden, und machen Sie das Verschieben im Kundenportal leicht, denn Flugpläne ändern sich.',
+          },
+          {
+            name: 'Bad Cannstatt',
+            body: 'Bad Cannstatt war lange ein Kurort, und die Mineralbäder gibt es bis heute. Wellness hat hier Tradition, und eine Praxis in der Altstadt hat oft Stammkundschaft, die seit Jahren zur Massage oder Gesichtsbehandlung kommt, viele davon im Rentenalter. Diese Kundinnen rufen lieber an, als online zu buchen. Tragen Sie solche Termine selbst in den Kalender ein, dann bekommt die Kundin trotzdem eine Erinnerung per SMS. Wer bar zahlt, landet im Kassenbuch, und für die Stammkundschaft lohnen sich Treuepunkte.',
+          },
+        ],
         chat: {
           studio: 'KI-Assistent',
           channel: 'Beispielgespräch',
@@ -112,6 +174,10 @@ export const STUTTGART: CityContentSet = {
             q: 'Was kostet der Einstieg?',
             a: 'Sie starten mit dem kostenlosen Plan. Auf Buchungen nimmt Zenno keine Provision, egal ob die Buchung über Ihre Seite, die KI-Rezeption oder einen KI-Assistenten kommt.',
           },
+          {
+            q: 'In meiner Praxis in Bad Cannstatt zahlen viele Stammkundinnen bar. Wie halte ich das sauber fest?',
+            a: 'Barzahlungen erfassen Sie im Kassenbuch, Kartenzahlungen laufen über Stripe. Die Umsatzsteuer legen Sie pro Leistung fest, und am Monats- oder Quartalsende sehen Sie alles in einer Übersicht und exportieren es im DATEV-Format. Was genau Ihre Steuerberatung braucht, besprechen Sie am besten direkt mit ihr.',
+          },
         ],
       },
     },
@@ -124,15 +190,33 @@ export const STUTTGART: CityContentSet = {
         districts: ['Stuttgart-West', 'Stuttgart-Mitte', 'Stuttgart-Süd', 'Bad Cannstatt', 'Degerloch', 'Stuttgart-Ost'],
         hero: {
           title: ['Salons in Stuttgart,', 'booked before the first S-Bahn.'],
-          lead: 'A haircut at 7:30, a manicure after work, a massage on Saturday in Bad Cannstatt: clients book their slot on your own page, through AI assistants too. SMS reminders and deposits keep your calendar reliable.',
+          lead: 'Clients come before work or after it, and book those hours on your own page, through AI assistants too. SMS reminders and deposits keep your calendar reliable.',
         },
         local: {
           title: ['In early, out late.', 'Your calendar knows the edge hours.'],
           paragraphs: [
             'In Stuttgart-West and the city centre, many salons open early because clients come before work and stay late at the office. Those early and late slots go fast, and they are exactly what the phone call you can’t take mid-cut is about. On your Zenno page clients see whether Tuesday at 7:30 or Thursday at 19:00 is still free, and book on the spot.',
-            'Anyone coming in from Degerloch, Vaihingen or the Rems valley factors in parking and steep streets and doesn’t want a wasted trip. Confirmations and reminders by SMS and email give both sides certainty, and anyone who needs to reschedule does it themselves in the client portal. For highlights, colour or long wellness treatments you ask for a deposit through Stripe, so an empty chair isn’t a loss.',
+            'Anyone coming in from Degerloch, Vaihingen or the Rems valley factors in parking and steep streets and doesn’t want a wasted trip. Confirmations and reminders by SMS and email give both sides certainty, and anyone who needs to reschedule does it themselves in the client portal. For highlights, colour or long wellness treatments you ask for a deposit through Stripe, so an empty chair isn’t entirely at your expense.',
           ],
         },
+        neighbourhoods: [
+          {
+            name: 'Stuttgart-West',
+            body: 'In Stuttgart-West the old apartment blocks stand close together around Bismarckplatz and Feuersee, and almost nobody finds a parking space. Clients walk or take the U-Bahn, work in an office or from home, and book on their phone in the evening. Thursday after 6 pm and Saturday morning fill up fast, especially for balayage and modern short cuts. Open one long evening a week until 8 pm and make it bookable online. People in the West check their phone after work and take whatever is still free.',
+          },
+          {
+            name: 'Bad Cannstatt',
+            body: 'When the Volksfest or the spring festival is on at the Cannstatter Wasen, many people go in traditional dress, and to the salon first. On those weekends braids and plaited crowns are in demand, often from eight in the morning. The rest of the year, loyal clients from the neighbourhood book in the old town. Set up the Wasen hairstyle as its own short service at a fixed price, open early slots on those Saturdays and ask for a deposit, so nobody reserves five appointments and keeps one.',
+          },
+          {
+            name: 'Degerloch',
+            body: 'Degerloch sits up on the Filder plateau, reached by the rack railway from Marienplatz, and people who live here don’t like driving down into the basin for a haircut. Clients tend to be settled, families and couples who have lived in the same house for years and come by car. Colour every six weeks and perms are planned well ahead. Allow bookings eight weeks in advance, so regulars fix the next colour appointment right after the last one, and send the SMS reminder two days before.',
+          },
+          {
+            name: 'Stuttgart-Ost',
+            body: 'In Gablenberg, Ostheim and around Stöckach live many families, often with parents or grandparents who came to Stuttgart from other countries. Salons and barbershops here are neighbourhood shops, and everyone knows what a men’s cut costs. Many drop by on the spur of the moment, but send a quick WhatsApp first to ask if there is a free chair. Let the AI receptionist answer those messages and suggest a time straight away, and put your prices openly on your page. Then nobody has to ask, and a happy client books online next time.',
+          },
+        ],
         chat: {
           studio: 'AI assistant',
           channel: 'Example conversation',
@@ -152,7 +236,11 @@ export const STUTTGART: CityContentSet = {
           },
           {
             q: 'How do I stop clients from simply not showing up?',
-            a: 'SMS and email reminders already help a lot. On top of that you can ask for a deposit or the full price at booking, or keep the card on file and charge a no-show fee. Payments run through Stripe.',
+            a: 'SMS and email reminders are the first step. On top of that you can ask for a deposit or the full price at booking, or keep the card on file and charge a no-show fee. Payments run through Stripe.',
+          },
+          {
+            q: 'Before the Cannstatter Wasen, everyone wants braids at the same time. How do I spread the appointments?',
+            a: 'Set up the braided style as its own service with a fixed duration and price, say 40 minutes for €45. In the calendar each stylist has her own column, and the booking page only shows times that are really free. With a deposit at booking, nobody reserves three slots just in case.',
           },
         ],
       },
@@ -169,6 +257,24 @@ export const STUTTGART: CityContentSet = {
             'In the south and west, many studios sit on steep streets or at the top of the city’s public stairways, and some trips take longer than expected in rush hour. Clients then reschedule themselves in the client portal instead of just staying away. For private sessions and personal training you ask for prepayment or keep a card on file, and a late cancellation carries a fee.',
           ],
         },
+        neighbourhoods: [
+          {
+            name: 'Stuttgart-Süd',
+            body: 'In the south, around Marienplatz, the Heusteigviertel and the Lehenviertel, many families live in old buildings on steep streets, and some studios sit at the top of a Stäffele, one of the city’s public stairways. First-timers sometimes end up at the wrong one. People book for Sunday morning and for weekdays after 7 pm, once the kids are in bed, often Yin, gentle Vinyasa or postnatal yoga as a private session. Put the way there in the description, with the stop and the right stairway, and send the evening reminder with your address.',
+          },
+          {
+            name: 'Stuttgart-Nord',
+            body: 'The Killesberg has hillside villas and the newer Killesberghöhe quarter, plus the meadows of the Höhenpark. Clients here value personal attention and book personal training or private sessions at fixed times, often early in the morning. In summer many want to practise outdoors. Set that up as its own service, say a private session in the park from May to September, put the meeting point in the description, and spell out in your terms what happens when it rains.',
+          },
+          {
+            name: 'Stuttgart-West',
+            body: 'Many people who work in Stuttgart as engineers or developers live in the West, and some of them moved here from abroad. They write in English, know yoga from home or from earlier jobs, and look for a teacher who speaks their language. They book on weekdays at 19:30, after getting back from the plant, or around midday on Saturday. Offer your booking page in English and say in the description of each private session which language you teach in. That way nobody picks the wrong session.',
+          },
+          {
+            name: 'Stuttgart-Mitte',
+            body: 'In the centre, between Königstraße and the main station, many people work in offices, public agencies and shops, and a large share take the S-Bahn back out in the evening. An after-work session has to leave time for the train: start at 17:15, finish at 18:15. At lunch, 45-minute sessions are in demand. When the S-Bahn is late yet again, the client moves the session in the client portal instead of not showing up. Make it clear in the confirmation until when a reschedule is free of charge.',
+          },
+        ],
         chat: {
           studio: 'AI assistant',
           channel: 'Example conversation',
@@ -190,6 +296,10 @@ export const STUTTGART: CityContentSet = {
             q: 'Can I sell vouchers for private sessions?',
             a: 'Yes. You sell vouchers and gift cards online, with payment via Stripe. For regulars you can also award loyalty points.',
           },
+          {
+            q: 'Many of my clients moved to Stuttgart for a job in industry and speak little German. Can they still book easily?',
+            a: 'Yes. Your booking page is available in German and English, and confirmations and reminders go out in the language of the booking. The AI receptionist answers messages on WhatsApp, by email and in your website chat in German, English or Thai.',
+          },
         ],
       },
       clinics: {
@@ -205,6 +315,24 @@ export const STUTTGART: CityContentSet = {
             'The AI receptionist answers questions about the process, duration and cost from your own information, on WhatsApp, by email and in your website chat. Health questions go to you, and in draft mode you check every reply before it is sent. Longer treatments are secured with a deposit through Stripe, and you set VAT per service, ready for the DATEV export.',
           ],
         },
+        neighbourhoods: [
+          {
+            name: 'Stuttgart-Mitte',
+            body: 'For clients from Ludwigsburg, Esslingen or Böblingen, the centre is where they are on a Saturday anyway, shopping on Königstraße or having a coffee on Schlossplatz. A clinic in Mitte therefore gets plenty of Saturday bookings, often two weeks ahead and with the S-Bahn connection in mind. First consultations and one-hour treatments are in demand. Because Saturdays are scarce, a deposit at booking makes sense here. During the week, keep the mornings for clients who live in the city.',
+          },
+          {
+            name: 'Stuttgart-Nord',
+            body: 'Among the villas on the Killesberg and the hillside, some clinics occupy converted houses, with their own entrance and parking at the door. Clients arrive by car, often from the hillside areas around, and want to know exactly what to expect before their first treatment. Their questions come in writing, in the evening and in detail. The AI receptionist answers them from your own information, and in draft mode you read every reply before it goes out. Anything to do with health comes straight to you anyway.',
+          },
+          {
+            name: 'Degerloch',
+            body: 'From Degerloch it is only a few minutes to the airport via the B27, and many clients from Degerloch and the Filder area fly regularly for work. Their calendar follows their travel, so a treatment gets slotted between two business trips, often on Monday morning or Friday afternoon after landing. Facials, consultations and follow-ups are in demand. Send reminders by email, which people read at the gate, and make rescheduling in the client portal easy, because flight plans change.',
+          },
+          {
+            name: 'Bad Cannstatt',
+            body: 'Bad Cannstatt was a spa town for a long time, and its mineral baths are still there. Wellness has a tradition here, and a clinic in the old town often has regulars who have come for a massage or a facial for years, many of them retired. These clients would rather call than book online. Enter those appointments in the calendar yourself, and the client still gets an SMS reminder. Cash payments go into the cash book, and loyalty points suit these long-standing regulars.',
+          },
+        ],
         chat: {
           studio: 'AI assistant',
           channel: 'Example conversation',
@@ -225,6 +353,10 @@ export const STUTTGART: CityContentSet = {
           {
             q: 'What does it cost to get started?',
             a: 'You start on the free plan. Zenno takes no commission on bookings, whether they come through your page, the AI receptionist or an AI assistant.',
+          },
+          {
+            q: 'At my clinic in Bad Cannstatt many regulars pay cash. How do I keep that in order?',
+            a: 'You record cash payments in the cash book, and card payments run through Stripe. You set VAT per service, and at the end of the month or quarter you see everything in one overview and export it in DATEV format. What exactly your tax adviser needs is best agreed with them directly.',
           },
         ],
       },

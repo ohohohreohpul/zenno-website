@@ -94,8 +94,8 @@ export const CLINICS: Record<Lang, LandingContent> = {
           body: 'Legen Sie Beratungstermine als eigene Leistung mit Dauer und Preis an, damit Neukundschaft den ersten Schritt ohne Anruf bucht.',
         },
         {
-          title: 'Von der KI gefunden',
-          body: 'Wer ChatGPT oder Google nach einer Behandlung in der Nähe fragt, findet Ihre Leistungen, Preise und freien Zeiten und kann direkt bei Ihnen buchen.',
+          title: 'Bereit für KI-Assistenten',
+          body: 'KI-Assistenten wie ChatGPT können Ihre Leistungen, Preise und freien Zeiten lesen und direkt bei Ihnen buchen.',
         },
         {
           title: 'Weniger Telefon am Empfang',
@@ -247,8 +247,8 @@ export const CLINICS: Record<Lang, LandingContent> = {
           body: 'Set up consultations as their own service with duration and price, so new clients take the first step without calling.',
         },
         {
-          title: 'Found by AI',
-          body: 'When someone asks ChatGPT or Google for a treatment nearby, they find your services, prices and free times and can book you directly.',
+          title: 'Ready for AI assistants',
+          body: 'AI assistants such as ChatGPT can read your services, prices and free times and book you directly.',
         },
         {
           title: 'Fewer calls at the front desk',
@@ -400,8 +400,8 @@ export const CLINICS: Record<Lang, LandingContent> = {
           body: 'ตั้งนัดปรึกษาเป็นบริการแยก พร้อมระยะเวลาและราคา ลูกค้าใหม่จึงเริ่มก้าวแรกได้โดยไม่ต้องโทร',
         },
         {
-          title: 'AI ค้นเจอคุณ',
-          body: 'เมื่อมีคนถาม ChatGPT หรือ Google หาทรีตเมนต์ใกล้ๆ เขาจะเจอบริการ ราคา และเวลาว่างของคุณ และจองกับคุณได้โดยตรง',
+          title: 'พร้อมให้ผู้ช่วย AI จอง',
+          body: 'ผู้ช่วย AI อย่าง ChatGPT อ่านบริการ ราคา และเวลาว่างของคุณได้ และจองกับคุณได้โดยตรง',
         },
         {
           title: 'สายโทรเข้าที่เคาน์เตอร์น้อยลง',

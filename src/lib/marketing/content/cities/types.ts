@@ -10,6 +10,8 @@ export interface CityIndustryCopy {
   hero: { title: Headline; lead: string }
   /** The local story: who books, when, and what that means for the business. */
   local: { title: Headline; paragraphs: string[] }
+  /** A short portrait of each key neighbourhood for this industry: who books there and how. */
+  neighbourhoods: { name: string; body: string }[]
   /** Example AI-assistant conversation set in this city. */
   chat: ChatScript
   /** Questions an owner in this city asks; answered within what Zenno does today. */

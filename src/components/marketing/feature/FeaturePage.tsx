@@ -20,6 +20,8 @@ import { ChargeSection } from '../home/charge/ChargeSection'
 import { CalendarSection } from '../home/calendar/CalendarSection'
 import { VouchersDemo } from '../home/vouchers/VouchersDemo'
 import { StorySection } from '../landing/StorySection'
+import { GuideSection } from '../landing/GuideSection'
+import { guideContent } from '@/lib/marketing/content/guides'
 import styles from './FeaturePage.module.css'
 
 const HOME_LABEL: Record<Lang, string> = { de: 'Start', en: 'Home', th: 'หน้าแรก' }
@@ -95,6 +97,7 @@ export function FeaturePage({ lang, slug }: FeaturePageProps) {
           </section>
           {c.story && <StorySection {...c.story} />}
           {sections(slug, lang)}
+          <GuideSection {...guideContent(slug, lang)} />
           <Faq lang={lang} items={c.faq.items} heading={{ kicker: c.faq.kicker, title: c.faq.title }} />
           <ClosingCta lang={lang} />
         </main>

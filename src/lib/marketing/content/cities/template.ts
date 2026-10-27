@@ -31,6 +31,8 @@ export interface CityPageStrings {
   ctaSecondary: string
   localKicker: string
   districtsLabel: string
+  neighbourhoodsKicker: string
+  neighbourhoodsTitle: [string, string]
   clienteleKicker: string
   otherCitiesKicker: string
   otherCitiesTitle: [string, string]
@@ -52,6 +54,8 @@ export function cityPageStrings(industry: CityIndustry, lang: CityLang, city: st
       ctaSecondary: 'Was sich in ' + city + ' ändert',
       localKicker: `${city} vor Ort`,
       districtsLabel: 'Stadtteile',
+      neighbourhoodsKicker: 'Stadtteil für Stadtteil',
+      neighbourhoodsTitle: [`${city} ist nicht eine Stadt,`, 'sondern viele Viertel.'],
       clienteleKicker: `Wer in ${city} bucht`,
       otherCitiesKicker: 'Weitere Städte',
       otherCitiesTitle: [`${noun}`, 'in anderen Städten.'],
@@ -69,6 +73,8 @@ export function cityPageStrings(industry: CityIndustry, lang: CityLang, city: st
     ctaSecondary: `What changes in ${city}`,
     localKicker: `${city}, locally`,
     districtsLabel: 'Neighbourhoods',
+    neighbourhoodsKicker: 'Neighbourhood by neighbourhood',
+    neighbourhoodsTitle: [`${city} isn’t one market,`, 'it’s many neighbourhoods.'],
     clienteleKicker: `Who books in ${city}`,
     otherCitiesKicker: 'Other cities',
     otherCitiesTitle: [`${noun[0].toUpperCase()}${noun.slice(1)}`, 'in other cities.'],

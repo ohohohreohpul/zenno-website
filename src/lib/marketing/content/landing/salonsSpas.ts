@@ -38,7 +38,7 @@ export const SALONS_SPAS: Record<Lang, LandingContent> = {
       paragraphs: [
         'Im Salon wird mit den Händen gearbeitet. Wer gerade Farbe aufträgt oder massiert, kann nicht ans Telefon gehen und keine Nachrichten beantworten.',
         'Also sammeln sich Anfragen bis zum Feierabend: Wann ist am Samstag frei, was kostet eine Balayage, kann ich den Termin am Donnerstag verschieben? Gleichzeitig fehlt am Monatsende Umsatz, weil zwei lange Termine nicht erschienen sind und der Stuhl leer blieb.',
-        'Mit Zenno bucht Ihre Kundschaft rund um die Uhr selbst, mit Ihren Leistungen, Preisen und Ihrem Team. Lange Termine sichern Sie mit Anzahlung ab, Erinnerungen gehen von allein raus, und Ihre Seite ist so aufgebaut, dass auch KI-Assistenten Sie direkt buchen können. Der Abend gehört wieder Ihnen.',
+        'Mit Zenno bucht Ihre Kundschaft rund um die Uhr selbst, mit Ihren Leistungen, Preisen und Ihrem Team. Lange Termine sichern Sie mit Anzahlung ab, Erinnerungen gehen von allein raus, und Ihre Seite ist so aufgebaut, dass auch KI-Assistenten Sie direkt buchen können. Den Abend müssen Sie dann nicht mehr mit Nachrichten verbringen.',
       ],
       image: '/images/verticals/salon-story.webp',
       imageAlt: 'Saloninhaberin lehnt nach Ladenschluss am Empfang und schaut aufs Handy',
@@ -79,7 +79,7 @@ export const SALONS_SPAS: Record<Lang, LandingContent> = {
     },
     points: {
       kicker: 'Warum Salons wechseln',
-      title: ['Gebaut für den Salonalltag,', 'nicht für einen Marktplatz.'],
+      title: ['Gebaut für den Salonalltag,', 'mit Ihrer eigenen Buchungsseite.'],
       items: [
         {
           title: 'Lange Termine abgesichert',
@@ -91,11 +91,11 @@ export const SALONS_SPAS: Record<Lang, LandingContent> = {
         },
         {
           title: 'Ihre Kundschaft bleibt Ihre',
-          body: 'Gebucht wird auf Ihrer eigenen Seite, in Ihrem Namen. Kein Marktplatz zwischen Ihnen und Ihren Stammkundinnen, keine Provision auf KI-Buchungen.',
+          body: 'Gebucht wird auf Ihrer eigenen Seite, in Ihrem Namen. Zwischen Ihnen und Ihren Stammkundinnen steht kein Marktplatz, und auf KI-Buchungen fällt keine Provision an.',
         },
         {
           title: 'Gutscheine & Treueprogramm',
-          body: 'Gutscheine online verkaufen und Stammkundschaft mit Punkten belohnen. Ideal für Geburtstage, Feiertage und den zehnten Besuch.',
+          body: 'Gutscheine online verkaufen und Stammkundschaft mit Punkten belohnen. Gutscheine passen zu Geburtstagen und Feiertagen, Punkte belohnen den zehnten Besuch.',
         },
         {
           title: 'Erinnerungen per SMS und E-Mail',
@@ -191,7 +191,7 @@ export const SALONS_SPAS: Record<Lang, LandingContent> = {
       paragraphs: [
         'Salon work is hands-on. While you are applying colour or giving a massage, you can’t pick up the phone or answer messages.',
         'So requests pile up until closing: when is Saturday free, how much is a balayage, can I move Thursday’s appointment? And at the end of the month revenue is missing, because two long appointments didn’t show and the chair stayed empty.',
-        'With Zenno your clients book around the clock, with your services, prices and team. You secure long appointments with a deposit, reminders go out on their own, and your page is built so AI assistants can book you directly too. Your evening is yours again.',
+        'With Zenno your clients book around the clock, with your services, prices and team. You secure long appointments with a deposit, reminders go out on their own, and your page is built so AI assistants can book you directly too. You no longer spend your evening answering messages.',
       ],
       image: '/images/verticals/salon-story.webp',
       imageAlt: 'Salon owner leaning on the reception counter after closing, checking her phone',
@@ -232,7 +232,7 @@ export const SALONS_SPAS: Record<Lang, LandingContent> = {
     },
     points: {
       kicker: 'Why salons switch',
-      title: ['Built for a salon day,', 'not for a marketplace.'],
+      title: ['Built for a salon day,', 'on your own booking page.'],
       items: [
         {
           title: 'Long appointments, secured',
@@ -244,11 +244,11 @@ export const SALONS_SPAS: Record<Lang, LandingContent> = {
         },
         {
           title: 'Your clients stay yours',
-          body: 'Bookings happen on your own page, in your name. No marketplace between you and your regulars, no commission on AI bookings.',
+          body: 'Bookings happen on your own page, in your name. There is no marketplace between you and your regulars, and no commission on AI bookings.',
         },
         {
           title: 'Gift cards & loyalty',
-          body: 'Sell gift cards online and reward regulars with points. Made for birthdays, holidays and the tenth visit.',
+          body: 'Sell gift cards online and reward regulars with points. Gift cards suit birthdays and holidays, and points reward the tenth visit.',
         },
         {
           title: 'SMS and email reminders',
@@ -344,7 +344,7 @@ export const SALONS_SPAS: Record<Lang, LandingContent> = {
       paragraphs: [
         'งานในร้านต้องใช้มือ ระหว่างทำสีผมหรือนวด คุณรับโทรศัพท์หรือตอบข้อความไม่ได้',
         'คำถามจึงกองรอจนปิดร้าน วันเสาร์ว่างกี่โมง บาลายาจราคาเท่าไร ขอเลื่อนนัดวันพฤหัสได้ไหม และพอสิ้นเดือนรายได้ก็หายไป เพราะนัดยาวสองนัดไม่มา เก้าอี้ว่างเปล่า',
-        'กับ Zenno ลูกค้าจองเองได้ตลอดเวลา พร้อมบริการ ราคา และทีมของคุณ นัดยาวป้องกันด้วยเงินมัดจำ การแจ้งเตือนส่งออกไปเอง และหน้าของคุณถูกสร้างมาให้ผู้ช่วย AI จองกับคุณได้โดยตรง ช่วงค่ำกลับมาเป็นของคุณอีกครั้ง',
+        'กับ Zenno ลูกค้าจองเองได้ตลอดเวลา พร้อมบริการ ราคา และทีมของคุณ นัดยาวป้องกันด้วยเงินมัดจำ การแจ้งเตือนส่งออกไปเอง และหน้าของคุณถูกสร้างมาให้ผู้ช่วย AI จองกับคุณได้โดยตรง คุณไม่ต้องใช้ช่วงค่ำไปกับการตอบข้อความอีก',
       ],
       image: '/images/verticals/salon-story.webp',
       imageAlt: 'เจ้าของร้านทำผมยืนพิงเคาน์เตอร์หลังปิดร้าน กำลังดูโทรศัพท์',
@@ -385,7 +385,7 @@ export const SALONS_SPAS: Record<Lang, LandingContent> = {
     },
     points: {
       kicker: 'ทำไมซาลอนถึงเปลี่ยนมาใช้',
-      title: ['สร้างมาเพื่องานในซาลอน', 'ไม่ใช่เพื่อแพลตฟอร์มตัวกลาง'],
+      title: ['สร้างมาเพื่องานในซาลอน', 'บนหน้าจองของคุณเอง'],
       items: [
         {
           title: 'นัดยาวก็มั่นใจได้',
@@ -401,7 +401,7 @@ export const SALONS_SPAS: Record<Lang, LandingContent> = {
         },
         {
           title: 'บัตรของขวัญและระบบสะสมแต้ม',
-          body: 'ขายบัตรของขวัญออนไลน์ และให้แต้มตอบแทนลูกค้าประจำ เหมาะกับวันเกิด เทศกาล และการมาใช้บริการครั้งที่สิบ',
+          body: 'ขายบัตรของขวัญออนไลน์ และให้แต้มตอบแทนลูกค้าประจำ บัตรของขวัญเหมาะกับวันเกิดและเทศกาล ส่วนแต้มให้รางวัลการมาครั้งที่สิบ',
         },
         {
           title: 'แจ้งเตือนทาง SMS และอีเมล',

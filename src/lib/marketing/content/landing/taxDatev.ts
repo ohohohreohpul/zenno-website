@@ -112,7 +112,7 @@ export const TAX_DATEV: Record<Lang, LandingContent> = {
         },
         {
           title: 'Die Steuerberatung bekommt, was sie braucht',
-          body: 'Ihre Steuerberatung arbeitet mit DATEV, und genau dafür ist der Export aus Zenno gedacht. Statt eines Stapels einzelner Belege bekommt sie Umsätze und Umsatzsteuer für den Monat oder das Quartal an einer Stelle. Fragen Sie einmal nach, in welcher Form sie die Daten am liebsten hätte, und schicken Sie den Export dann immer zum selben Termin. Die Voranmeldung und die Steuererklärung macht weiterhin sie.',
+          body: 'Ihre Steuerberatung arbeitet mit DATEV, und dafür ist der Export aus Zenno gedacht. Sie bekommt Umsätze und Umsatzsteuer für den Monat oder das Quartal an einer Stelle und muss keine Einzelbelege zusammensuchen. Fragen Sie einmal nach, in welcher Form sie die Daten am liebsten hätte, und schicken Sie den Export dann immer zum selben Termin. Die Voranmeldung und die Steuererklärung macht weiterhin sie.',
           image: '/images/features/tax-advisor.webp',
           imageAlt: 'Steuerberaterin prüft am Schreibtisch einen ausgedruckten Monatsbericht',
           note: { label: 'Übersicht', value: '3. Quartal: Umsatz und Steuer' },
@@ -226,7 +226,7 @@ export const TAX_DATEV: Record<Lang, LandingContent> = {
         },
         {
           title: 'Your advisor gets what they need',
-          body: 'Your tax advisor works in DATEV, and that is exactly what the Zenno export is made for. Instead of a pile of single receipts, they get revenue and VAT for the month or quarter in one place. Ask them once which format they prefer, then send the export on the same date each time. They still handle the VAT returns and the annual tax return.',
+          body: 'Your tax advisor works in DATEV, and the Zenno export is made for that. They get revenue and VAT for the month or quarter in one place and don’t have to piece it together from single receipts. Ask them once which format they prefer, then send the export on the same date each time. They still handle the VAT returns and the annual tax return.',
           image: '/images/features/tax-advisor.webp',
           imageAlt: 'A tax advisor at her desk reviewing a printed monthly report',
           note: { label: 'Overview', value: 'Q3: revenue and tax' },
@@ -340,7 +340,7 @@ export const TAX_DATEV: Record<Lang, LandingContent> = {
         },
         {
           title: 'นักบัญชีได้ข้อมูลที่ต้องใช้',
-          body: 'นักบัญชีของคุณทำงานกับ DATEV และไฟล์ส่งออกจาก Zenno ก็ทำมาเพื่อสิ่งนี้ แทนที่จะได้ใบเสร็จเป็นกอง นักบัญชีจะได้รายได้และ VAT ของเดือนหรือไตรมาสรวมอยู่ในที่เดียว ถามนักบัญชีครั้งเดียวว่าอยากได้ไฟล์แบบไหน แล้วส่งไฟล์ให้ตรงวันเดิมทุกครั้ง การยื่นแบบ VAT และภาษีประจำปียังเป็นหน้าที่ของนักบัญชีเหมือนเดิม',
+          body: 'นักบัญชีของคุณทำงานกับ DATEV และไฟล์ส่งออกจาก Zenno ก็ทำมาเพื่อสิ่งนี้ นักบัญชีจะได้รายได้และ VAT ของเดือนหรือไตรมาสรวมอยู่ในที่เดียว ไม่ต้องไล่รวมจากใบเสร็จทีละใบ ถามนักบัญชีครั้งเดียวว่าอยากได้ไฟล์แบบไหน แล้วส่งไฟล์ให้ตรงวันเดิมทุกครั้ง การยื่นแบบ VAT และภาษีประจำปียังเป็นหน้าที่ของนักบัญชีเหมือนเดิม',
           image: '/images/features/tax-advisor.webp',
           imageAlt: 'นักบัญชีนั่งที่โต๊ะทำงาน กำลังตรวจรายงานประจำเดือนที่พิมพ์ออกมา',
           note: { label: 'ภาพรวม', value: 'ไตรมาส 3: รายได้และภาษี' },

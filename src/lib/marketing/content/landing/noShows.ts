@@ -28,7 +28,7 @@ export const NO_SHOWS: Record<Lang, LandingContent> = {
       items: [
         {
           title: 'Anzahlung bei der Buchung',
-          body: 'Ein Teil des Preises wird beim Buchen fällig. Wer bezahlt hat, kommt, und wer nicht kommt, hat Ihre Zeit trotzdem bezahlt.',
+          body: 'Ein Teil des Preises wird beim Buchen fällig. Bleibt jemand trotzdem weg, ist zumindest ein Teil Ihrer Zeit bezahlt.',
         },
         {
           title: 'Vorkasse',
@@ -46,7 +46,7 @@ export const NO_SHOWS: Record<Lang, LandingContent> = {
       items: [
         { title: 'Regel wählen', body: 'Anzahlung, Vorkasse oder hinterlegte Karte mit Ausfallgebühr.' },
         { title: 'Kundschaft bucht', body: 'Bezahlt oder hinterlegt wird direkt bei der Online-Buchung über Stripe.' },
-        { title: 'Termin platzt? Gebühr statt Verlust', body: 'Bei No-Show oder zu später Absage berechnen Sie die Ausfallgebühr von der hinterlegten Karte.' },
+        { title: 'Termin geplatzt: Gebühr berechnen', body: 'Bei No-Show oder zu später Absage berechnen Sie die Ausfallgebühr von der hinterlegten Karte.' },
       ],
     },
     faq: {
@@ -91,8 +91,8 @@ export const NO_SHOWS: Record<Lang, LandingContent> = {
       kicker: 'Dienstag, 10:10 Uhr',
       title: ['Der Raum ist vorbereitet.', 'Die Kundin kommt nicht.'],
       paragraphs: [
-        'Die Liege ist frisch bezogen, das Öl angewärmt, die nächste Stunde gehört einer einzigen Kundin. Um zehn nach zehn ist klar, dass sie nicht kommt. Kein Anruf, keine Nachricht, nur ein leerer Raum und eine Stunde Arbeitszeit.',
-        'So sieht der Alltag in vielen kleinen Studios aus. Eine Massage über 60 Minuten lässt sich kurzfristig kaum neu vergeben, und wer am Sonntagabend online gebucht hat, denkt am Dienstagmorgen oft schon an etwas anderes. Hinterhertelefonieren kostet Zeit, und eine Rechnung im Nachhinein zu schicken fühlt sich unangenehm an. Also bleibt der Ausfall bei Ihnen hängen, Woche für Woche, und außer Ihrer Kasse merkt es niemand.',
+        'Die Liege ist frisch bezogen, das Öl angewärmt, die nächste Stunde gehört einer einzigen Kundin. Um zehn nach zehn ist klar, dass sie nicht kommt. Sie hat weder angerufen noch geschrieben, und der Raum bleibt eine Stunde lang leer.',
+        'So sieht der Alltag in vielen kleinen Studios aus. Eine Massage über 60 Minuten lässt sich kurzfristig kaum neu vergeben, und wer am Sonntagabend online gebucht hat, denkt am Dienstagmorgen oft schon an etwas anderes. Hinterhertelefonieren kostet Zeit, und eine Rechnung im Nachhinein zu schicken fühlt sich unangenehm an. Also tragen Sie den Ausfall selbst, und bei zwei, drei solcher Termine im Monat ist das spürbar.',
         'Mit Zenno legen Sie vorher fest, wie verbindlich eine Buchung ist. Die Kundin zahlt beim Buchen eine Anzahlung oder den vollen Preis, oder sie hinterlegt ihre Karte über Stripe. Erscheint sie nicht oder sagt zu spät ab, berechnen Sie die Ausfallgebühr von dieser Karte. Vorher bekommt sie Erinnerungen per SMS und E-Mail und kann im Kundenportal selbst verschieben. Wer verhindert ist, hat damit einen einfachen Weg, Bescheid zu geben.',
       ],
       image: '/images/features/noshow-empty.webp',
@@ -142,7 +142,7 @@ export const NO_SHOWS: Record<Lang, LandingContent> = {
       items: [
         {
           title: 'Deposit at booking',
-          body: 'Part of the price is due when booking. People who paid turn up, and people who don’t have still paid for your time.',
+          body: 'Part of the price is due when booking. If someone still stays away, at least part of your time is paid for.',
         },
         {
           title: 'Prepayment',
@@ -160,7 +160,7 @@ export const NO_SHOWS: Record<Lang, LandingContent> = {
       items: [
         { title: 'Pick a rule', body: 'Deposit, prepayment, or card on file with a no-show fee.' },
         { title: 'Clients book', body: 'Payment or card is taken during online booking through Stripe.' },
-        { title: 'No-show? Fee, not loss', body: 'For a no-show or late cancellation, you charge the fee to the card on file.' },
+        { title: 'No-show: charge the fee', body: 'For a no-show or late cancellation, you charge the fee to the card on file.' },
       ],
     },
     faq: {
@@ -205,8 +205,8 @@ export const NO_SHOWS: Record<Lang, LandingContent> = {
       kicker: 'Tuesday, 10:10 am',
       title: ['The room is ready.', 'The client isn’t coming.'],
       paragraphs: [
-        'The table is freshly made, the oil is warm, and the next hour belongs to one client. By ten past ten it is clear she is not coming. No call, no message, just an empty room and an hour of paid work time.',
-        'This is an ordinary week in a lot of small studios. A 60-minute massage is hard to fill at short notice, and someone who booked on Sunday evening is often thinking about something else by Tuesday morning. Chasing them by phone takes time, and sending a bill afterwards feels awkward. So the loss stays with you, week after week, and nobody notices except your till.',
+        'The table is freshly made, the oil is warm, and the next hour belongs to one client. By ten past ten it is clear she is not coming. She hasn’t called or sent a message, and the room stays empty for the hour.',
+        'This is an ordinary week in a lot of small studios. A 60-minute massage is hard to fill at short notice, and someone who booked on Sunday evening is often thinking about something else by Tuesday morning. Chasing them by phone takes time, and sending a bill afterwards feels awkward. So you carry the loss yourself, and with two or three of those a month, you feel it.',
         'With Zenno you decide in advance how firm a booking is. The client pays a deposit or the full price when she books, or saves her card through Stripe. If she doesn’t show or cancels too late, you charge the no-show fee to that card. Before the appointment she gets reminders by SMS and email and can reschedule herself in the client portal. If something comes up, she has an easy way to let you know.',
       ],
       image: '/images/features/noshow-empty.webp',
@@ -256,7 +256,7 @@ export const NO_SHOWS: Record<Lang, LandingContent> = {
       items: [
         {
           title: 'มัดจำตอนจอง',
-          body: 'ลูกค้าจ่ายส่วนหนึ่งของราคาตอนจอง คนที่จ่ายแล้วมักจะมา และคนที่ไม่มาก็จ่ายค่าเวลาของคุณไปแล้ว',
+          body: 'ลูกค้าจ่ายส่วนหนึ่งของราคาตอนจอง ถ้ายังไม่มาอยู่ดี อย่างน้อยเวลาของคุณก็ได้รับค่าตอบแทนไปบางส่วนแล้ว',
         },
         {
           title: 'ชำระเต็มจำนวนล่วงหน้า',
@@ -274,7 +274,7 @@ export const NO_SHOWS: Record<Lang, LandingContent> = {
       items: [
         { title: 'เลือกกฎ', body: 'มัดจำ ชำระเต็มจำนวนล่วงหน้า หรือบันทึกบัตรไว้พร้อมค่าธรรมเนียมเมื่อไม่มาตามนัด' },
         { title: 'ลูกค้าจอง', body: 'การชำระเงินหรือการบันทึกบัตรเกิดขึ้นระหว่างการจองออนไลน์ผ่าน Stripe' },
-        { title: 'ไม่มาตามนัด ได้ค่าธรรมเนียม ไม่ขาดทุน', body: 'เมื่อลูกค้าไม่มาหรือยกเลิกกระชั้นชิด คุณเรียกเก็บค่าธรรมเนียมจากบัตรที่บันทึกไว้' },
+        { title: 'ไม่มาตามนัด: เรียกเก็บค่าธรรมเนียม', body: 'เมื่อลูกค้าไม่มาหรือยกเลิกกระชั้นชิด คุณเรียกเก็บค่าธรรมเนียมจากบัตรที่บันทึกไว้' },
       ],
     },
     faq: {
@@ -319,8 +319,8 @@ export const NO_SHOWS: Record<Lang, LandingContent> = {
       kicker: 'วันอังคาร 10:10 น.',
       title: ['ห้องเตรียมไว้พร้อมแล้ว', 'แต่ลูกค้าไม่มา'],
       paragraphs: [
-        'ผ้าปูเตียงนวดเพิ่งเปลี่ยนใหม่ น้ำมันอุ่นไว้แล้ว ชั่วโมงถัดไปเป็นของลูกค้าคนเดียว พอสิบโมงสิบนาทีก็รู้แล้วว่าเธอไม่มา ไม่มีโทรมา ไม่มีข้อความ เหลือแค่ห้องว่างกับเวลางานหนึ่งชั่วโมงที่เสียไป',
-        'นี่คือสัปดาห์ปกติของร้านเล็กๆ หลายร้าน นวด 60 นาทีหาคนมาแทนในเวลากระชั้นชิดได้ยาก และลูกค้าที่จองไว้ตั้งแต่คืนวันอาทิตย์ พอถึงเช้าวันอังคารก็อาจลืมไปแล้ว จะโทรตามก็เสียเวลา จะส่งบิลไปทีหลังก็รู้สึกไม่สบายใจ สุดท้ายความเสียหายก็ตกอยู่ที่คุณ สัปดาห์แล้วสัปดาห์เล่า โดยไม่มีใครเห็นนอกจากยอดในลิ้นชักเก็บเงิน',
+        'ผ้าปูเตียงนวดเพิ่งเปลี่ยนใหม่ น้ำมันอุ่นไว้แล้ว ชั่วโมงถัดไปเป็นของลูกค้าคนเดียว พอสิบโมงสิบนาทีก็รู้แล้วว่าเธอไม่มา เธอไม่ได้โทรมาหรือส่งข้อความ ห้องจึงว่างไปทั้งชั่วโมง',
+        'นี่คือสัปดาห์ปกติของร้านเล็กๆ หลายร้าน นวด 60 นาทีหาคนมาแทนในเวลากระชั้นชิดได้ยาก และลูกค้าที่จองไว้ตั้งแต่คืนวันอาทิตย์ พอถึงเช้าวันอังคารก็อาจลืมไปแล้ว จะโทรตามก็เสียเวลา จะส่งบิลไปทีหลังก็รู้สึกไม่สบายใจ สุดท้ายคุณก็ต้องรับความเสียหายเอง และถ้าเกิดสักสองสามครั้งต่อเดือน ก็เห็นผลในยอดขายชัดเจน',
         'กับ Zenno คุณกำหนดไว้ล่วงหน้าว่าการจองควรผูกมัดแค่ไหน ลูกค้าจ่ายมัดจำหรือราคาเต็มตอนจอง หรือบันทึกบัตรไว้ผ่าน Stripe ถ้าเธอไม่มาหรือยกเลิกกระชั้นชิด คุณเรียกเก็บค่าธรรมเนียมจากบัตรนั้นได้ ก่อนถึงวันนัด เธอได้รับการแจ้งเตือนทาง SMS และอีเมล และเลื่อนนัดเองได้ในพอร์ทัลลูกค้า ถ้ามีธุระกะทันหัน เธอก็มีทางแจ้งร้านได้ง่ายๆ',
       ],
       image: '/images/features/noshow-empty.webp',

@@ -27,6 +27,7 @@ import { Faq } from '../Faq'
 import { ClosingCta } from '../ClosingCta'
 import { CityGrid } from '../landing/CityGrid'
 import { LocalSection } from './LocalSection'
+import { Neighbourhoods } from './Neighbourhoods'
 
 const HOME_LABEL: Record<Lang, string> = { de: 'Startseite', en: 'Home', th: 'หน้าแรก' }
 
@@ -105,6 +106,7 @@ export function CityPage({ lang, industry, city }: CityPageProps) {
           alsoLabel={s.sameCityLabel}
           alsoLinks={otherIndustries.map((i) => ({ label: PAGE_LABEL[i][lang], href: localePath(lang, cityPath(i, city)) }))}
         />
+        <Neighbourhoods kicker={s.neighbourhoodsKicker} title={s.neighbourhoodsTitle} items={copy.neighbourhoods} />
         <UseCaseFit
           kicker={industryPage.points.kicker}
           titlePre={industryPage.points.title[0]}

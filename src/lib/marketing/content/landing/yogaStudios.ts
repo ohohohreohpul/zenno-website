@@ -42,7 +42,7 @@ export const YOGA_STUDIOS: Record<Lang, LandingContent> = {
       paragraphs: [
         'Die meisten Yogastudios werden von den Menschen geführt, die auch unterrichten. Zwischen zwei Stunden bleibt kaum Zeit für Nachrichten, Rückrufe und Zahlungen.',
         'Genau dann fragen Interessierte nach einer Probestunde, Stammkundschaft will den Termin verschieben, und jemand schreibt auf Englisch, ob es am Samstag noch eine Einzelstunde gibt. Wer erst nach der Klasse antwortet, hat die Anfrage oft schon an ein anderes Studio verloren.',
-        'Mit Zenno bucht Ihre Kundschaft selbst: Probestunde, Einzelstunde oder Personal Training, mit echten freien Zeiten, Ihren Preisen und Ihren Lehrerinnen und Lehrern. Ihre Seite ist so aufgebaut, dass auch KI-Assistenten Sie finden und direkt buchen können. Sie unterrichten, der Kalender füllt sich.',
+        'Mit Zenno bucht Ihre Kundschaft selbst: Probestunde, Einzelstunde oder Personal Training, mit echten freien Zeiten, Ihren Preisen und Ihren Lehrerinnen und Lehrern. Ihre Seite ist so aufgebaut, dass auch KI-Assistenten Sie finden und direkt buchen können. Während Sie unterrichten, kommen die Buchungen über Ihre Seite herein.',
       ],
       image: '/images/verticals/yoga-story.webp',
       imageAlt: 'Studioinhaberin sitzt vor der Abendklasse auf einer Holzbank und schaut aufs Handy',
@@ -95,7 +95,7 @@ export const YOGA_STUDIOS: Record<Lang, LandingContent> = {
         },
         {
           title: 'Gutscheine & Treuepunkte',
-          body: 'Gutscheine online verkaufen, Stammkundschaft mit Punkten belohnen. Ohne Plugin, ohne zweites System.',
+          body: 'Gutscheine online verkaufen, Stammkundschaft mit Punkten belohnen. Dafür brauchen Sie weder ein Plugin noch ein zweites System.',
         },
         {
           title: 'Erinnerungen, die von selbst rausgehen',
@@ -103,7 +103,7 @@ export const YOGA_STUDIOS: Record<Lang, LandingContent> = {
         },
         {
           title: 'Ihr Studio, Ihr Name',
-          body: 'Gebucht wird auf Ihrer eigenen Seite mit Ihrem Logo. Keine Plattform, die Ihre Kundschaft an das nächste Studio weiterreicht.',
+          body: 'Gebucht wird auf Ihrer eigenen Seite mit Ihrem Logo. Es gibt keine Plattform, die Ihre Kundschaft an das nächste Studio weiterreicht.',
         },
         {
           title: 'Steuer und DATEV inklusive',
@@ -138,7 +138,7 @@ export const YOGA_STUDIOS: Record<Lang, LandingContent> = {
           a: 'Ja, im Kundenportal. Jede Buchung bekommt eine Bestätigung mit Link. Wer zu spät absagt oder nicht erscheint, zahlt die Gebühr, die Sie festgelegt haben, wenn eine Karte hinterlegt ist.',
         },
         {
-          q: 'Bin ich als kleines Studio Kleinunternehmer. Kann Zenno das?',
+          q: 'Ich bin als kleines Studio Kleinunternehmer. Kann Zenno das?',
           a: 'Ja. Sie stellen die Kleinunternehmerregelung ein oder hinterlegen die Umsatzsteuer je Leistung. Die Monats- oder Quartalsübersicht und der DATEV-Export gehen an Ihre Steuerberatung. Was für Sie gilt, klären Sie bitte mit ihr.',
         },
         {
@@ -195,7 +195,7 @@ export const YOGA_STUDIOS: Record<Lang, LandingContent> = {
       paragraphs: [
         'Most yoga studios are run by the people who also teach. Between two classes there is barely time for messages, call-backs and payments.',
         'That is exactly when someone asks about a trial session, a regular wants to move their slot, and a message arrives in English asking about a private on Saturday. Answer only after class and the request has often gone to another studio.',
-        'With Zenno your clients book themselves: trial session, private or personal training, with real free times, your prices and your teachers. Your page is built so AI assistants can find you and book you directly too. You teach, the calendar fills.',
+        'With Zenno your clients book themselves: trial session, private or personal training, with real free times, your prices and your teachers. Your page is built so AI assistants can find you and book you directly too. While you teach, bookings come in through your page.',
       ],
       image: '/images/verticals/yoga-story.webp',
       imageAlt: 'Studio owner sitting on a wooden bench before the evening class, checking her phone',
@@ -248,7 +248,7 @@ export const YOGA_STUDIOS: Record<Lang, LandingContent> = {
         },
         {
           title: 'Gift cards & loyalty points',
-          body: 'Sell gift cards online and reward regulars with points. No plugin, no second system.',
+          body: 'Sell gift cards online and reward regulars with points. You don’t need a plugin or a second system.',
         },
         {
           title: 'Reminders that send themselves',
@@ -256,7 +256,7 @@ export const YOGA_STUDIOS: Record<Lang, LandingContent> = {
         },
         {
           title: 'Your studio, your name',
-          body: 'Bookings happen on your own page with your logo. No platform passing your clients on to the next studio.',
+          body: 'Bookings happen on your own page with your logo. There is no platform passing your clients on to the next studio.',
         },
         {
           title: 'Tax and DATEV included',
@@ -348,7 +348,7 @@ export const YOGA_STUDIOS: Record<Lang, LandingContent> = {
       paragraphs: [
         'สตูดิโอโยคะส่วนใหญ่ดูแลโดยคนที่สอนเอง ระหว่างคลาสแทบไม่มีเวลาตอบข้อความ โทรกลับ หรือเก็บเงิน',
         'แต่ช่วงนั้นเองที่มีคนถามเรื่องคลาสทดลอง ลูกค้าประจำขอเลื่อนนัด และมีข้อความภาษาอังกฤษถามว่าวันเสาร์ยังมีคลาสส่วนตัวว่างไหม ถ้ารอตอบหลังเลิกคลาส ลูกค้ามักจองสตูดิโออื่นไปแล้ว',
-        'กับ Zenno ลูกค้าจองเองได้ ทั้งคลาสทดลอง คลาสส่วนตัว และเทรนนิ่งส่วนตัว พร้อมเวลาว่างจริง ราคาของคุณ และครูของคุณ หน้าของคุณยังถูกสร้างมาให้ผู้ช่วย AI หาเจอและจองกับคุณได้โดยตรง คุณสอนไป ปฏิทินก็เต็มไป',
+        'กับ Zenno ลูกค้าจองเองได้ ทั้งคลาสทดลอง คลาสส่วนตัว และเทรนนิ่งส่วนตัว พร้อมเวลาว่างจริง ราคาของคุณ และครูของคุณ หน้าของคุณยังถูกสร้างมาให้ผู้ช่วย AI หาเจอและจองกับคุณได้โดยตรง ระหว่างที่คุณสอน การจองก็เข้ามาผ่านหน้าของคุณ',
       ],
       image: '/images/verticals/yoga-story.webp',
       imageAlt: 'เจ้าของสตูดิโอนั่งบนม้านั่งไม้ก่อนคลาสเย็น กำลังดูโทรศัพท์',
@@ -401,7 +401,7 @@ export const YOGA_STUDIOS: Record<Lang, LandingContent> = {
         },
         {
           title: 'บัตรของขวัญและระบบสะสมแต้ม',
-          body: 'ขายบัตรของขวัญออนไลน์ และให้แต้มตอบแทนลูกค้าประจำ ไม่ต้องใช้ปลั๊กอิน ไม่ต้องมีระบบที่สอง',
+          body: 'ขายบัตรของขวัญออนไลน์ และให้แต้มตอบแทนลูกค้าประจำ โดยไม่ต้องใช้ปลั๊กอินหรือระบบที่สอง',
         },
         {
           title: 'แจ้งเตือนที่ส่งออกไปเอง',

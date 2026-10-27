@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { START_URL } from '@/lib/marketing/config'
 import { homePath, localePath, type Lang } from '@/lib/marketing/lang'
 import { landingContent, type LandingContent } from '@/lib/marketing/content/landing'
+import { guideContent } from '@/lib/marketing/content/guides'
 import { STUDIO_PLATFORM } from '@/lib/marketing/content/studioPlatform'
 import { breadcrumbSchema, faqPageSchema } from '@/lib/marketing/jsonld'
 import type { LandingSlug } from '@/lib/marketing/pages'
@@ -23,6 +24,7 @@ import { StorySection } from './StorySection'
 import { SceneRows } from './SceneRows'
 import { NicheChips } from './NicheChips'
 import { CityGrid } from './CityGrid'
+import { GuideSection } from './GuideSection'
 import styles from './LandingPage.module.css'
 
 const HOME_LABEL: Record<Lang, string> = { de: 'Startseite', en: 'Home', th: 'หน้าแรก' }
@@ -77,6 +79,7 @@ export function LandingPage({ lang, slug }: LandingPageProps) {
             points={c.steps.items}
           />
         )}
+        <GuideSection {...guideContent(slug, lang)} />
         <Faq lang={lang} items={c.faq.items} heading={c.faq} />
         {isCityIndustry(slug) && hasCityPages(lang) && <CityGrid lang={lang} industry={slug} {...CITY_GRID_HEADING[lang]} />}
         <RelatedPages lang={lang} slug={slug} />

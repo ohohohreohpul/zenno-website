@@ -58,7 +58,7 @@ const AI_RECEPTIONIST: Record<Lang, FeaturePageContent> = {
         },
         {
           q: 'Woher weiß sie Preise und freie Termine?',
-          a: 'Aus Ihrer App. Sie bucht nur echte freie Zeiten und nennt nur Ihre Preise und Angebote. Sie rät nie.',
+          a: 'Aus Ihrer App. Sie bucht nur Zeiten, die dort wirklich frei sind, und nennt nur die Preise und Angebote, die Sie eingetragen haben.',
         },
         {
           q: 'Was passiert bei Beschwerden oder Gesundheitsfragen?',
@@ -112,7 +112,7 @@ const AI_RECEPTIONIST: Record<Lang, FeaturePageContent> = {
         },
         {
           q: 'How does she know prices and free times?',
-          a: 'From your app. She only books real free times and only quotes your prices and offers. She never guesses.',
+          a: 'From your app. She only books times that are really free there and only quotes the prices and offers you have entered.',
         },
         {
           q: 'What about complaints or health questions?',
@@ -166,7 +166,7 @@ const AI_RECEPTIONIST: Record<Lang, FeaturePageContent> = {
         },
         {
           q: 'เธอรู้ราคาและเวลาว่างได้อย่างไร',
-          a: 'จากแอปของคุณ เธอจองเฉพาะเวลาว่างจริง และบอกเฉพาะราคาและโปรโมชันของร้าน เธอไม่เดา',
+          a: 'จากแอปของคุณ เธอจองเฉพาะเวลาที่ว่างจริงในแอป และบอกเฉพาะราคาและโปรโมชันที่คุณกรอกไว้',
         },
         {
           q: 'ถ้ามีเรื่องร้องเรียนหรือคำถามสุขภาพล่ะ',
@@ -205,7 +205,7 @@ const VOUCHERS: Record<Lang, FeaturePageContent> = {
       kicker: 'Mitte Dezember',
       title: ['Die Schleife binden Sie.', 'Um den Rest kümmert sich Zenno.'],
       paragraphs: [
-        'Im Dezember suchen viele nach einem Geschenk, das nach Zeit für sich aussieht. Ein Gutschein für eine Massage oder einen Spa-Tag ist genau so ein Geschenk, und an der Theke wird er mit Schleife überreicht.',
+        'Im Dezember suchen viele nach einem Geschenk, das nach Zeit für sich aussieht. Ein Gutschein für eine Massage oder einen Spa-Tag passt dazu, und an der Theke wird er mit Schleife überreicht.',
         'In den Wochen vor Weihnachten kommt beides zusammen: Kundschaft an der Theke, die schnell einen Gutschein mitnehmen will, und Anfragen per Nachricht, oft spät am Abend. Mit Papiergutscheinen beginnt dann die Suche. Welche Nummer war das, wie viel ist noch drauf, wurde er schon eingelöst? Und im Januar fragt die Steuerberatung, wo eigentlich die Gutscheinverkäufe aus dem Dezember stehen.',
         'Mit Zenno verkaufen Sie Wertgutscheine, Gutscheinsets und Mehrfachkarten an der Theke in drei Schritten und online auf Ihrer Buchungsseite rund um die Uhr. Ihre KI-Rezeption verkauft sie auch auf WhatsApp und per E-Mail. Jeder Gutschein hat einen QR-Code, der beim Einlösen gescannt wird, und der Restbetrag bleibt auf dem Gutschein. Jeder Verkauf steht im Kassenbuch und im DATEV-Export.',
       ],
@@ -255,7 +255,7 @@ const VOUCHERS: Record<Lang, FeaturePageContent> = {
       kicker: 'Mid-December',
       title: ['You tie the ribbon.', 'Zenno handles the rest.'],
       paragraphs: [
-        'In December a lot of people are looking for a gift that feels like time for yourself. A voucher for a massage or a spa day is exactly that kind of gift, and at the counter it is handed over with a ribbon.',
+        'In December a lot of people are looking for a gift that feels like time for yourself. A voucher for a massage or a spa day fits that wish, and at the counter it is handed over with a ribbon.',
         'In the weeks before Christmas, two things happen at once: clients at the counter who want a voucher quickly, and requests by message, often late in the evening. With paper vouchers, the searching starts. Which number was it, how much is left on it, has it already been used? And in January your tax advisor asks where December’s voucher sales are.',
         'With Zenno you sell value vouchers, voucher sets and multi-visit passes at the counter in three taps, and online on your booking page day and night. Your AI receptionist sells them on WhatsApp and by email too. Every voucher has a QR code that is scanned when it is redeemed, and any remaining balance stays on the voucher. Every sale goes into the cash book and the DATEV export.',
       ],
@@ -305,7 +305,7 @@ const VOUCHERS: Record<Lang, FeaturePageContent> = {
       kicker: 'กลางเดือนธันวาคม',
       title: ['คุณผูกโบว์', 'ที่เหลือ Zenno จัดการให้'],
       paragraphs: [
-        'ช่วงธันวาคม หลายคนมองหาของขวัญที่ให้เวลาพักผ่อนกับตัวเอง บัตรของขวัญสำหรับนวดหรือวันสปาคือของขวัญแบบนั้นพอดี และที่เคาน์เตอร์ก็ส่งให้ลูกค้าพร้อมโบว์สวยๆ',
+        'ช่วงธันวาคม หลายคนมองหาของขวัญที่ให้เวลาพักผ่อนกับตัวเอง บัตรของขวัญสำหรับนวดหรือวันสปาตรงกับที่เขามองหา และที่เคาน์เตอร์ก็ส่งให้ลูกค้าพร้อมโบว์สวยๆ',
         'ช่วงสัปดาห์ก่อนคริสต์มาส สองอย่างมาพร้อมกัน ลูกค้าที่เคาน์เตอร์อยากได้บัตรของขวัญแบบรีบๆ และข้อความถามซื้อที่มักเข้ามาตอนดึก ถ้าเป็นบัตรกระดาษ ก็ต้องเริ่มตามหา เลขที่เท่าไร เหลือยอดเท่าไร ใช้ไปแล้วหรือยัง แล้วพอถึงเดือนมกราคม นักบัญชีก็ถามว่ายอดขายบัตรของขวัญเดือนธันวาคมอยู่ตรงไหน',
         'กับ Zenno คุณขายบัตรมูลค่า เซ็ตบัตรของขวัญ และบัตรหลายครั้ง ที่เคาน์เตอร์ได้ในสามขั้นตอน และขายออนไลน์บนหน้าจองได้ตลอดเวลา พนักงานต้อนรับ AI ก็ขายทาง WhatsApp และอีเมลได้ด้วย ทุกใบมี QR code ที่สแกนตอนใช้งาน และยอดที่เหลือยังอยู่ในบัตร ทุกการขายบันทึกในสมุดเงินสดและไฟล์ส่งออก DATEV',
       ],
