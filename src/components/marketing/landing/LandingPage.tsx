@@ -2,9 +2,11 @@ import type { Metadata } from 'next'
 import { START_URL } from '@/lib/marketing/config'
 import { homePath, localePath, type Lang } from '@/lib/marketing/lang'
 import { landingContent, type LandingContent } from '@/lib/marketing/content/landing'
+import { guideContent } from '@/lib/marketing/content/guides'
 import { STUDIO_PLATFORM } from '@/lib/marketing/content/studioPlatform'
 import { breadcrumbSchema, faqPageSchema } from '@/lib/marketing/jsonld'
 import type { LandingSlug } from '@/lib/marketing/pages'
+import { hasCityPages, isCityIndustry } from '@/lib/marketing/cities'
 import { pageMetadata } from '@/lib/marketing/seo'
 import { JsonLd } from '../JsonLd'
 import { MarketingShell } from '../MarketingShell'
@@ -18,9 +20,20 @@ import { SpotlightLedger } from '../StudioPlatform'
 import { Faq } from '../Faq'
 import { ClosingCta } from '../ClosingCta'
 import { RelatedPages } from './RelatedPages'
+import { StorySection } from './StorySection'
+import { SceneRows } from './SceneRows'
+import { NicheChips } from './NicheChips'
+import { CityGrid } from './CityGrid'
+import { GuideSection } from './GuideSection'
 import styles from './LandingPage.module.css'
 
 const HOME_LABEL: Record<Lang, string> = { de: 'Startseite', en: 'Home', th: 'หน้าแรก' }
+
+const CITY_GRID_HEADING: Record<Lang, { kicker: string; title: [string, string] }> = {
+  de: { kicker: 'In Ihrer Stadt', title: ['Zenno vor Ort,', 'von Berlin bis Leipzig.'] },
+  en: { kicker: 'In your city', title: ['Zenno locally,', 'from Berlin to Leipzig.'] },
+  th: { kicker: 'ในเมืองของคุณ', title: ['Zenno ในเยอรมนี', 'จากเบอร์ลินถึงไลพ์ซิก'] },
+}
 
 export function landingMetadata(lang: Lang, slug: LandingSlug): Metadata {
   const { meta } = landingContent(slug, lang)
@@ -52,7 +65,10 @@ export function LandingPage({ lang, slug }: LandingPageProps) {
       <Nav lang={lang} onLightBg={!c.hero.image} localizedPath={`/${slug}`} />
       <main>
         <LandingHero lang={lang} content={c} secondaryHref={secondaryHref} />
+        {c.story && <StorySection {...c.story} />}
+        {c.scenes && <SceneRows {...c.scenes} />}
         <UseCaseFit kicker={c.points.kicker} titlePre={c.points.title[0]} titleGhost={c.points.title[1]} points={c.points.items} />
+        {c.niches && <NicheChips {...c.niches} />}
         {c.embed === 'readiness' && <AiBookable lang={lang} />}
         {c.steps && (
           <UseCaseFit
@@ -63,7 +79,9 @@ export function LandingPage({ lang, slug }: LandingPageProps) {
             points={c.steps.items}
           />
         )}
+        <GuideSection {...guideContent(slug, lang)} />
         <Faq lang={lang} items={c.faq.items} heading={c.faq} />
+        {isCityIndustry(slug) && hasCityPages(lang) && <CityGrid lang={lang} industry={slug} {...CITY_GRID_HEADING[lang]} />}
         <RelatedPages lang={lang} slug={slug} />
         <ClosingCta lang={lang} />
       </main>

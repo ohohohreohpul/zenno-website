@@ -1,0 +1,94 @@
+.section {
+  border-top: 1px solid var(--line);
+}
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.32fr) minmax(0, 1fr);
+  gap: clamp(2rem, 1rem + 4vw, 5rem);
+  align-items: start;
+}
+.toc {
+  position: sticky;
+  top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.tocList {
+  margin: 0;
+  padding: 0 0 0 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  color: var(--t3);
+  font-size: 0.9rem;
+}
+.tocLink {
+  color: var(--t2);
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+.tocLink:hover,
+.tocLink:focus-visible {
+  color: var(--t1);
+}
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 44rem;
+}
+.intro {
+  margin: 0 0 0.5rem;
+  font-size: var(--step-1);
+  line-height: 1.55;
+  color: var(--t1);
+}
+.chapter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding-top: 1.6rem;
+  margin-top: 0.4rem;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 6rem;
+}
+.heading {
+  margin: 0;
+  font-size: var(--step-2);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+.para {
+  margin: 0;
+  color: var(--t2);
+  font-size: var(--step-0);
+  line-height: 1.75;
+}
+.bullets {
+  margin: 0.2rem 0 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  color: var(--t2);
+  font-size: var(--step-0);
+  line-height: 1.6;
+}
+.bullets li::marker {
+  color: var(--green);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .toc {
+    position: static;
+    padding: 20px;
+    border-radius: var(--r-lg);
+    background: var(--bg-warm);
+  }
+}

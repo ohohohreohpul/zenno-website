@@ -1,0 +1,74 @@
+.section {
+  border-top: 1px solid var(--line);
+}
+.grid {
+  list-style: none;
+  margin: clamp(2rem, 1.2rem + 2.5vw, 3.25rem) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: var(--sh-sm);
+  transition: box-shadow 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo);
+}
+.tile:hover,
+.tile:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: var(--sh);
+}
+.tile:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s var(--ease-out-expo);
+}
+.tile:hover .img {
+  transform: scale(1.05);
+}
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(12, 10, 8, 0.7) 0%, rgba(12, 10, 8, 0) 60%);
+}
+.name {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  font-size: 1.12rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.name :global(.arrow) {
+  display: inline-block;
+  transition: transform 0.3s var(--ease-out-expo);
+}
+.tile:hover .name :global(.arrow) {
+  transform: translateX(3px);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tile,
+  .img {
+    transition: none;
+  }
+}

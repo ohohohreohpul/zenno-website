@@ -1,6 +1,7 @@
 import type { Lang } from '../lang'
 import type { FaqItem } from './faq'
 import type { OgCopy } from '@/components/marketing/OgImage'
+import type { StoryBlock } from './landing/types'
 
 /**
  * The two feature pages the rebrief asks for. Each has its own search intent
@@ -14,6 +15,8 @@ export interface FeaturePageContent {
   meta: { title: string; description: string }
   label: string
   hero: { eyebrow: string; title: string; lead: string; primary: string; secondary: string }
+  /** Editorial block with a photo, between the hero screen and the product chapters. */
+  story?: StoryBlock
   faq: { kicker: string; title: [string, string]; items: FaqItem[] }
   og: OgCopy
 }
@@ -33,6 +36,18 @@ const AI_RECEPTIONIST: Record<Lang, FeaturePageContent> = {
       primary: 'Kostenlos starten',
       secondary: 'So spricht sie',
     },
+    story: {
+      kicker: 'Kurz nach 23 Uhr',
+      title: ['Das Spa ist zu.', 'Die Rezeption antwortet trotzdem.'],
+      paragraphs: [
+        'Im Empfang ist das Licht aus, die Handtücher für morgen liegen gefaltet bereit. Auf dem Tresen leuchtet ein Telefon: Jemand fragt auf WhatsApp nach einer Paarmassage am Samstag. Früher hätte diese Nachricht bis zum Morgen gewartet.',
+        'Bis dahin hat die Person vielleicht schon woanders gebucht. Viele Anfragen kommen genau dann, wenn niemand Zeit hat zu antworten: abends nach der Arbeit, am Sonntag, oder während Sie selbst mit einer Kundin im Behandlungsraum sind. Wer morgens erst einen Stapel Nachrichten abarbeiten muss, beginnt den Tag schon im Rückstand, und manche Frage bleibt einfach liegen, bis sie sich von selbst erledigt hat.',
+        'Die KI-Rezeption von Zenno antwortet in diesem Moment, auf WhatsApp mit Ihrer eigenen Nummer, per E-Mail oder im Chat auf Ihrer Website, auf Deutsch, Englisch oder Thai. Sie kennt Ihre Leistungen, Preise und echten freien Zeiten, schlägt den Samstag um 15 Uhr vor und trägt die Buchung in Ihren Kalender ein. Bei Beschwerden oder Gesundheitsfragen übergibt sie an Sie, und im Entwurfsmodus geben Sie jede Antwort vorher selbst frei.',
+      ],
+      image: '/images/features/reception-night.webp',
+      imageAlt: 'Geschlossene Spa-Rezeption bei Nacht, auf dem Tresen leuchtet ein Telefon mit einer neuen Nachricht',
+      note: { label: 'Gebucht um 23:14', value: 'Paarmassage, Sa 15:00' },
+    },
     faq: {
       kicker: 'Fragen zur KI-Rezeption',
       title: ['Was sie tut,', 'und was nicht.'],
@@ -43,7 +58,7 @@ const AI_RECEPTIONIST: Record<Lang, FeaturePageContent> = {
         },
         {
           q: 'Woher weiß sie Preise und freie Termine?',
-          a: 'Aus Ihrer App. Sie bucht nur echte freie Zeiten und nennt nur Ihre Preise und Angebote. Sie rät nie.',
+          a: 'Aus Ihrer App. Sie bucht nur Zeiten, die dort wirklich frei sind, und nennt nur die Preise und Angebote, die Sie eingetragen haben.',
         },
         {
           q: 'Was passiert bei Beschwerden oder Gesundheitsfragen?',
@@ -75,6 +90,18 @@ const AI_RECEPTIONIST: Record<Lang, FeaturePageContent> = {
       primary: 'Start free',
       secondary: 'Hear how she talks',
     },
+    story: {
+      kicker: 'Just after 11 pm',
+      title: ['The spa is closed.', 'The front desk still answers.'],
+      paragraphs: [
+        'The lights in reception are off and tomorrow’s towels are folded and ready. On the counter a phone lights up: someone on WhatsApp is asking about a couples massage on Saturday. This message used to wait until morning.',
+        'By then, that person may already have booked somewhere else. A lot of questions arrive exactly when nobody is free to answer: in the evening after work, on a Sunday, or while you are in the treatment room with a client. Starting the morning with a pile of messages means starting the day behind, and some questions simply sit there until they no longer need an answer.',
+        'The Zenno AI receptionist answers right then, on WhatsApp with your own number, by email or in the chat on your website, in German, English or Thai. She knows your services, prices and real free times, suggests Saturday at 3 pm and puts the booking in your calendar. Complaints and health questions go to you, and with draft mode on, you approve every reply before it is sent.',
+      ],
+      image: '/images/features/reception-night.webp',
+      imageAlt: 'A closed spa reception at night, a phone on the counter glowing with a new message',
+      note: { label: 'Booked at 11:14 pm', value: 'Couples massage, Sat 3 pm' },
+    },
     faq: {
       kicker: 'About the receptionist',
       title: ['What she does,', 'and what she does not.'],
@@ -85,7 +112,7 @@ const AI_RECEPTIONIST: Record<Lang, FeaturePageContent> = {
         },
         {
           q: 'How does she know prices and free times?',
-          a: 'From your app. She only books real free times and only quotes your prices and offers. She never guesses.',
+          a: 'From your app. She only books times that are really free there and only quotes the prices and offers you have entered.',
         },
         {
           q: 'What about complaints or health questions?',
@@ -117,6 +144,18 @@ const AI_RECEPTIONIST: Record<Lang, FeaturePageContent> = {
       primary: 'เริ่มใช้ฟรี',
       secondary: 'ฟังเธอคุย',
     },
+    story: {
+      kicker: 'หลังห้าทุ่มนิดหน่อย',
+      title: ['สปาปิดแล้ว', 'แต่หน้าเคาน์เตอร์ยังตอบลูกค้าอยู่'],
+      paragraphs: [
+        'ไฟที่ล็อบบี้ปิดแล้ว ผ้าขนหนูสำหรับพรุ่งนี้พับเตรียมไว้เรียบร้อย บนเคาน์เตอร์มีมือถือสว่างขึ้นมา ลูกค้าทักมาทาง WhatsApp ถามเรื่องนวดคู่วันเสาร์ ถ้าเป็นเมื่อก่อน ข้อความนี้ต้องรอถึงเช้า',
+        'กว่าจะถึงเช้า ลูกค้าคนนั้นอาจจองร้านอื่นไปแล้ว คำถามจำนวนมากเข้ามาตอนที่ไม่มีใครว่างตอบ ทั้งตอนค่ำหลังเลิกงาน วันอาทิตย์ หรือตอนที่คุณกำลังทำทรีตเมนต์ให้ลูกค้าอยู่ในห้อง ถ้าต้องเริ่มเช้าด้วยการไล่ตอบข้อความกองโต วันนั้นก็เริ่มต้นแบบตามหลังไปแล้ว และบางคำถามก็ค้างอยู่จนลูกค้าไม่ต้องการคำตอบอีก',
+        'พนักงานต้อนรับ AI ของ Zenno ตอบทันทีตอนนั้นเลย ทาง WhatsApp ด้วยเบอร์ของร้านเอง ทางอีเมล หรือในแชทบนเว็บไซต์ เป็นภาษาเยอรมัน อังกฤษ หรือไทย เธอรู้บริการ ราคา และเวลาว่างจริงของร้าน เสนอเวลาบ่ายสามโมงวันเสาร์ แล้วลงการจองในปฏิทินของคุณ ถ้าเป็นเรื่องร้องเรียนหรือคำถามสุขภาพ เธอจะส่งต่อให้คุณ และถ้าเปิดโหมดร่างข้อความ คุณอนุมัติทุกคำตอบก่อนส่งเอง',
+      ],
+      image: '/images/features/reception-night.webp',
+      imageAlt: 'ล็อบบี้สปาที่ปิดแล้วตอนกลางคืน มีมือถือบนเคาน์เตอร์สว่างขึ้นพร้อมข้อความใหม่',
+      note: { label: 'จองเมื่อ 23:14', value: 'นวดคู่ เสาร์ 15:00' },
+    },
     faq: {
       kicker: 'เกี่ยวกับพนักงานต้อนรับ',
       title: ['เธอทำอะไรได้', 'และอะไรที่ไม่ทำ'],
@@ -127,7 +166,7 @@ const AI_RECEPTIONIST: Record<Lang, FeaturePageContent> = {
         },
         {
           q: 'เธอรู้ราคาและเวลาว่างได้อย่างไร',
-          a: 'จากแอปของคุณ เธอจองเฉพาะเวลาว่างจริง และบอกเฉพาะราคาและโปรโมชันของร้าน เธอไม่เดา',
+          a: 'จากแอปของคุณ เธอจองเฉพาะเวลาที่ว่างจริงในแอป และบอกเฉพาะราคาและโปรโมชันที่คุณกรอกไว้',
         },
         {
           q: 'ถ้ามีเรื่องร้องเรียนหรือคำถามสุขภาพล่ะ',
@@ -161,6 +200,18 @@ const VOUCHERS: Record<Lang, FeaturePageContent> = {
       lead: 'An der Theke in drei Schritten, online rund um die Uhr. Jeder Gutschein hat einen QR-Code und wird per Scan eingelöst.',
       primary: 'Kostenlos starten',
       secondary: 'So geht der Verkauf',
+    },
+    story: {
+      kicker: 'Mitte Dezember',
+      title: ['Die Schleife binden Sie.', 'Um den Rest kümmert sich Zenno.'],
+      paragraphs: [
+        'Im Dezember suchen viele nach einem Geschenk, das nach Zeit für sich aussieht. Ein Gutschein für eine Massage oder einen Spa-Tag passt dazu, und an der Theke wird er mit Schleife überreicht.',
+        'In den Wochen vor Weihnachten kommt beides zusammen: Kundschaft an der Theke, die schnell einen Gutschein mitnehmen will, und Anfragen per Nachricht, oft spät am Abend. Mit Papiergutscheinen beginnt dann die Suche. Welche Nummer war das, wie viel ist noch drauf, wurde er schon eingelöst? Und im Januar fragt die Steuerberatung, wo eigentlich die Gutscheinverkäufe aus dem Dezember stehen.',
+        'Mit Zenno verkaufen Sie Wertgutscheine, Gutscheinsets und Mehrfachkarten an der Theke in drei Schritten und online auf Ihrer Buchungsseite rund um die Uhr. Ihre KI-Rezeption verkauft sie auch auf WhatsApp und per E-Mail. Jeder Gutschein hat einen QR-Code, der beim Einlösen gescannt wird, und der Restbetrag bleibt auf dem Gutschein. Jeder Verkauf steht im Kassenbuch und im DATEV-Export.',
+      ],
+      image: '/images/features/voucher-ribbon.webp',
+      imageAlt: 'Hände binden an der Theke eines Spas eine Schleife um einen Geschenkumschlag, weihnachtliche Stimmung',
+      note: { label: 'Gutschein verkauft', value: 'Spa-Tag für zwei, 180 €' },
     },
     faq: {
       kicker: 'Fragen zu Gutscheinen',
@@ -200,6 +251,18 @@ const VOUCHERS: Record<Lang, FeaturePageContent> = {
       primary: 'Start free',
       secondary: 'See a sale',
     },
+    story: {
+      kicker: 'Mid-December',
+      title: ['You tie the ribbon.', 'Zenno handles the rest.'],
+      paragraphs: [
+        'In December a lot of people are looking for a gift that feels like time for yourself. A voucher for a massage or a spa day fits that wish, and at the counter it is handed over with a ribbon.',
+        'In the weeks before Christmas, two things happen at once: clients at the counter who want a voucher quickly, and requests by message, often late in the evening. With paper vouchers, the searching starts. Which number was it, how much is left on it, has it already been used? And in January your tax advisor asks where December’s voucher sales are.',
+        'With Zenno you sell value vouchers, voucher sets and multi-visit passes at the counter in three taps, and online on your booking page day and night. Your AI receptionist sells them on WhatsApp and by email too. Every voucher has a QR code that is scanned when it is redeemed, and any remaining balance stays on the voucher. Every sale goes into the cash book and the DATEV export.',
+      ],
+      image: '/images/features/voucher-ribbon.webp',
+      imageAlt: 'Hands tying a ribbon around a gift envelope at a spa counter in a festive December mood',
+      note: { label: 'Voucher sold', value: 'Spa day for two, €180' },
+    },
     faq: {
       kicker: 'About vouchers',
       title: ['Vouchers,', 'simply explained.'],
@@ -237,6 +300,18 @@ const VOUCHERS: Record<Lang, FeaturePageContent> = {
       lead: 'ขายที่เคาน์เตอร์ได้ในสามขั้นตอน ขายออนไลน์ได้ตลอดเวลา ทุกใบมี QR code ใช้งานด้วยการสแกน',
       primary: 'เริ่มใช้ฟรี',
       secondary: 'ดูการขาย',
+    },
+    story: {
+      kicker: 'กลางเดือนธันวาคม',
+      title: ['คุณผูกโบว์', 'ที่เหลือ Zenno จัดการให้'],
+      paragraphs: [
+        'ช่วงธันวาคม หลายคนมองหาของขวัญที่ให้เวลาพักผ่อนกับตัวเอง บัตรของขวัญสำหรับนวดหรือวันสปาตรงกับที่เขามองหา และที่เคาน์เตอร์ก็ส่งให้ลูกค้าพร้อมโบว์สวยๆ',
+        'ช่วงสัปดาห์ก่อนคริสต์มาส สองอย่างมาพร้อมกัน ลูกค้าที่เคาน์เตอร์อยากได้บัตรของขวัญแบบรีบๆ และข้อความถามซื้อที่มักเข้ามาตอนดึก ถ้าเป็นบัตรกระดาษ ก็ต้องเริ่มตามหา เลขที่เท่าไร เหลือยอดเท่าไร ใช้ไปแล้วหรือยัง แล้วพอถึงเดือนมกราคม นักบัญชีก็ถามว่ายอดขายบัตรของขวัญเดือนธันวาคมอยู่ตรงไหน',
+        'กับ Zenno คุณขายบัตรมูลค่า เซ็ตบัตรของขวัญ และบัตรหลายครั้ง ที่เคาน์เตอร์ได้ในสามขั้นตอน และขายออนไลน์บนหน้าจองได้ตลอดเวลา พนักงานต้อนรับ AI ก็ขายทาง WhatsApp และอีเมลได้ด้วย ทุกใบมี QR code ที่สแกนตอนใช้งาน และยอดที่เหลือยังอยู่ในบัตร ทุกการขายบันทึกในสมุดเงินสดและไฟล์ส่งออก DATEV',
+      ],
+      image: '/images/features/voucher-ribbon.webp',
+      imageAlt: 'มือกำลังผูกโบว์บนซองของขวัญที่เคาน์เตอร์สปา บรรยากาศเดือนธันวาคม',
+      note: { label: 'ขายบัตรของขวัญแล้ว', value: 'วันสปาสำหรับสองคน €180' },
     },
     faq: {
       kicker: 'เกี่ยวกับบัตรของขวัญ',

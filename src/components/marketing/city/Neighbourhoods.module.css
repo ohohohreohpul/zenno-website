@@ -1,0 +1,32 @@
+.grid {
+  margin-top: clamp(2rem, 1.2rem + 2.5vw, 3.25rem);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: clamp(2rem, 1rem + 3vw, 4rem);
+  row-gap: 2rem;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line-strong);
+}
+.name {
+  margin: 0;
+  font-size: var(--step-1);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.body {
+  margin: 0;
+  color: var(--t2);
+  font-size: var(--step-0);
+  line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

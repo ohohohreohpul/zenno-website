@@ -75,9 +75,14 @@ interface NavProps {
    * pages: the switcher then points at each locale's homepage.
    */
   localizedPath?: string
+  /**
+   * Per-locale path overrides for routes missing in some locales (location
+   * pages have no Thai version, so the TH switch points at the industry page).
+   */
+  langPaths?: Partial<Record<Lang, string>>
 }
 
-export function Nav({ lang = 'en', onLightBg = false, localizedPath }: NavProps) {
+export function Nav({ lang = 'en', onLightBg = false, localizedPath, langPaths }: NavProps) {
   const [scrolled, setScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const t = STRINGS[lang]
@@ -127,7 +132,7 @@ export function Nav({ lang = 'en', onLightBg = false, localizedPath }: NavProps)
             {otherLangs.map((l) => (
               <a
                 key={l}
-                href={localePath(l, localizedPath ?? '/')}
+                href={localePath(l, langPaths?.[l] ?? localizedPath ?? '/')}
                 hrefLang={l}
                 lang={l}
                 className={styles.langSwitch}
