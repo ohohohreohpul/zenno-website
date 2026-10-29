@@ -45,7 +45,7 @@ const AI_RECEPTIONIST: Record<Lang, FeaturePageContent> = {
         'Die KI-Rezeption von Zenno antwortet in diesem Moment, auf WhatsApp mit Ihrer eigenen Nummer, per E-Mail oder im Chat auf Ihrer Website, auf Deutsch, Englisch oder Thai. Sie kennt Ihre Leistungen, Preise und echten freien Zeiten, schlägt den Samstag um 15 Uhr vor und trägt die Buchung in Ihren Kalender ein. Bei Beschwerden oder Gesundheitsfragen übergibt sie an Sie, und im Entwurfsmodus geben Sie jede Antwort vorher selbst frei.',
       ],
       image: '/images/features/reception-night.webp',
-      imageAlt: 'Geschlossene Spa-Rezeption bei Nacht, auf dem Tresen leuchtet ein Telefon mit einer neuen Nachricht',
+      imageAlt: 'Leerer Empfang eines Studios am Abend, nur die Lampen brennen noch',
       note: { label: 'Gebucht um 23:14', value: 'Paarmassage, Sa 15:00' },
     },
     faq: {
@@ -99,7 +99,7 @@ const AI_RECEPTIONIST: Record<Lang, FeaturePageContent> = {
         'The Zenno AI receptionist answers right then, on WhatsApp with your own number, by email or in the chat on your website, in German, English or Thai. She knows your services, prices and real free times, suggests Saturday at 3 pm and puts the booking in your calendar. Complaints and health questions go to you, and with draft mode on, you approve every reply before it is sent.',
       ],
       image: '/images/features/reception-night.webp',
-      imageAlt: 'A closed spa reception at night, a phone on the counter glowing with a new message',
+      imageAlt: 'An empty studio reception in the evening, only the lamps still on',
       note: { label: 'Booked at 11:14 pm', value: 'Couples massage, Sat 3 pm' },
     },
     faq: {
@@ -153,7 +153,7 @@ const AI_RECEPTIONIST: Record<Lang, FeaturePageContent> = {
         'พนักงานต้อนรับ AI ของ Zenno ตอบทันทีตอนนั้นเลย ทาง WhatsApp ด้วยเบอร์ของร้านเอง ทางอีเมล หรือในแชทบนเว็บไซต์ เป็นภาษาเยอรมัน อังกฤษ หรือไทย เธอรู้บริการ ราคา และเวลาว่างจริงของร้าน เสนอเวลาบ่ายสามโมงวันเสาร์ แล้วลงการจองในปฏิทินของคุณ ถ้าเป็นเรื่องร้องเรียนหรือคำถามสุขภาพ เธอจะส่งต่อให้คุณ และถ้าเปิดโหมดร่างข้อความ คุณอนุมัติทุกคำตอบก่อนส่งเอง',
       ],
       image: '/images/features/reception-night.webp',
-      imageAlt: 'ล็อบบี้สปาที่ปิดแล้วตอนกลางคืน มีมือถือบนเคาน์เตอร์สว่างขึ้นพร้อมข้อความใหม่',
+      imageAlt: 'เคาน์เตอร์ต้อนรับที่ว่างเปล่าตอนค่ำ มีเพียงโคมไฟที่ยังเปิดอยู่',
       note: { label: 'จองเมื่อ 23:14', value: 'นวดคู่ เสาร์ 15:00' },
     },
     faq: {
@@ -210,7 +210,7 @@ const VOUCHERS: Record<Lang, FeaturePageContent> = {
         'Mit Zenno verkaufen Sie Wertgutscheine, Gutscheinsets und Mehrfachkarten an der Theke in drei Schritten und online auf Ihrer Buchungsseite rund um die Uhr. Ihre KI-Rezeption verkauft sie auch auf WhatsApp und per E-Mail. Jeder Gutschein hat einen QR-Code, der beim Einlösen gescannt wird, und der Restbetrag bleibt auf dem Gutschein. Jeder Verkauf steht im Kassenbuch und im DATEV-Export.',
       ],
       image: '/images/features/voucher-ribbon.webp',
-      imageAlt: 'Hände binden an der Theke eines Spas eine Schleife um einen Geschenkumschlag, weihnachtliche Stimmung',
+      imageAlt: 'Hände öffnen einen roten Umschlag mit Gutscheinkarte, daneben ein Geschenk mit Schleife und ein Weihnachtsbaum',
       note: { label: 'Gutschein verkauft', value: 'Spa-Tag für zwei, 180 €' },
     },
     faq: {
@@ -260,7 +260,7 @@ const VOUCHERS: Record<Lang, FeaturePageContent> = {
         'With Zenno you sell value vouchers, voucher sets and multi-visit passes at the counter in three taps, and online on your booking page day and night. Your AI receptionist sells them on WhatsApp and by email too. Every voucher has a QR code that is scanned when it is redeemed, and any remaining balance stays on the voucher. Every sale goes into the cash book and the DATEV export.',
       ],
       image: '/images/features/voucher-ribbon.webp',
-      imageAlt: 'Hands tying a ribbon around a gift envelope at a spa counter in a festive December mood',
+      imageAlt: 'Hands opening a red envelope with a gift card, a ribboned present and a Christmas tree nearby',
       note: { label: 'Voucher sold', value: 'Spa day for two, €180' },
     },
     faq: {
@@ -310,7 +310,7 @@ const VOUCHERS: Record<Lang, FeaturePageContent> = {
         'กับ Zenno คุณขายบัตรมูลค่า เซ็ตบัตรของขวัญ และบัตรหลายครั้ง ที่เคาน์เตอร์ได้ในสามขั้นตอน และขายออนไลน์บนหน้าจองได้ตลอดเวลา พนักงานต้อนรับ AI ก็ขายทาง WhatsApp และอีเมลได้ด้วย ทุกใบมี QR code ที่สแกนตอนใช้งาน และยอดที่เหลือยังอยู่ในบัตร ทุกการขายบันทึกในสมุดเงินสดและไฟล์ส่งออก DATEV',
       ],
       image: '/images/features/voucher-ribbon.webp',
-      imageAlt: 'มือกำลังผูกโบว์บนซองของขวัญที่เคาน์เตอร์สปา บรรยากาศเดือนธันวาคม',
+      imageAlt: 'มือกำลังเปิดซองสีแดงที่มีบัตรของขวัญ ข้างๆ มีกล่องของขวัญผูกโบว์และต้นคริสต์มาส',
       note: { label: 'ขายบัตรของขวัญแล้ว', value: 'วันสปาสำหรับสองคน €180' },
     },
     faq: {

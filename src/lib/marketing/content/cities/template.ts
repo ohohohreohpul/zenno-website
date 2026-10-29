@@ -62,7 +62,7 @@ export function cityPageStrings(industry: CityIndustry, lang: CityLang, city: st
       sameCityLabel: `Auch in ${city}`,
       faqKicker: `Fragen aus ${city}`,
       faqTitle: ['Kurz beantwortet,', `für ${noun} in ${city}.`],
-      imageAlt: `${noun} in ${city}: Behandlung im Studio, die Stadt im Fenster`,
+      imageAlt: `Stadtansicht von ${city}`,
     }
   }
   return {
@@ -81,6 +81,6 @@ export function cityPageStrings(industry: CityIndustry, lang: CityLang, city: st
     sameCityLabel: `Also in ${city}`,
     faqKicker: `Questions from ${city}`,
     faqTitle: ['Answered briefly,', `for ${noun} in ${city}.`],
-    imageAlt: `${noun} in ${city}: a treatment in the studio, the city through the window`,
+    imageAlt: `A view of ${city}`,
   }
 }
