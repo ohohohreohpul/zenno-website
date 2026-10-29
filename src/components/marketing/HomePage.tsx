@@ -12,6 +12,7 @@ import { CalendarSection } from './home/calendar/CalendarSection'
 import { BooksSection } from './home/books/BooksSection'
 import { TalksSection } from './home/talks/TalksSection'
 import { VouchersSection } from './home/vouchers/VouchersSection'
+import { RegularsSection } from './home/regulars/RegularsSection'
 import { ChargeSection } from './home/charge/ChargeSection'
 import { SwitchingSection } from './home/switching/SwitchingSection'
 import { TourSection } from './home/tour/TourSection'
@@ -23,10 +24,10 @@ interface HomePageProps {
 }
 
 /**
- * The homepage, in the rebrief's order: the front desk moment, a quick tour
- * (the product film as clickable screens), one calendar,
- * it books itself, talks like you, vouchers and money, you stay in charge,
- * switching, pricing, FAQ. Every section shows a real screen of the app.
+ * The homepage leads with outcomes: the front desk problem, then more
+ * bookings, more gift cards and more regulars. How it works comes after:
+ * the tour, one calendar, the receptionist's voice, control, switching,
+ * pricing, FAQ. Every section shows a real screen of the app.
  */
 export function HomePage({ lang }: HomePageProps) {
   return (
@@ -35,15 +36,16 @@ export function HomePage({ lang }: HomePageProps) {
       <main>
         <HomeHero lang={lang} />
         <FrontDeskSection lang={lang} />
+        <BooksSection lang={lang} index={2} />
+        <VouchersSection lang={lang} index={3} />
+        <RegularsSection lang={lang} index={4} />
         <TourSection lang={lang} />
         <GuestCards lang={lang} />
-        <CalendarSection lang={lang} />
+        <CalendarSection lang={lang} index={5} />
         <StaffCarousel lang={lang} />
-        <BooksSection lang={lang} />
-        <TalksSection lang={lang} />
-        <VouchersSection lang={lang} />
-        <ChargeSection lang={lang} />
-        <SwitchingSection lang={lang} />
+        <TalksSection lang={lang} index={6} />
+        <ChargeSection lang={lang} index={7} />
+        <SwitchingSection lang={lang} index={8} />
         <BookingPricing lang={lang} />
         <Faq lang={lang} />
         <ClosingCta lang={lang} />

@@ -12,12 +12,12 @@ export interface OgCopy {
 }
 
 export const OG_COPY: Record<Lang, OgCopy> = {
-  de: { line1: 'Die Buchungssoftware,', line2: 'die für Sie bucht.', sub: 'Kalender · Online-Buchung · Gutscheine · KI-Rezeption' },
-  en: { line1: 'Booking software', line2: 'that books itself.', sub: 'Calendar · online booking · vouchers · AI receptionist' },
+  de: { line1: 'Mehr Buchungen,', line2: 'Gutscheine & Stammgäste.', sub: 'Online-Buchung · Gutscheine · Treuepunkte · KI-Rezeption' },
+  en: { line1: 'More bookings,', line2: 'gift cards & regulars.', sub: 'Online booking · gift cards · loyalty · AI receptionist' },
   th: {
-    line1: 'ระบบจองคิว',
-    line2: 'ที่รับจองแทนคุณ',
-    sub: 'ปฏิทิน · จองออนไลน์ · บัตรของขวัญ · พนักงานต้อนรับ AI',
+    line1: 'คิวเต็มขึ้น',
+    line2: 'ลูกค้ากลับมาบ่อยขึ้น',
+    sub: 'จองออนไลน์ · บัตรของขวัญ · แต้มสะสม · พนักงานต้อนรับ AI',
   },
 }
 

@@ -8,9 +8,9 @@ import { pageMetadata } from '@/lib/marketing/seo'
 export const metadata = pageMetadata({
   lang: 'en',
   path: '/',
-  title: 'Booking software that books itself | Zenno',
+  title: 'Booking software for more bookings, gift cards and regulars | Zenno',
   description:
-    'Booking software for spas, massage shops and beauty salons: a POS calendar, online booking, vouchers and payments, and an AI receptionist that answers on WhatsApp, email and your website and books for you.',
+    'Zenno fills your calendar, sells gift cards online around the clock and brings regulars back, with an AI receptionist for WhatsApp, email and your website, reminders and loyalty points. For spas, massage shops and beauty salons.',
 })
 
 export default function HomePageEn() {

@@ -1,4 +1,5 @@
 import { LANGS, LANG_NAME, homePath, localePath, type Lang } from '@/lib/marketing/lang'
+import { TAGLINE } from '@/lib/marketing/content/tagline'
 import { HELP_URL, SUPPORT_EMAIL } from '@/lib/marketing/config'
 import { FEATURE_SLUGS, INDUSTRY_SLUGS, PAGE_LABEL, type PageSlug } from '@/lib/marketing/pages'
 import styles from './Footer.module.css'
@@ -33,7 +34,7 @@ interface FooterStrings {
 
 const STRINGS: Record<Lang, FooterStrings> = {
   de: {
-    tagline: 'Die Buchungssoftware, die für Sie bucht.',
+    tagline: TAGLINE.de,
     product: { title: 'Produkt', calendar: 'Kalender', receptionist: 'KI-Rezeption', vouchers: 'Gutscheine', pricing: 'Preise' },
     useCases: { title: 'Branchen' },
     help: { title: 'Hilfe', docs: 'Hilfe-Center', support: 'Support' },
@@ -43,7 +44,7 @@ const STRINGS: Record<Lang, FooterStrings> = {
     previously: 'Früher onbuuk.com',
   },
   en: {
-    tagline: 'Booking software that books itself.',
+    tagline: TAGLINE.en,
     product: { title: 'Product', calendar: 'Calendar', receptionist: 'AI receptionist', vouchers: 'Vouchers', pricing: 'Pricing' },
     useCases: { title: 'Industries' },
     help: { title: 'Help', docs: 'Help centre', support: 'Support' },
@@ -53,7 +54,7 @@ const STRINGS: Record<Lang, FooterStrings> = {
     previously: 'Previously onbuuk.com',
   },
   th: {
-    tagline: 'ระบบจองคิว ที่รับจองแทนคุณ',
+    tagline: TAGLINE.th,
     product: { title: 'ผลิตภัณฑ์', calendar: 'ปฏิทิน', receptionist: 'พนักงานต้อนรับ AI', vouchers: 'บัตรของขวัญ', pricing: 'ราคา' },
     useCases: { title: 'ประเภทธุรกิจ' },
     help: { title: 'ช่วยเหลือ', docs: 'ศูนย์ช่วยเหลือ', support: 'ฝ่ายบริการลูกค้า' },

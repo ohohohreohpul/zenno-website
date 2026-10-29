@@ -8,9 +8,9 @@ import { pageMetadata } from '@/lib/marketing/seo'
 export const metadata = pageMetadata({
   lang: 'de',
   path: '/',
-  title: 'Die Buchungssoftware, die für Sie bucht | Zenno',
+  title: 'Buchungssoftware für mehr Buchungen, Gutscheine und Stammgäste | Zenno',
   description:
-    'Buchungssoftware für Spas, Massage- und Kosmetikstudios: Kassenkalender, Online-Buchung, Gutscheine und Zahlungen, und eine KI-Rezeption, die auf WhatsApp, per E-Mail und auf Ihrer Website antwortet und für Sie bucht.',
+    'Zenno füllt Ihren Kalender, verkauft Gutscheine online rund um die Uhr und holt Stammgäste zurück: mit einer KI-Rezeption für WhatsApp, E-Mail und Website, Erinnerungen und Treuepunkten. Für Spas, Massage- und Kosmetikstudios.',
 })
 
 export default function HomePageDe() {

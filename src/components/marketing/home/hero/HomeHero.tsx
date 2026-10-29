@@ -1,11 +1,11 @@
 import type { Lang } from '@/lib/marketing/lang'
 import { PhotoHero, type PhotoScene } from '../photo-hero/PhotoHero'
 import { HeroDemo } from './HeroDemo'
+import { RotatingHeadline } from './RotatingHeadline'
 import styles from './Hero.module.css'
 
 interface HeroCopy {
   eyebrow: string
-  title: string
   sub: string
   primary: string
   secondary: string
@@ -16,11 +16,10 @@ interface HeroCopy {
 
 const COPY: Record<Lang, HeroCopy> = {
   en: {
-    eyebrow: 'Booking software for spas, salons and studios',
-    title: 'Booking software that books itself.',
-    sub: 'One calendar, an online booking page, vouchers and payments. And an AI receptionist that answers on WhatsApp, email and your website, then books for you.',
+    eyebrow: 'For spas, salons and studios',
+    sub: 'Zenno answers your guests on WhatsApp, email and your website while you work, sells gift cards online day and night, and brings regulars back with reminders, easy rebooking and loyalty points.',
     primary: 'Start free',
-    secondary: 'See it book',
+    secondary: 'See how it works',
     scenesLabel: 'Choose a business',
     shotLine: 'A message at 23:04. Booked before you wake up.',
     scenes: [
@@ -87,11 +86,10 @@ const COPY: Record<Lang, HeroCopy> = {
     ],
   },
   de: {
-    eyebrow: 'Buchungssoftware für Spas, Salons und Studios',
-    title: 'Die Buchungssoftware, die für Sie bucht.',
-    sub: 'Ein Kalender, eine Online-Buchungsseite, Gutscheine und Zahlungen. Und eine KI-Rezeption, die auf WhatsApp, per E-Mail und auf Ihrer Website antwortet und für Sie bucht.',
+    eyebrow: 'Für Spas, Salons und Studios',
+    sub: 'Zenno antwortet Ihren Gästen auf WhatsApp, per E-Mail und auf Ihrer Website, während Sie arbeiten, verkauft Gutscheine online rund um die Uhr und holt Stammgäste zurück: mit Erinnerungen, einfachem Umbuchen und Treuepunkten.',
     primary: 'Kostenlos starten',
-    secondary: 'Sehen, wie sie bucht',
+    secondary: 'So funktioniert es',
     scenesLabel: 'Betrieb wählen',
     shotLine: 'Eine Nachricht um 23:04. Gebucht, bevor Sie aufwachen.',
     scenes: [
@@ -158,12 +156,10 @@ const COPY: Record<Lang, HeroCopy> = {
     ],
   },
   th: {
-    eyebrow: 'ระบบจองคิวสำหรับสปา ร้านเสริมสวย และสตูดิโอ',
-    // Thai has no word spaces, so the line break is set by hand.
-    title: 'ระบบจองคิว\nที่รับจองแทนคุณ',
-    sub: 'ปฏิทินเดียว หน้าจองออนไลน์ บัตรของขวัญและการชำระเงิน พร้อมพนักงานต้อนรับ AI ที่ตอบลูกค้าทาง WhatsApp อีเมล และเว็บไซต์ แล้วรับจองคิวให้คุณ',
+    eyebrow: 'สำหรับสปา ร้านเสริมสวย และสตูดิโอ',
+    sub: 'Zenno ตอบลูกค้าทาง WhatsApp อีเมล และเว็บไซต์ระหว่างที่คุณทำงาน ขายบัตรของขวัญออนไลน์ได้ตลอดวัน และดึงลูกค้าประจำให้กลับมาด้วยการแจ้งเตือน การจองซ้ำที่ง่าย และแต้มสะสม',
     primary: 'เริ่มใช้ฟรี',
-    secondary: 'ดูการจองจริง',
+    secondary: 'ดูวิธีทำงาน',
     scenesLabel: 'เลือกประเภทร้าน',
     shotLine: 'ลูกค้าทักมาตอน 23:04 คิวลงปฏิทินก่อนคุณตื่น',
     scenes: [
@@ -242,7 +238,7 @@ export function HomeHero({ lang }: HomeHeroProps) {
     <>
       <PhotoHero
         eyebrow={t.eyebrow}
-        title={t.title}
+        title={<RotatingHeadline lang={lang} />}
         sub={t.sub}
         primary={t.primary}
         secondary={t.secondary}

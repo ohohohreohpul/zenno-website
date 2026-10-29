@@ -1,5 +1,6 @@
 'use client'
 
+import type { ReactNode } from 'react'
 import { useMemo, useRef } from 'react'
 import { ArrowRight, Check, Play } from 'lucide-react'
 import { useStepLoop } from '@/lib/marketing/useStepLoop'
@@ -26,7 +27,7 @@ export interface PhotoScene {
 
 interface PhotoHeroProps {
   eyebrow?: string
-  title: string
+  title: ReactNode
   sub: string
   primary: string
   secondary: string

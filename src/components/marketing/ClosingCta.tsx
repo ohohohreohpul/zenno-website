@@ -1,4 +1,5 @@
 import '@/styles/zenno-ui.css'
+import { TAGLINE } from '@/lib/marketing/content/tagline'
 import { ArrowRight } from 'lucide-react'
 import type { Lang } from '@/lib/marketing/lang'
 import { START_URL, SUPPORT_EMAIL } from '@/lib/marketing/config'
@@ -18,24 +19,24 @@ interface ClosingCopy {
 
 const STRINGS: Record<Lang, ClosingCopy> = {
   en: {
-    title: 'Booking software that books itself.',
-    sub: 'One calendar, full for the day. Your receptionist answers, books and sells vouchers, and you stay in charge.',
+    title: TAGLINE.en,
+    sub: 'Every guest gets an answer, gift cards sell around the clock and regulars come back. You stay in charge.',
     primary: 'Start free',
     secondary: 'Write to us',
     note: 'Free plan · no credit card · German, English and Thai',
     calLabel: 'A full Saturday in the calendar for Nok, Ploy and Anna.',
   },
   de: {
-    title: 'Die Buchungssoftware, die für Sie bucht.',
-    sub: 'Ein Kalender, voll für den Tag. Ihre Rezeption antwortet, bucht und verkauft Gutscheine, und Sie behalten die Kontrolle.',
+    title: TAGLINE.de,
+    sub: 'Jeder Gast bekommt eine Antwort, Gutscheine verkaufen sich rund um die Uhr, Stammgäste kommen wieder. Und Sie behalten die Kontrolle.',
     primary: 'Kostenlos starten',
     secondary: 'Schreiben Sie uns',
     note: 'Kostenloser Tarif · keine Kreditkarte · Deutsch, Englisch und Thai',
     calLabel: 'Ein voller Samstag im Kalender für Nok, Ploy und Anna.',
   },
   th: {
-    title: 'ระบบจองคิว ที่รับจองแทนคุณ',
-    sub: 'ปฏิทินเดียว คิวเต็มทั้งวัน พนักงานต้อนรับตอบ จอง และขายบัตรของขวัญให้ คุณยังเป็นคนตัดสินใจ',
+    title: TAGLINE.th,
+    sub: 'ตอบลูกค้าทุกคน ขายบัตรของขวัญได้ตลอดวัน ลูกค้าประจำกลับมาอีก และคุณยังเป็นคนตัดสินใจ',
     primary: 'เริ่มใช้ฟรี',
     secondary: 'ส่งข้อความหาเรา',
     note: 'มีแพ็กเกจฟรี · ไม่ต้องใช้บัตรเครดิต · ภาษาเยอรมัน อังกฤษ และไทย',
