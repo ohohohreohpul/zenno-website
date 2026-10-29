@@ -67,9 +67,9 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
 }
 
 export const BOOKING_APP_DESCRIPTION: Record<Lang, string> = {
-  de: 'Buchungssoftware, die für Sie bucht: Kassenkalender, Online-Buchungsseite, Gutscheine, Zahlungen, No-Show-Gebühren, Kassenbuch und DATEV-Export, mit einer KI-Rezeption für WhatsApp, E-Mail und Website. Vormals onbuuk.com.',
-  en: 'Booking software that books itself: a POS calendar, online booking page, vouchers, payments, no-show fees, cash book and DATEV export, with an AI receptionist for WhatsApp, email and your website. Previously onbuuk.com.',
-  th: 'ระบบจองคิว ที่รับจองแทนคุณ ปฏิทินหน้าร้าน หน้าจองออนไลน์ บัตรของขวัญ การชำระเงิน ค่าปรับไม่มาตามนัด สมุดเงินสด และไฟล์ส่งออก DATEV พร้อมพนักงานต้อนรับ AI สำหรับ WhatsApp อีเมล และเว็บไซต์ เดิมคือ onbuuk.com',
+  de: 'Buchungssoftware für mehr Buchungen, Gutscheine und Stammgäste: Kassenkalender, Online-Buchungsseite, Gutscheine, Zahlungen, No-Show-Gebühren, Kassenbuch und DATEV-Export, mit einer KI-Rezeption für WhatsApp, E-Mail und Website. Vormals onbuuk.com.',
+  en: 'Booking software for more bookings, gift cards and regulars: a POS calendar, online booking page, vouchers, payments, no-show fees, cash book and DATEV export, with an AI receptionist for WhatsApp, email and your website. Previously onbuuk.com.',
+  th: 'ระบบจองคิวที่ช่วยให้คิวเต็มขึ้น ขายบัตรของขวัญได้มากขึ้น และลูกค้ากลับมาบ่อยขึ้น ปฏิทินหน้าร้าน หน้าจองออนไลน์ บัตรของขวัญ การชำระเงิน ค่าปรับไม่มาตามนัด สมุดเงินสด และไฟล์ส่งออก DATEV พร้อมพนักงานต้อนรับ AI สำหรับ WhatsApp อีเมล และเว็บไซต์ เดิมคือ onbuuk.com',
 }
 
 /** The product: the homepage, feature pages and /booking describe this one. */

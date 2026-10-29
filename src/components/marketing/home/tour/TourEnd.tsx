@@ -1,15 +1,10 @@
 import type { Lang } from '@/lib/marketing/lang'
+import { TAGLINE } from '@/lib/marketing/content/tagline'
 import { APP_WORDS, STAFF } from '@/lib/marketing/content/home/demo'
 import { AppWindow } from '../../app-ui/AppWindow'
 import { DayCalendar } from '../../app-ui/DayCalendar'
 import { fullDayBookings } from '../../app-ui/fullDay'
 import styles from './Tour.module.css'
-
-const LINE: Record<Lang, string> = {
-  en: 'Booking software that books itself.',
-  de: 'Die Buchungssoftware, die für Sie bucht.',
-  th: 'ระบบจองคิว ที่รับจองแทนคุณ',
-}
 
 const CAL_LABEL: Record<Lang, string> = {
   en: 'A full Saturday in the calendar for Nok, Ploy and Anna.',
@@ -25,7 +20,7 @@ interface TourEndProps {
 export function TourEnd({ lang }: TourEndProps) {
   return (
     <div className={styles.end}>
-      <p className={styles.endLine}>{LINE[lang]}</p>
+      <p className={styles.endLine}>{TAGLINE[lang]}</p>
       <AppWindow title={APP_WORDS[lang].saturday} nav="calendar">
         <DayCalendar
           staff={STAFF}

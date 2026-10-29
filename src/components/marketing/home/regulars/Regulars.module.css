@@ -1,0 +1,100 @@
+.stage {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(rgba(26, 23, 20, 0.04), rgba(26, 23, 20, 0.04)),
+    var(--sand);
+}
+
+.profile {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.profile > span:last-child {
+  display: grid;
+  gap: 2px;
+}
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 600;
+}
+.name {
+  font-size: 16px;
+}
+
+.points {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(28, 25, 23, 0.06), var(--shadow-lift);
+}
+.pointsHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.pointsValue {
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+.dots {
+  display: flex;
+  gap: 6px;
+}
+.dots i {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1.5px var(--line);
+}
+.dots .dotOn {
+  background: var(--success-fill);
+  box-shadow: none;
+}
+
+.events {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.event {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: var(--paper);
+}
+.eventIcon {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--success-tint);
+  color: var(--success);
+}
+.eventText {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+.when {
+  white-space: nowrap;
+}

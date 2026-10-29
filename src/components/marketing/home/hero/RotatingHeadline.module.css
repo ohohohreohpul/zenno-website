@@ -1,0 +1,31 @@
+.line {
+  white-space: normal;
+}
+
+/* All words share one cell: the cell is as wide as the longest word. */
+.rotator {
+  display: inline-grid;
+  vertical-align: top;
+}
+
+.word {
+  grid-area: 1 / 1;
+  justify-self: start;
+  opacity: 0;
+  transform: translateY(0.35em);
+  transition:
+    opacity 450ms var(--zn-ease),
+    transform 650ms var(--zn-ease);
+}
+.active {
+  opacity: 1;
+  transform: none;
+}
+.leaving {
+  transform: translateY(-0.35em);
+}
+
+/* Thai has no word spaces: let the phrase wrap and stay centred. */
+.rotator:lang(th) .word {
+  justify-self: center;
+}
