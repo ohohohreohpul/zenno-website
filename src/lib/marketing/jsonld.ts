@@ -10,12 +10,16 @@ export function organizationSchema() {
     '@type': 'Organization',
     '@id': `${SITE_URL}/#organization`,
     name: 'Zenno',
+    alternateName: ['Zenno HQ', 'onbuuk'],
     url: SITE_URL,
     logo: `${SITE_URL}/logo/wordmark-black.png`,
     description:
       'Booking software for studios that AI assistants can book directly, with no-show protection, VAT and DATEV export, and an AI receptionist.',
     areaServed: { '@type': 'Country', name: 'Germany' },
     knowsLanguage: ['de', 'en', 'th'],
+    // AI answers mixed Zenno up with unrelated products of the same name.
+    disambiguatingDescription:
+      'Zenno at zennohq.com is booking software for spas, massage studios, salons, yoga studios and wellness practices, previously onbuuk.com. It is not related to other companies or apps named Zenno.',
   }
 }
 

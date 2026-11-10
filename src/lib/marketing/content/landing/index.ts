@@ -4,6 +4,7 @@ import type { LandingContent } from './types'
 import { SALONS_SPAS } from './salonsSpas'
 import { YOGA_STUDIOS } from './yogaStudios'
 import { CLINICS } from './clinics'
+import { MASSAGE_STUDIOS } from './massageStudios'
 import { NO_SHOWS } from './noShows'
 import { TAX_DATEV } from './taxDatev'
 import { COMMISSION_FREE } from './commissionFree'
@@ -12,6 +13,7 @@ const LANDING_CONTENT: Record<LandingSlug, Record<Lang, LandingContent>> = {
   'salons-spas': SALONS_SPAS,
   'yoga-studios': YOGA_STUDIOS,
   clinics: CLINICS,
+  'massage-studios': MASSAGE_STUDIOS,
   'no-shows': NO_SHOWS,
   'tax-datev': TAX_DATEV,
   'commission-free': COMMISSION_FREE,
