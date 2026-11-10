@@ -2,6 +2,8 @@ import { LANGS, LANG_NAME, homePath, localePath, type Lang } from '@/lib/marketi
 import { TAGLINE } from '@/lib/marketing/content/tagline'
 import { HELP_URL, SUPPORT_EMAIL } from '@/lib/marketing/config'
 import { FEATURE_SLUGS, INDUSTRY_SLUGS, PAGE_LABEL, type PageSlug } from '@/lib/marketing/pages'
+import { META_PIXEL_ID } from '@/lib/marketing/legal/company'
+import { CookieSettingsLink } from './consent/CookieSettingsLink'
 import styles from './Footer.module.css'
 
 interface FooterLink {
@@ -12,6 +14,8 @@ interface FooterLink {
 interface FooterCol {
   title: string
   links: FooterLink[]
+  /** The company column also carries the cookie-settings switch (only when the pixel is configured). */
+  hasCookieSettings?: boolean
 }
 
 /** The channels the receptionist answers on today. */
@@ -26,7 +30,7 @@ interface FooterStrings {
   product: { title: string; calendar: string; receptionist: string; vouchers: string; pricing: string }
   useCases: { title: string }
   help: { title: string; docs: string; support: string }
-  company: { title: string; links: string[] }
+  company: { title: string; privacy: string; imprint: string; cookies: string }
   languages: string
   rights: string
   previously: string
@@ -38,7 +42,7 @@ const STRINGS: Record<Lang, FooterStrings> = {
     product: { title: 'Produkt', calendar: 'Kalender', receptionist: 'KI-Rezeption', vouchers: 'Gutscheine', pricing: 'Preise' },
     useCases: { title: 'Branchen' },
     help: { title: 'Hilfe', docs: 'Hilfe-Center', support: 'Support' },
-    company: { title: 'Unternehmen', links: ['Datenschutz', 'AGB', 'Impressum'] },
+    company: { title: 'Unternehmen', privacy: 'Datenschutz', imprint: 'Impressum', cookies: 'Cookie-Einstellungen' },
     languages: 'Sprache',
     rights: 'Alle Rechte vorbehalten.',
     previously: 'Früher onbuuk.com',
@@ -48,7 +52,7 @@ const STRINGS: Record<Lang, FooterStrings> = {
     product: { title: 'Product', calendar: 'Calendar', receptionist: 'AI receptionist', vouchers: 'Vouchers', pricing: 'Pricing' },
     useCases: { title: 'Industries' },
     help: { title: 'Help', docs: 'Help centre', support: 'Support' },
-    company: { title: 'Company', links: ['Privacy', 'Terms', 'Imprint'] },
+    company: { title: 'Company', privacy: 'Privacy', imprint: 'Imprint', cookies: 'Cookie settings' },
     languages: 'Language',
     rights: 'All rights reserved.',
     previously: 'Previously onbuuk.com',
@@ -58,7 +62,7 @@ const STRINGS: Record<Lang, FooterStrings> = {
     product: { title: 'ผลิตภัณฑ์', calendar: 'ปฏิทิน', receptionist: 'พนักงานต้อนรับ AI', vouchers: 'บัตรของขวัญ', pricing: 'ราคา' },
     useCases: { title: 'ประเภทธุรกิจ' },
     help: { title: 'ช่วยเหลือ', docs: 'ศูนย์ช่วยเหลือ', support: 'ฝ่ายบริการลูกค้า' },
-    company: { title: 'บริษัท', links: ['ความเป็นส่วนตัว', 'ข้อกำหนด', 'ข้อมูลบริษัท'] },
+    company: { title: 'บริษัท', privacy: 'ความเป็นส่วนตัว', imprint: 'ข้อมูลบริษัท', cookies: 'ตั้งค่าคุกกี้' },
     languages: 'ภาษา',
     rights: 'สงวนลิขสิทธิ์',
     previously: 'เดิมคือ onbuuk.com',
@@ -87,8 +91,14 @@ function buildCols(lang: Lang): FooterCol[] {
         { label: t.help.support, href: `mailto:${SUPPORT_EMAIL}` },
       ],
     },
-    // TODO: real Privacy / Terms / Impressum pages before launch.
-    { title: t.company.title, links: t.company.links.map((label) => ({ label, href: '#' })) },
+    {
+      title: t.company.title,
+      links: [
+        { label: t.company.privacy, href: localePath(lang, '/privacy') },
+        { label: t.company.imprint, href: localePath(lang, '/imprint') },
+      ],
+      hasCookieSettings: Boolean(META_PIXEL_ID),
+    },
   ]
 }
 
@@ -126,6 +136,7 @@ export function Footer({ lang = 'en' }: FooterProps) {
                   {l.label}
                 </a>
               ))}
+              {col.hasCookieSettings && <CookieSettingsLink label={t.company.cookies} className={`${styles.link} ${styles.linkButton}`} />}
             </nav>
           ))}
         </div>
