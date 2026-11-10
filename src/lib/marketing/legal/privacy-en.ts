@@ -36,7 +36,7 @@ export function privacyEn(): LegalDoc {
       {
         h: '3. Cookies and the Meta pixel (only with your consent)',
         blocks: [
-          { p: 'If you click "Accept" in the cookie banner, we load the Meta pixel of Meta Platforms Ireland Ltd., Merrion Road, Dublin 4, Ireland. It records which of our pages you visit and when you click "Start free", together with your IP address, browser and device details and a Meta cookie identifier.' },
+          { p: 'If you click "Accept" in the cookie banner, we load the Meta pixel of Meta Platforms Ireland Ltd., Merrion Road, Dublin 4, Ireland. It records which of our pages you visit and when you click "Start free", and on the sign-up and dashboard pages of the Zenno app (book.zennohq.com, with its own cookie banner) also when you create an account or buy a plan, together with your IP address, browser and device details and a Meta cookie identifier.' },
           { p: 'We use it to measure our ads on Facebook and Instagram and to show our ads to people who have visited our site. Legal basis: your consent (Art. 6(1)(a) GDPR, § 25(1) German TDDDG). For the collection and transmission of this data we and Meta are joint controllers (Art. 26 GDPR) under Meta\'s Controller Addendum (facebook.com/legal/controller_addendum); Meta alone is responsible for what happens afterwards, described at facebook.com/privacy/policy. Meta may process data in the USA under the EU-U.S. Data Privacy Framework.' },
           { p: 'If you click "Decline", the pixel is not loaded. Your choice is stored in your browser (local storage), which is needed to respect it. You can change or withdraw your consent at any time under "Cookie settings" at the bottom of every page.' },
         ],
