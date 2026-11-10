@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { SITE_URL } from '@/lib/marketing/config'
 import { LANGS, localizedAlternates, localePath, type Lang } from '@/lib/marketing/lang'
 import { FEATURE_SLUGS, INDUSTRY_SLUGS } from '@/lib/marketing/pages'
+import { LEGAL_SLUGS } from '@/lib/marketing/legal'
 import { CITY_INDUSTRIES, CITY_LANGS, CITY_SLUGS, cityPath } from '@/lib/marketing/cities'
 
 export const dynamic = 'force-static'
@@ -15,6 +16,7 @@ const LOCALIZED_ROUTES = [
   { path: '/pricing', priority: 0.9 },
   ...INDUSTRY_SLUGS.map((slug) => ({ path: `/${slug}`, priority: 0.8 })),
   ...FEATURE_SLUGS.map((slug) => ({ path: `/${slug}`, priority: 0.8 })),
+  ...LEGAL_SLUGS.map((slug) => ({ path: `/${slug}`, priority: 0.2 })),
 ]
 
 /** Location pages: every industry × city, German and English only. */

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Noto_Sans_Thai } from 'next/font/google'
 import type { Lang } from '@/lib/marketing/lang'
 import { organizationSchema, websiteSchema } from '@/lib/marketing/jsonld'
 import { JsonLd } from './JsonLd'
+import { ConsentManager } from './consent/ConsentManager'
 import '@/app/globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
@@ -28,6 +29,7 @@ export function RootDocument({ lang, children }: RootDocumentProps) {
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema(lang)} />
         {children}
+        <ConsentManager lang={lang} />
       </body>
     </html>
   )

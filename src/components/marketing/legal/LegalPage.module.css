@@ -1,0 +1,181 @@
+.page {
+  padding: clamp(7rem, 5rem + 6vw, 10rem) 0 var(--section-y);
+  background: var(--bg);
+}
+
+/* Title across the top; the index sits in a narrow left rail beside the text from 960px. */
+.grid {
+  display: grid;
+  gap: clamp(2rem, 1rem + 3vw, 3.5rem);
+}
+
+.head {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 46rem;
+}
+
+.updated {
+  margin: 0;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: var(--step--1);
+  color: var(--t3);
+}
+
+.intro {
+  margin: 0.4rem 0 0;
+  font-size: var(--step-1);
+  line-height: 1.55;
+  color: var(--t2);
+}
+
+.toc {
+  display: none;
+}
+
+.tocLabel {
+  display: block;
+  margin-bottom: 0.9rem;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--t3);
+}
+
+.toc ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: toc;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.toc li {
+  counter-increment: toc;
+}
+
+.toc a {
+  display: flex;
+  gap: 0.7rem;
+  padding: 0.45rem 0.6rem;
+  margin-left: -0.6rem;
+  border-radius: var(--r-sm);
+  color: var(--t2);
+  font-size: 0.9rem;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.toc a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--t3);
+  padding-top: 0.12rem;
+}
+
+.toc a:hover {
+  background: var(--subtle);
+  color: var(--t1);
+}
+
+.toc a:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+.body {
+  max-width: 44rem;
+  min-width: 0;
+}
+
+.section {
+  padding-top: 2.4rem;
+  margin-top: 2.4rem;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 6rem;
+}
+
+.section:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.section h2 {
+  margin: 0 0 1rem;
+  font-size: var(--step-2);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: var(--t1);
+}
+
+.section p,
+.section li {
+  font-size: var(--step-0);
+  line-height: 1.7;
+  color: var(--t2);
+  overflow-wrap: anywhere;
+}
+
+.section p {
+  margin: 0 0 1rem;
+}
+
+.section ul {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.section li::marker {
+  color: var(--green);
+}
+
+.lines {
+  display: grid;
+  gap: 0.15rem;
+  margin: 0 0 1rem;
+  padding: 1.1rem 1.3rem;
+  border-radius: var(--r);
+  background: var(--bg-warm);
+  border: 1px solid var(--line);
+  font-style: normal;
+  font-size: var(--step-0);
+  line-height: 1.55;
+  color: var(--t1);
+  overflow-wrap: anywhere;
+}
+
+.lines span:first-child {
+  font-weight: 600;
+}
+
+/* Thai stacks marks above and below the line; give headings room. */
+.page :is(h1, h2):lang(th) {
+  line-height: 1.32;
+  letter-spacing: 0;
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: 15rem minmax(0, 1fr);
+    column-gap: clamp(3rem, 2rem + 3vw, 5.5rem);
+  }
+
+  .head {
+    grid-column: 1 / -1;
+  }
+
+  .toc {
+    display: block;
+    position: sticky;
+    top: 7rem;
+    align-self: start;
+  }
+}

@@ -1,0 +1,107 @@
+/* Floating card at the bottom; both choices the same size and weight. */
+.banner {
+  position: fixed;
+  z-index: 60;
+  left: 50%;
+  bottom: clamp(0.75rem, 0.5rem + 1vw, 1.5rem);
+  transform: translateX(-50%);
+  width: min(100% - 2rem, 46rem);
+  display: grid;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+  border-radius: 18px;
+  background: rgba(253, 252, 250, 0.92);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  border: 1px solid #e4dfd7;
+  box-shadow: 0 24px 60px -24px rgba(26, 23, 20, 0.35), 0 2px 6px rgba(26, 23, 20, 0.06);
+  color: #1a1714;
+  font-family: var(--font-geist-sans), var(--font-thai), system-ui, sans-serif;
+  animation: rise 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.text {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.body {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #6b6560;
+}
+
+.link {
+  color: #1a1714;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.btn {
+  min-height: 44px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid #1a1714;
+  background: #1a1714;
+  color: #fff;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 560;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  background: #2e2926;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:focus-visible {
+  outline: 2px solid #059669;
+  outline-offset: 2px;
+}
+
+@media (min-width: 720px) {
+  .banner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .actions {
+    grid-template-columns: auto auto;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner {
+    animation: none;
+  }
+}

@@ -119,3 +119,13 @@
     gap: 6px;
   }
 }
+
+/* The cookie-settings switch is a button styled like the links next to it. */
+.linkButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
