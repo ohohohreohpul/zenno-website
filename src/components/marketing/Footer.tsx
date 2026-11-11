@@ -5,6 +5,7 @@ import { FEATURE_SLUGS, INDUSTRY_SLUGS, PAGE_LABEL, type PageSlug } from '@/lib/
 import { META_PIXEL_ID } from '@/lib/marketing/legal/company'
 import { CookieSettingsLink } from './consent/CookieSettingsLink'
 import styles from './Footer.module.css'
+import { COMPARE_STRINGS, comparePath } from '@/lib/marketing/content/compare'
 
 interface FooterLink {
   label: string
@@ -81,6 +82,7 @@ function buildCols(lang: Lang): FooterCol[] {
         { label: t.product.vouchers, href: localePath(lang, '/vouchers') },
         ...FEATURE_SLUGS.map(pageLink),
         { label: t.product.pricing, href: homePath(lang, '#pricing') },
+        { label: COMPARE_STRINGS[lang].hubLabel, href: localePath(lang, comparePath()) },
       ],
     },
     { title: t.useCases.title, links: INDUSTRY_SLUGS.map(pageLink) },
