@@ -30,7 +30,10 @@ export function privacyEn(): LegalDoc {
           { p: 'The site is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, and served from its data centre in Frankfurt. When you open a page, the server automatically records:' },
           { list: ['your IP address', 'date and time of the request', 'the page requested and the referring page', 'browser and operating system'] },
           { p: 'We need this to deliver the site and keep it secure (Art. 6(1)(f) GDPR, our legitimate interest in a working, safe website). Vercel keeps these logs only for a short period. Vercel is certified under the EU-U.S. Data Privacy Framework.' },
-          { p: 'Fonts and images are served from our own domain. The site does not load Google Fonts or other third-party content, and it sets no cookies unless you agree to them (section 3).' },
+          { p: 'Fonts and images are served from our own domain. The site does not load Google Fonts or advertising content from third parties, and it sets no cookies unless you agree to them (section 3).' },
+          { p: 'Visitor statistics: every page loads Open Analytics, an open-source analytics tool, from c.reporting.ohitsoh.com, so we can see which pages are read and how fast the site loads. It records:' },
+          { list: ['the page address and title, the referring page and campaign tags in the link', 'device type and screen size', 'time spent on the page', 'clicks on links and buttons, including their label', 'loading speed'] },
+          { p: 'Your IP address is transmitted for technical reasons. Open Analytics sets no cookies and does not follow you across other websites. It stores nothing on your device. The legal basis is our legitimate interest in understanding and improving our website (Art. 6(1)(f) GDPR, PDPA section 24(5)); you can object at any time (section 8). The service runs on servers of Railway Corp., USA.' },
         ],
       },
       {
@@ -63,7 +66,7 @@ export function privacyEn(): LegalDoc {
       {
         h: '7. Data outside the EU',
         blocks: [
-          { p: 'We are based in Thailand, so data we receive is processed there. Our service providers Vercel and Meta may process data in the USA, under the EU-U.S. Data Privacy Framework or the EU Standard Contractual Clauses.' },
+          { p: 'We are based in Thailand, so data we receive is processed there. Our service providers Vercel and Meta may process data in the USA, under the EU-U.S. Data Privacy Framework or the EU Standard Contractual Clauses. Railway, which hosts our visitor statistics, processes data in the USA.' },
         ],
       },
       {

@@ -42,7 +42,7 @@ export function isCompanyComplete(c: CompanyDetails = COMPANY): boolean {
 }
 
 /** Date the privacy policy text last changed (ISO), shown at the top of the page. */
-export const PRIVACY_UPDATED = '2026-11-10'
+export const PRIVACY_UPDATED = '2026-11-11'
 
 /** Meta pixel for zennohq.com; unset means no pixel and no consent banner. */
 export const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || ''

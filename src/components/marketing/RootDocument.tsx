@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import Script from 'next/script'
 import { Geist, Geist_Mono, Noto_Sans_Thai } from 'next/font/google'
 import type { Lang } from '@/lib/marketing/lang'
 import { organizationSchema, websiteSchema } from '@/lib/marketing/jsonld'
@@ -30,6 +31,13 @@ export function RootDocument({ lang, children }: RootDocumentProps) {
         <JsonLd data={websiteSchema(lang)} />
         {children}
         <ConsentManager lang={lang} />
+        <Script
+          src="https://c.reporting.ohitsoh.com/oa.js"
+          data-key="oa_pk_SETNOagFzayVy9GdUrZx4l1CG-I4aOmE"
+          data-collector="https://c.reporting.ohitsoh.com"
+          data-storage="none"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
