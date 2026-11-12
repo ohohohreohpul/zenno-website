@@ -30,7 +30,10 @@ export function privacyDe(): LegalDoc {
           { p: 'Die Website wird von Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, gehostet und aus deren Rechenzentrum in Frankfurt ausgeliefert. Beim Aufruf einer Seite speichert der Server automatisch:' },
           { list: ['Ihre IP-Adresse', 'Datum und Uhrzeit des Abrufs', 'die aufgerufene und die zuvor besuchte Seite', 'Browser und Betriebssystem'] },
           { p: 'Das ist nötig, um die Website auszuliefern und sicher zu betreiben (Art. 6 Abs. 1 lit. f DSGVO, unser berechtigtes Interesse an einer funktionierenden, sicheren Website). Vercel speichert diese Protokolle nur kurz. Vercel ist nach dem EU-U.S. Data Privacy Framework zertifiziert.' },
-          { p: 'Schriften und Bilder liefern wir von unserer eigenen Domain aus. Die Website lädt keine Google Fonts oder andere Inhalte Dritter und setzt keine Cookies, solange Sie nicht zustimmen (Abschnitt 3).' },
+          { p: 'Schriften und Bilder liefern wir von unserer eigenen Domain aus. Die Website lädt keine Google Fonts oder Werbeinhalte Dritter und setzt keine Cookies, solange Sie nicht zustimmen (Abschnitt 3).' },
+          { p: 'Besucherstatistik: Jede Seite lädt Open Analytics, ein Open-Source-Analysewerkzeug, von c.reporting.ohitsoh.com. So sehen wir, welche Seiten gelesen werden und wie schnell die Website lädt. Erfasst werden:' },
+          { list: ['Adresse und Titel der Seite, die zuvor besuchte Seite und Kampagnen-Kennzeichen im Link', 'Gerätetyp und Bildschirmgröße', 'Verweildauer auf der Seite', 'Klicks auf Links und Schaltflächen, einschließlich ihrer Beschriftung', 'Ladegeschwindigkeit'] },
+          { p: 'Ihre IP-Adresse wird aus technischen Gründen übertragen. Open Analytics setzt keine Cookies und verfolgt Sie nicht über andere Websites. Es speichert nichts auf Ihrem Gerät. Rechtsgrundlage ist unser berechtigtes Interesse, unsere Website zu verstehen und zu verbessern (Art. 6 Abs. 1 lit. f DSGVO); Sie können jederzeit widersprechen (Abschnitt 8). Der Dienst läuft auf Servern der Railway Corp., USA.' },
         ],
       },
       {
@@ -63,7 +66,7 @@ export function privacyDe(): LegalDoc {
       {
         h: '7. Daten außerhalb der EU',
         blocks: [
-          { p: 'Wir haben unseren Sitz in Thailand, daher werden Daten, die wir erhalten, dort verarbeitet. Unsere Dienstleister Vercel und Meta können Daten in den USA verarbeiten, auf Grundlage des EU-U.S. Data Privacy Framework oder der EU-Standardvertragsklauseln.' },
+          { p: 'Wir haben unseren Sitz in Thailand, daher werden Daten, die wir erhalten, dort verarbeitet. Unsere Dienstleister Vercel und Meta können Daten in den USA verarbeiten, auf Grundlage des EU-U.S. Data Privacy Framework oder der EU-Standardvertragsklauseln. Railway, der Hoster unserer Besucherstatistik, verarbeitet Daten in den USA.' },
         ],
       },
       {
