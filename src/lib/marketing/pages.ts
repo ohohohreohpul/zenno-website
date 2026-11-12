@@ -9,6 +9,7 @@ export const LANDING_SLUGS = [
   'salons-spas',
   'yoga-studios',
   'clinics',
+  'massage-studios',
   'no-shows',
   'tax-datev',
   'commission-free',
@@ -17,7 +18,7 @@ export const LANDING_SLUGS = [
 export type LandingSlug = (typeof LANDING_SLUGS)[number]
 export type PageSlug = LandingSlug | 'pricing'
 
-export const INDUSTRY_SLUGS: readonly LandingSlug[] = ['salons-spas', 'yoga-studios', 'clinics']
+export const INDUSTRY_SLUGS: readonly LandingSlug[] = ['salons-spas', 'massage-studios', 'yoga-studios', 'clinics']
 export const FEATURE_SLUGS: readonly LandingSlug[] = ['no-shows', 'tax-datev', 'commission-free']
 
 /** Link labels per page (also used as breadcrumb names). */
@@ -25,6 +26,7 @@ export const PAGE_LABEL: Record<PageSlug, Record<Lang, string>> = {
   'salons-spas': { de: 'Friseure, Kosmetik & Spas', en: 'Salons & spas', th: 'ซาลอนและสปา' },
   'yoga-studios': { de: 'Yoga- & Fitnessstudios', en: 'Yoga & fitness studios', th: 'สตูดิโอโยคะและฟิตเนส' },
   clinics: { de: 'Ästhetik- & Wellnesspraxen', en: 'Aesthetic & wellness clinics', th: 'คลินิกความงามและเวลเนส' },
+  'massage-studios': { de: 'Massagestudios & -praxen', en: 'Massage studios', th: 'ร้านนวด' },
   'no-shows': { de: 'No-Show-Schutz', en: 'No-show protection', th: 'ป้องกันลูกค้าไม่มาตามนัด' },
   'tax-datev': { de: 'Umsatzsteuer & DATEV', en: 'VAT & DATEV export', th: 'ภาษีและ DATEV' },
   'commission-free': { de: 'Buchen ohne Provision', en: 'Commission-free booking', th: 'จองโดยไม่มีค่าคอมมิชชั่น' },

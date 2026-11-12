@@ -42,6 +42,14 @@ export const PRICING_PAGE: Record<Lang, PricingPageContent> = {
       items: [
         { q: 'Welche Tarife gibt es?', a: PLAN_LINE.de },
         {
+          q: 'Was kostet eine Buchungssoftware mit Kasse für ein kleines Studio im Monat?',
+          a: 'Mit Zenno 0 € im kostenlosen Tarif für 1 Therapeutin und 5 Behandlungen, oder 49 € im Monat mit allem: Kassenkalender, Zahlungen am Empfang und online, Kassenbuch, No-Show-Gebühren, DATEV-Export und KI-Rezeption mit 1.000 Antworten im Monat. Auf Buchungen fällt keine Provision an. Ob Sie für Barzahlungen zusätzlich eine zertifizierte Kasse mit TSE brauchen, klären Sie mit Ihrer Steuerberatung.',
+        },
+        {
+          q: 'Kann ich Zenno kostenlos testen, bevor ich mich festlege?',
+          a: 'Ja, ohne Kreditkarte und ohne Laufzeit. Der Free-Tarif ist keine befristete Testphase: Sie richten Ihre Behandlungen ein, teilen Ihren Buchungslink und nehmen echte Buchungen an. Wenn Sie mehr Therapeutinnen oder die KI-Rezeption brauchen, wechseln Sie zu Zenno für 49 € im Monat.',
+        },
+        {
           q: 'Was kann der kostenlose Tarif?',
           a: 'Free hat Kassenkalender und Online-Buchungsseite für 1 Therapeutin und 5 Behandlungen. Die KI-Rezeption ist nicht dabei, und auf Ihrer Buchungsseite steht „Powered by Zenno“. Eine Kreditkarte brauchen Sie zum Start nicht.',
         },
@@ -86,6 +94,14 @@ export const PRICING_PAGE: Record<Lang, PricingPageContent> = {
       items: [
         { q: 'Which plans are there?', a: PLAN_LINE.en },
         {
+          q: 'What does booking software with a till cost a small studio per month?',
+          a: 'With Zenno, €0 on the free plan for 1 therapist and 5 treatments, or €49 a month for everything: POS calendar, payments at the desk and online, cash book, no-show fees, DATEV export and the AI receptionist with 1,000 replies a month. There is no commission on bookings. Whether you also need a certified till with a TSE for cash payments is a question for your tax advisor.',
+        },
+        {
+          q: 'Can I try Zenno for free before committing?',
+          a: 'Yes, with no credit card and no contract term. The free plan isn’t a time-limited trial: you set up your treatments, share your booking link and take real bookings. When you need more therapists or the AI receptionist, move to Zenno for €49 a month.',
+        },
+        {
           q: 'What does the free plan include?',
           a: 'Free has the POS calendar and online booking page for 1 therapist and 5 treatments. It has no AI receptionist, and your booking page shows “Powered by Zenno”. You don’t need a credit card to start.',
         },
@@ -129,6 +145,14 @@ export const PRICING_PAGE: Record<Lang, PricingPageContent> = {
       title: ['ตอบตรงๆ', 'เรื่องค่าใช้จ่าย'],
       items: [
         { q: 'มีแพ็กเกจอะไรบ้าง', a: PLAN_LINE.th },
+        {
+          q: 'ระบบจองคิวที่มีระบบเก็บเงินสำหรับร้านเล็กราคาเดือนละเท่าไร',
+          a: 'กับ Zenno ราคา €0 ในแพ็กเกจฟรีสำหรับพนักงาน 1 คนและบริการ 5 รายการ หรือ €49 ต่อเดือนได้ทุกอย่าง ทั้งปฏิทินหน้าร้าน รับชำระที่ร้านและออนไลน์ สมุดเงินสด ค่าปรับไม่มาตามนัด ไฟล์ส่งออก DATEV และพนักงานต้อนรับ AI 1,000 ข้อความต่อเดือน ไม่มีค่าคอมมิชชั่นจากการจอง ส่วนเรื่องว่าต้องใช้เครื่องเก็บเงินที่มี TSE สำหรับเงินสดหรือไม่ ให้ปรึกษาที่ปรึกษาภาษี',
+        },
+        {
+          q: 'ลองใช้ Zenno ฟรีก่อนตัดสินใจได้ไหม',
+          a: 'ได้ ไม่ต้องใช้บัตรเครดิตและไม่มีสัญญาผูกมัด แพ็กเกจฟรีไม่ใช่ช่วงทดลองที่มีวันหมดอายุ คุณตั้งค่าบริการ แชร์ลิงก์จอง และรับการจองจริงได้เลย เมื่อต้องการพนักงานเพิ่มหรือพนักงานต้อนรับ AI ก็เปลี่ยนเป็น Zenno ราคา €49 ต่อเดือน',
+        },
         {
           q: 'แพ็กเกจฟรีมีอะไรบ้าง',
           a: 'Free มีปฏิทินหน้าร้านและหน้าจองออนไลน์ สำหรับพนักงาน 1 คนและบริการ 5 รายการ ไม่มีพนักงานต้อนรับ AI และหน้าจองจะมีป้าย “Powered by Zenno” ไม่ต้องใช้บัตรเครดิตเพื่อเริ่มต้น',
