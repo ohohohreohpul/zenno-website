@@ -2,7 +2,7 @@
 
 **Goal:** cold Meta traffic → a 60-second quiz → a personal "what Zenno is worth to your studio" estimate → sign-up (and, where it pays off, the paid plan) on the spot.
 
-**Recommendation in one line:** an 8-question quiz on zennohq.com that ends in a monthly euro estimate with the maths shown, then sends people straight into sign-up with their answers carried over. No email wall: the sign-up *is* the gate. Run ads to it optimising on "quiz completed" first (more signal for a small budget), then switch to sign-ups.
+**Recommendation in one line:** a short quiz at zennohq.com/check that ends in a monthly euro estimate with the maths shown, then sends people straight into sign-up with their answers carried over. No email wall: the sign-up *is* the gate. Run ads to it optimising on "quiz completed" first (more signal for a small budget), then switch to sign-ups.
 
 ---
 
@@ -97,7 +97,7 @@ Rules for the result:
 
 ## 5. Hand-off to sign-up ("convert right away")
 
-- The CTA goes to `book.zennohq.com/signup?plan=pro&type=massage_spa&team=2-3&src=quiz` (answers only, never personal data in the URL).
+- The CTA goes to `book.zennohq.com/signup?plan=zenno&type=massage_spa&team=2-3&src=studio_check` plus the ad's UTM tags (answers only, never personal data in the URL).
 - The app pre-selects the plan and studio type, so the owner only adds email and password.
 - Optional second CTA for big studios (4+ people or estimate over €1,000): **"Lieber kurz sprechen? WhatsApp"**, which goes to you with the answers prefilled.
 - Thank-you screen in the app: "Your gift-card shop is ready to set up" (Nov/Dec) to get them to value fast.
@@ -111,7 +111,7 @@ Rules for the result:
 | Quiz opened | `ViewContent` (content_name: quiz) | |
 | Question 3 answered | custom `QuizEngaged` | Drop-off check |
 | Result shown | `Lead` with `value` = estimate midpoint | **Optimisation event, phase 1** |
-| CTA clicked | custom `QuizToSignup` | |
+| CTA clicked | custom `CheckToSignup` | |
 | Account created (app) | `CompleteRegistration` | **Optimisation event, phase 2** (from ~50/week) |
 | Paid | `Purchase` | Already tracked in the app |
 
@@ -125,7 +125,7 @@ Plus Open Analytics on every step for the funnel view (already on the site, no c
 
 ## 7. Build plan
 
-1. Quiz page in this repo: `/rechner` (DE), `/en/calculator`, `/th/calculator`, client-side React, no backend. Copy and formulas in one content file per locale (like the legal pages).
+1. Quiz page in this repo: `/check` (DE), `/en/check`, `/th/check` (built), client-side React, no backend. Copy and formulas in one content file per locale (like the legal pages).
 2. Pixel events behind the existing cookie consent, plus Open Analytics events.
 3. App: read `plan`, `type`, `team` query params on `/signup` (small change in onbuuk2025).
 4. Ads: new campaign built paused, ~6 quiz-hook statics, then your go.
