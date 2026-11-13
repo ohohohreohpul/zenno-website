@@ -2,10 +2,134 @@
 
 .page {
   min-height: 100svh;
-  padding: calc(var(--section-y) * 0.9) 0 var(--section-y);
+  /* Clears the floating nav (about 6rem tall with its top offset). */
+  padding: clamp(6.5rem, 5.5rem + 3vw, 8.5rem) 0 var(--section-y);
   background:
     radial-gradient(60rem 30rem at 85% -10%, var(--bk-soft), transparent 70%),
     var(--bg-warm);
+}
+
+/* ---- Layout: photo beside the card on wide screens, a banner above it on phones ---- */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+.side {
+  position: relative;
+  z-index: 1;
+  margin-top: -3rem;
+}
+@media (min-width: 960px) {
+  .layout {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: clamp(1.5rem, 1rem + 2vw, 3rem);
+  }
+  .side {
+    margin-top: 0;
+  }
+}
+
+.visual {
+  position: relative;
+  height: 220px;
+  border-radius: var(--r-2xl);
+  overflow: hidden;
+  background: var(--ink);
+  box-shadow: var(--sh);
+}
+@media (min-width: 960px) {
+  .visual {
+    position: sticky;
+    top: 6.5rem;
+    height: min(78svh, 46rem);
+    box-shadow: var(--sh-float);
+  }
+}
+.visualImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: photoIn 0.9s var(--ease-out-expo) both;
+}
+.visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(15, 12, 10, 0.45));
+  pointer-events: none;
+}
+@keyframes photoIn {
+  from {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.chip {
+  position: absolute;
+  z-index: 1;
+  left: 1rem;
+  top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  max-width: calc(100% - 2rem);
+  padding: 0.65rem 0.95rem 0.65rem 0.65rem;
+  border-radius: var(--r-lg);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: var(--sh);
+  animation: chipIn 0.7s var(--ease-out-expo) 0.25s both;
+}
+@media (min-width: 960px) {
+  .chip {
+    left: 1.5rem;
+    top: auto;
+    bottom: 1.5rem;
+  }
+}
+.chipIcon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 0.7rem;
+  background: var(--bk);
+  color: var(--inv);
+}
+.chipText {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--step--1);
+  line-height: 1.3;
+  color: var(--t1);
+}
+.chipText b {
+  font-weight: 650;
+}
+@keyframes chipIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+:global(.reduce) .visualImg,
+:global(.reduce) .chip {
+  animation: none;
 }
 
 .panel {
@@ -123,10 +247,10 @@
   margin: 0.4rem 0 0.6rem;
 }
 .option {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
   align-items: center;
-  gap: 1rem;
+  gap: 0.9rem;
   width: 100%;
   text-align: left;
   padding: 1.05em 1.2em;
@@ -154,6 +278,50 @@
   border-color: var(--bk);
   background: var(--bk-soft);
 }
+.optionIcon {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.8rem;
+  background: var(--subtle);
+  color: var(--t2);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.optionOn .optionIcon,
+.option:hover .optionIcon {
+  background: var(--bk);
+  color: var(--inv);
+}
+.optionLabel {
+  min-width: 0;
+}
+.meter {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 1.1rem;
+}
+.meter i {
+  width: 5px;
+  border-radius: 2px;
+  background: var(--line-strong);
+}
+.meter i:nth-child(1) {
+  height: 35%;
+}
+.meter i:nth-child(2) {
+  height: 60%;
+}
+.meter i:nth-child(3) {
+  height: 80%;
+}
+.meter i:nth-child(4) {
+  height: 100%;
+}
+.meter .meterOn {
+  background: var(--bk);
+}
 .tick {
   flex: none;
   display: grid;
@@ -171,6 +339,7 @@
 
 /* ---- Result ---- */
 .resultTotal {
+  text-wrap: balance;
   font-size: var(--step-4);
   line-height: 1.04;
   letter-spacing: -0.035em;

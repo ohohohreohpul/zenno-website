@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { estimate, type QuizAnswers } from './estimate.ts'
+import { estimate, projection, type QuizAnswers } from './estimate.ts'
 
 const NOVEMBER = new Date('2026-11-13T12:00:00Z')
 const MARCH = new Date('2026-03-10T12:00:00Z')
@@ -84,4 +84,22 @@ test('solo studio with a small estimate is pointed to the Free plan, teams to Ze
 test('hours saved are 40–60 % of the monthly message time', () => {
   // 3.5 × 4.3 = 15.05 h → 6.02–9.03 → 6–9
   assert.deepEqual(estimate(base, MARCH).hoursSaved, { low: 6, high: 9 })
+})
+
+test('projection ramps up over the first two months and peaks in the gift-card season', () => {
+  // Arrange: paper gift cards only, no other gains, starting from mid-October
+  const answers = { ...base, channels: ['own_tool'] as const, giftCards: 'paper' as const }
+  const october = new Date(2026, 9, 15)
+
+  // Act
+  const points = projection(answers, october)
+
+  // Assert: Nov (ramp 50 %) and Dec (ramp 80 %) are in season (€300–600), Jan onwards is €150–300 at 100 %
+  assert.equal(points.length, 12)
+  assert.equal(points[0].month.getMonth(), 10)
+  assert.deepEqual(points[0].monthly, { low: 150, high: 300 })
+  assert.deepEqual(points[1].monthly, { low: 240, high: 480 })
+  assert.deepEqual(points[2].monthly, { low: 150, high: 300 })
+  // Nov 2026 – Oct 2027: only the first two months are in season
+  assert.deepEqual(points[11].cumulative, { low: 150 + 240 + 150 * 10, high: 300 + 480 + 300 * 10 })
 })

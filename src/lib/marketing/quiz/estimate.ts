@@ -144,3 +144,32 @@ export function estimate(a: QuizAnswers, today: Date = new Date()): Estimate {
     isGiftSeason: isSeason,
   }
 }
+
+/** Studios need a few weeks to switch over, so the first months count only partly. */
+export const RAMP_UP: readonly number[] = [0.5, 0.8]
+export const PROJECTION_MONTHS = 12
+
+export interface ProjectionPoint {
+  /** First day of the month (local time). */
+  month: Date
+  monthly: Range
+  cumulative: Range
+}
+
+/**
+ * Month-by-month gain for the next year, starting next month: each month uses
+ * that month's season (gift cards peak in Nov/Dec), the first months ramp up.
+ */
+export function projection(a: QuizAnswers, today: Date = new Date(), months: number = PROJECTION_MONTHS): ProjectionPoint[] {
+  const points: ProjectionPoint[] = []
+  let cumulative: Range = { low: 0, high: 0 }
+  for (let i = 0; i < months; i++) {
+    const month = new Date(today.getFullYear(), today.getMonth() + 1 + i, 1)
+    const ramp = RAMP_UP[i] ?? 1
+    const { total } = estimate(a, month)
+    const monthly = { low: total.low * ramp, high: total.high * ramp }
+    cumulative = { low: cumulative.low + monthly.low, high: cumulative.high + monthly.high }
+    points.push({ month, monthly, cumulative })
+  }
+  return points
+}

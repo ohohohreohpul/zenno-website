@@ -4,8 +4,9 @@ import { useMemo } from 'react'
 import { ArrowRight, RotateCcw } from 'lucide-react'
 import type { Lang } from '@/lib/marketing/lang'
 import { fill, type CheckCopy } from '@/lib/marketing/content/check'
-import { estimate, type QuizAnswers } from '@/lib/marketing/quiz/estimate'
+import { estimate, projection, type QuizAnswers } from '@/lib/marketing/quiz/estimate'
 import { signupUrl, trackCheckSignupClick } from './checkTracking'
+import { GrowthChart } from './GrowthChart'
 import styles from './Check.module.css'
 
 const LOCALE: Record<Lang, string> = { de: 'de-DE', en: 'en-IE', th: 'th-TH' }
@@ -23,8 +24,11 @@ interface QuizResultProps {
 
 export function QuizResult({ lang, copy, answers, startUrl, onRestart }: QuizResultProps) {
   const result = useMemo(() => estimate(answers), [answers])
+  const points = useMemo(() => projection(answers), [answers])
   const euro = new Intl.NumberFormat(LOCALE[lang], { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })
   const money = (n: number) => euro.format(n)
+  /** Word joiners keep "550 €–900 €" on one line. */
+  const range = (low: string, high: string) => `${low}\u2060–\u2060${high}`
   const span = (low: number, high: number) => (low === high ? money(low) : `${money(low)}–${money(high)}`)
 
   const r = copy.result
@@ -37,10 +41,21 @@ export function QuizResult({ lang, copy, answers, startUrl, onRestart }: QuizRes
     <section className={styles.panel} aria-labelledby="check-result">
       <span className="kicker">{r.kicker}</span>
       <h1 id="check-result" className={styles.resultTotal}>
-        {hasMoney ? fill(r.total, { low: money(result.total.low), high: money(result.total.high) }) : r.nothing}
+        {hasMoney ? fill(r.total, { range: range(money(result.total.low), money(result.total.high)) }) : r.nothing}
       </h1>
       {result.hoursSaved.high > 0 && (
         <p className={styles.resultHours}>{fill(r.hours, { low: result.hoursSaved.low, high: result.hoursSaved.high })}</p>
+      )}
+
+      {hasMoney && (
+        <GrowthChart
+          points={points}
+          locale={LOCALE[lang]}
+          title={r.chartTitle}
+          formatEnd={(low, high) => fill(r.chartEnd, { range: range(low, high) })}
+          note={r.chartNote}
+          money={money}
+        />
       )}
 
       {result.lines.length > 0 && (

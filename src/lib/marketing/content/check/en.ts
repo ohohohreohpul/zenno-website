@@ -14,6 +14,20 @@ export const checkEn: CheckCopy = {
     start: 'Start the check',
     promise: 'Takes 60 seconds · no email needed',
   },
+  chips: {
+    intro: 'New booking · Sat 10:00',
+    studio: 'Thai massage 60 min · €65',
+    team: 'Today: 14 appointments',
+    bookings: 'This week: 38 appointments',
+    ticket: 'Paid · €80',
+    channels: '23:47 · “Any time Saturday?”',
+    marketplaceBookings: 'New client · via marketplace',
+    commission: 'Commission deducted · −€21',
+    noShows: '14:00 · didn’t show up',
+    giftCards: 'Gift card sold · 02:14',
+    hours: '12 new messages',
+    result: 'Your studio with Zenno',
+  },
   stepOf: 'Question {n} of {total}',
   back: 'Back',
   next: 'Next',
@@ -113,8 +127,11 @@ export const checkEn: CheckCopy = {
   },
   result: {
     kicker: 'Your result',
-    total: 'about {low}–{high} more a month',
+    total: 'about {range} more a month',
     hours: 'and {low}–{high} fewer hours on your phone',
+    chartTitle: 'Your next 12 months',
+    chartEnd: 'After 12 months: about {range} more',
+    chartNote: 'Running total. The first two months count only partly, because switching over takes a little time. Gift cards follow the season.',
     nothing: 'Your studio is already well set up. Zenno mostly saves you time.',
     lines: {
       commission: {

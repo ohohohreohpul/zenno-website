@@ -14,6 +14,20 @@ export const checkDe: CheckCopy = {
     start: 'Check starten',
     promise: 'Dauert 60 Sekunden · ohne E-Mail',
   },
+  chips: {
+    intro: 'Neue Buchung · Sa 10:00',
+    studio: 'Thai-Massage 60 Min · 65 €',
+    team: 'Heute: 14 Termine im Team',
+    bookings: 'Diese Woche: 38 Termine',
+    ticket: 'Bezahlt · 80 €',
+    channels: '23:47 · „Haben Sie Samstag frei?“',
+    marketplaceBookings: 'Neue Kundin · über Marktplatz',
+    commission: 'Provision abgezogen · −21 €',
+    noShows: '14:00 · nicht erschienen',
+    giftCards: 'Gutschein verkauft · 02:14',
+    hours: '12 neue Nachrichten',
+    result: 'Ihr Studio mit Zenno',
+  },
   stepOf: 'Frage {n} von {total}',
   back: 'Zurück',
   next: 'Weiter',
@@ -113,8 +127,11 @@ export const checkDe: CheckCopy = {
   },
   result: {
     kicker: 'Ihr Ergebnis',
-    total: 'ca. {low}–{high} mehr im Monat',
+    total: 'ca. {range} mehr im Monat',
     hours: 'und {low}–{high} Stunden weniger am Handy',
+    chartTitle: 'Ihre nächsten 12 Monate',
+    chartEnd: 'Nach 12 Monaten: ca. {range} mehr',
+    chartNote: 'Summe über die Monate. Die ersten zwei Monate zählen nur teilweise, weil die Umstellung etwas dauert. Gutscheine mit Saison.',
     nothing: 'Ihr Studio ist schon gut aufgestellt. Zenno spart Ihnen vor allem Zeit.',
     lines: {
       commission: {

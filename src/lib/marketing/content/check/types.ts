@@ -11,6 +11,21 @@ export interface Question<V> {
   options: readonly Option<V>[]
 }
 
+/** Every screen of the check: intro, each question, result. */
+export type ScreenKey =
+  | 'intro'
+  | 'studio'
+  | 'team'
+  | 'bookings'
+  | 'ticket'
+  | 'channels'
+  | 'marketplaceBookings'
+  | 'commission'
+  | 'noShows'
+  | 'giftCards'
+  | 'hours'
+  | 'result'
+
 export interface Source {
   label: string
   url: string
@@ -29,6 +44,8 @@ export interface CheckCopy {
     start: string
     promise: string
   }
+  /** The small frosted app notification on each screen's photo. */
+  chips: Record<ScreenKey, string>
   /** "Frage {n} von {total}" */
   stepOf: string
   back: string
@@ -47,11 +64,15 @@ export interface CheckCopy {
   }
   result: {
     kicker: string
-    /** "ca. {low}–{high} mehr im Monat" */
+    /** "ca. {range} mehr im Monat" */
     total: string
     /** "und {low}–{high} Stunden weniger am Handy" */
     hours: string
     nothing: string
+    chartTitle: string
+    /** "Nach 12 Monaten: ca. {range} mehr" */
+    chartEnd: string
+    chartNote: string
     lines: Record<LineKey, { label: string; how: string }>
     seasonNote: string
     cappedNote: string
