@@ -1,4 +1,5 @@
 import type { Estimate, QuizAnswers } from '@/lib/marketing/quiz/estimate'
+import { signupLink } from '@/lib/marketing/signupLink'
 
 /** Open Analytics' global (cookieless, always on); the Meta pixel's `fbq` only exists after consent. */
 declare global {
@@ -38,24 +39,7 @@ export function trackCheckSignupClick(plan: string): void {
   window.fbq?.('trackCustom', 'CheckToSignup', { plan })
 }
 
-const FORWARDED_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid']
-
-/**
- * Sign-up link into the app with the plan and studio details pre-chosen, plus the ad's
- * UTM tags carried over so the account is attributed to the ad that brought it.
- * Only answers go into the URL, never personal data.
- */
+/** Sign-up link with plan and studio details pre-chosen (answers only, never personal data). */
 export function signupUrl(startUrl: string, answers: QuizAnswers, plan: string, currentSearch: string): string {
-  const url = new URL('signup', startUrl)
-  const incoming = new URLSearchParams(currentSearch)
-  for (const key of FORWARDED_PARAMS) {
-    const value = incoming.get(key)
-    if (value) url.searchParams.set(key, value)
-  }
-  if (!url.searchParams.has('utm_source')) url.searchParams.set('utm_source', 'zennohq')
-  url.searchParams.set('src', 'studio_check')
-  url.searchParams.set('plan', plan)
-  url.searchParams.set('type', answers.studio)
-  url.searchParams.set('team', answers.team)
-  return url.toString()
+  return signupLink(startUrl, currentSearch, { src: 'studio_check', plan, type: answers.studio, team: answers.team })
 }

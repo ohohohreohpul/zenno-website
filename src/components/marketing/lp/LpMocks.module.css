@@ -1,0 +1,185 @@
+/* Wireframe-quiet UI sketches inside the numbered cards. */
+
+.stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  width: min(100%, 22rem);
+  margin: 0 auto;
+}
+.time {
+  align-self: center;
+  font-size: 0.72rem;
+  color: var(--t3);
+}
+.bubble {
+  max-width: 85%;
+  padding: 0.6rem 0.85rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  box-shadow: var(--sh-sm);
+}
+.them {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-bottom-left-radius: 0.3rem;
+}
+.us {
+  align-self: flex-end;
+  background: var(--bk);
+  color: var(--inv);
+  border-bottom-right-radius: 0.3rem;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.pillFloat {
+  position: absolute;
+  right: -0.4rem;
+  bottom: -0.6rem;
+  box-shadow: var(--sh);
+  background: var(--card);
+}
+
+.voucher {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 0.3rem 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--r-lg);
+  background: linear-gradient(135deg, #1f3b37, var(--bk));
+  color: var(--inv);
+  box-shadow: var(--sh);
+}
+.voucherTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+.voucher strong {
+  grid-column: 1;
+  font-size: 1.9rem;
+  letter-spacing: -0.03em;
+}
+.qr {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(4, 9px);
+  gap: 2px;
+  padding: 6px;
+  background: var(--inv);
+  border-radius: 6px;
+}
+.qr i {
+  width: 9px;
+  height: 9px;
+  border-radius: 1px;
+  background: #e8ebe9;
+}
+.qr .qrOn {
+  background: var(--ink);
+}
+
+.notice {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--r);
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--sh-sm);
+  font-size: 0.85rem;
+}
+.notice b {
+  font-size: 0.75rem;
+  color: var(--t2);
+}
+.bars {
+  width: 100%;
+  padding: 0.75rem 0.85rem 0.6rem;
+  border-radius: var(--r);
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+.barsLabel {
+  font-size: 0.72rem;
+  color: var(--t3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.barsRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.45rem;
+  height: 4.2rem;
+  margin-top: 0.5rem;
+}
+.barsRow i {
+  flex: 1;
+  border-radius: 4px 4px 1px 1px;
+  background: var(--line-strong);
+}
+.barsRow .barGood {
+  background: var(--bk);
+}
+
+.rows {
+  display: grid;
+  gap: 0.5rem;
+  width: min(100%, 24rem);
+  margin: 0 auto;
+}
+.row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--r);
+  background: var(--card);
+  border: 1px solid var(--line);
+  font-size: 0.8rem;
+}
+.rowLine {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--bk);
+}
+.rowText {
+  color: var(--t2);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rowPrice {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.rowTag {
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-weight: 600;
+  white-space: nowrap;
+}
