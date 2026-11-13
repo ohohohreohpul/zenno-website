@@ -42,6 +42,8 @@ export function trackStartFreeClicks(startUrl: string): void {
   document.addEventListener('click', (event) => {
     const link = (event.target as Element | null)?.closest?.('a[href]')
     if (!(link instanceof HTMLAnchorElement)) return
+    // Links that report their own event (the Studio-Check result) opt out with data-no-lead.
+    if (link.hasAttribute('data-no-lead')) return
     if (new URL(link.href, window.location.href).origin !== appOrigin) return
     window.fbq?.('track', 'Lead', { content_name: 'start_free' })
   })
