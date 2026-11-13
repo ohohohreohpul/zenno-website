@@ -14,6 +14,7 @@ const LOCALIZED_ROUTES = [
   { path: '/vouchers', priority: 0.9 },
   { path: '/booking', priority: 0.7 },
   { path: '/pricing', priority: 0.9 },
+  { path: '/check', priority: 0.7 },
   ...INDUSTRY_SLUGS.map((slug) => ({ path: `/${slug}`, priority: 0.8 })),
   ...FEATURE_SLUGS.map((slug) => ({ path: `/${slug}`, priority: 0.8 })),
   ...LEGAL_SLUGS.map((slug) => ({ path: `/${slug}`, priority: 0.2 })),
